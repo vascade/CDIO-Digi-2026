@@ -22,12 +22,8 @@ var ISEJScriptLib = RDScrDir + "/ISEWrap.js";
 eval( EAInclude(ISEJScriptLib) );
 
 
-// pre-commands:
-ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log xilinx_one_port_ram_sync.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source xilinx_one_port_ram_sync.tcl -notrace" );
-
-
+         "-log xilinx_one_port_ram_sync.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xilinx_one_port_ram_sync.tcl" );
 
 
 

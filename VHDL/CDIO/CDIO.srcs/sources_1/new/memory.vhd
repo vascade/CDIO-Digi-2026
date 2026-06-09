@@ -5,7 +5,7 @@ use ieee.std_logic_1164.all ;
 use ieee.numeric_std.all;
 entity xilinx_one_port_ram_sync is
     generic (
-        ADDR_WIDTH : integer :=16 ; -- 2^16 65536 pladser
+        ADDR_WIDTH : integer :=16 ; -- 2^16 65536 pladser 2^15
         DATA_WIDTH : integer :=16
     );
     port(
@@ -20,6 +20,7 @@ end xilinx_one_port_ram_sync;
 architecture beh_arch of xilinx_one_port_ram_sync is
     type ram_type is array (2**ADDR_WIDTH-1 downto 0)
          of std_logic_vector (DATA_WIDTH-1 downto 0);
+    signal addr_reg: std_logic_vector(ADDR_WIDTH-1 downto 0);
     signal ram: ram_type := (
     -- Empty Traps/Interrupt Tables
     X"0000", X"0000", X"0000", X"0000", X"0000", X"0000", X"0000", X"0000",  -- addr 0 - 7
@@ -186,17 +187,16 @@ architecture beh_arch of xilinx_one_port_ram_sync is
     -- Start of user program         (1280-...)
     X"2405", X"608a", X"7092", X"608e", X"7096", X"0ffb", X"fe00",  -- addr 1280 - 1286
      others => X"0000" );
-     
-    signal addr_reg: std_logic_vector(ADDR_WIDTH-1 downto 0);
 begin
     process (clk)
     begin
         if (clk'event and clk = '1') then
             if (we='1') then
                 ram(to_integer(unsigned(addr))) <= din;
+                addr_reg <= addr;
             end if ;
             addr_reg <= addr;
         end if ;
     end process;
-    dout <= ram(to_integer(unsigned(addr_reg))) ;
+    dout <= ram(to_integer(unsigned(addr_reg)));
 end beh_arch ; 

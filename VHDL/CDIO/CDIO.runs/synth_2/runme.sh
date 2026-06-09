@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO/CDIO.runs/impl_1'
+HD_PWD='C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,8 +40,4 @@ EAStep()
      fi
 }
 
-# pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log xilinx_one_port_ram_sync.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source xilinx_one_port_ram_sync.tcl -notrace
-
-
+EAStep vivado -log xilinx_one_port_ram_sync.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xilinx_one_port_ram_sync.tcl
