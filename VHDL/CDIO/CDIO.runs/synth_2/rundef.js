@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log xilinx_one_port_ram_sync.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xilinx_one_port_ram_sync.tcl" );
+         "-log LC3Zybo_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LC3Zybo_top.tcl" );
 
 
 
