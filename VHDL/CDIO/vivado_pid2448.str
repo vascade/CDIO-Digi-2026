@@ -2199,3 +2199,113 @@ selectCodeEditor("lc3_computer.vhd", 564, 508); // ce (w, ck)
 selectCodeEditor("lc3_computer.vhd", 113, 497); // ce (w, ck)
 // Elapsed time: 185 seconds
 selectCodeEditor("lc3_computer.vhd", 594, 351); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,570 MB. GUI used memory: 105 MB. Current time: 6/9/26 3:22:25 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,570 MB. GUI used memory: 106 MB. Current time: 6/9/26 3:52:27 PM CEST
+// Elapsed time: 3480 seconds
+selectCodeEditor("lc3_computer.vhd", 161, 537); // ce (w, ck)
+// Elapsed time: 61 seconds
+selectCodeEditor("lc3_computer.vhd", 282, 538); // ce (w, ck)
+// Elapsed time: 67 seconds
+selectCodeEditor("lc3_computer.vhd", 161, 475); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 230, 475); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 156, 469); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 230, 486); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 243, 461); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("lc3_computer.vhd", 273, 468); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("lc3_computer.vhd", 264, 472); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 335, 432); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 82, 452); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 115, 473); // ce (w, ck)
+// Elapsed time: 137 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 2); // k (j, ck)
+// Elapsed time: 25 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "vtn"); // l (aQ, ck)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+// Elapsed time: 53 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 5); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 473, 433); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+// Elapsed time: 31 seconds
+selectCodeEditor("lc3_computer.vhd", 464, 459); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 560, 401); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,570 MB. GUI used memory: 105 MB. Current time: 6/9/26 4:22:29 PM CEST
+// Elapsed time: 47 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 2); // k (j, ck)
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top.vhd", 2); // k (j, ck)
+// Elapsed time: 34 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 5); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 431, 507); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 399, 529); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+typeControlKey(null, null, 'z');
+// Elapsed time: 46 seconds
+selectCodeEditor("lc3_computer.vhd", 241, 516); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 246, 506); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 337, 541); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 259, 519); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 248, 497); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 204, 522); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 367, 555); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 177 seconds
+selectCodeEditor("lc3_computer.vhd", 27, 346); // ce (w, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("lc3_computer.vhd", 325, 548); // ce (w, ck)
+// Elapsed time: 349 seconds
+selectCodeEditor("lc3_computer.vhd", 386, 503); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 236, 559); // ce (w, ck)
+// Elapsed time: 387 seconds
+selectCodeEditor("lc3_computer.vhd", 42, 346); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 311, 467); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 210, 520); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 148, 387); // ce (w, ck)
+// Elapsed time: 23 seconds
+selectCodeEditor("lc3_computer.vhd", 239, 499); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 395, 482); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 370, 477); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 160, 492); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 206, 485); // ce (w, ck)
+// Elapsed time: 25 seconds
+selectCodeEditor("lc3_computer.vhd", 245, 518); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 148, 400); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 164, 520); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 246, 521); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 35, 346); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 496, 484); // ce (w, ck)
+// Elapsed time: 18 seconds
+selectCodeEditor("lc3_computer.vhd", 209, 507); // ce (w, ck)
+// Elapsed time: 190 seconds
+selectCodeEditor("lc3_computer.vhd", 326, 441); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 342, 438); // ce (w, ck)
+// Elapsed time: 27 seconds
+selectCodeEditor("lc3_computer.vhd", 88, 551); // ce (w, ck)
+// Elapsed time: 65 seconds
+selectCodeEditor("lc3_computer.vhd", 166, 349); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 220, 366); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET

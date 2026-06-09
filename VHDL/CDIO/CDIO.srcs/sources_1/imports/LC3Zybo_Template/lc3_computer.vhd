@@ -87,7 +87,7 @@ architecture Behavioral of lc3_computer is
    signal sink_psw : std_logic;
    signal sink_btn : std_logic;
    signal sink_pbtn : std_logic;
-	signal sink_uart : std_logic;
+   signal sink_uart : std_logic;
    
 	-- Memory interface signals
 	signal address: std_logic_vector(15 downto 0);
@@ -226,7 +226,22 @@ begin
            dout => data_in,
            we => WE
            );    
-        
-
+     
+     process(clk)
+        begin
+            if(clk'event and clk = '1') then
+                if WE = '0' then
+                    case address is
+                        when IO_BTN =>
+                            data_in <= X"00" & "000" & btn;
+                        when IO_PBTN =>
+                            data_in <= X"000" & pbtn;
+                     end case
+                 if WE = '1' then 
+                    case address is 
+                        when 
+                     
+                 
+      end process;
 end Behavioral;
 
