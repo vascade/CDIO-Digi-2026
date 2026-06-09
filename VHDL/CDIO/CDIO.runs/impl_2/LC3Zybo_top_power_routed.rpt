@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Tue Jun  9 14:00:22 2026
+| Date             : Tue Jun  9 14:30:16 2026
 | Host             : Wills-laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file LC3Zybo_top_power_routed.rpt -pb LC3Zybo_top_power_summary_routed.pb -rpx LC3Zybo_top_power_routed.rpx
 | Design           : LC3Zybo_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.212        |
+| Total On-Chip Power (W)  | 0.250        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.118        |
-| Device Static (W)        | 0.094        |
+| Dynamic (W)              | 0.154        |
+| Device Static (W)        | 0.096        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.6         |
-| Junction Temperature (C) | 27.4         |
+| Max Ambient (C)          | 82.1         |
+| Junction Temperature (C) | 27.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,23 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.003 |        5 |       --- |             --- |
-| Slice Logic             |     0.004 |     3206 |       --- |             --- |
-|   LUT as Logic          |     0.003 |     1372 |     17600 |            7.80 |
-|   CARRY4                |    <0.001 |      184 |      4400 |            4.18 |
-|   Register              |    <0.001 |     1344 |     35200 |            3.82 |
-|   LUT as Shift Register |    <0.001 |       38 |      6000 |            0.63 |
+| Clocks                  |     0.005 |        5 |       --- |             --- |
+| Slice Logic             |     0.009 |     5155 |       --- |             --- |
+|   LUT as Logic          |     0.007 |     2959 |     17600 |           16.81 |
+|   Register              |    <0.001 |     1633 |     35200 |            4.64 |
+|   CARRY4                |    <0.001 |      208 |      4400 |            4.73 |
+|   LUT as Shift Register |    <0.001 |       39 |      6000 |            0.65 |
+|   F7/F8 Muxes           |    <0.001 |       99 |     17600 |            0.56 |
 |   BUFG                  |    <0.001 |        5 |        32 |           15.63 |
-|   F7/F8 Muxes           |    <0.001 |       75 |     17600 |            0.43 |
-|   Others                |     0.000 |      167 |       --- |             --- |
-| Signals                 |     0.003 |     2191 |       --- |             --- |
+|   Others                |     0.000 |      190 |       --- |             --- |
+| Signals                 |     0.009 |     3883 |       --- |             --- |
+| Block RAM               |     0.023 |       32 |        60 |           53.33 |
 | PLL                     |     0.106 |        1 |         2 |           50.00 |
+| DSPs                    |    <0.001 |        1 |        80 |            1.25 |
 | I/O                     |     0.001 |       13 |       100 |           13.00 |
 | PS7                     |     0.000 |        1 |       --- |             --- |
-| Static Power            |     0.094 |          |           |                 |
-| Total                   |     0.212 |          |           |                 |
+| Static Power            |     0.096 |          |           |                 |
+| Total                   |     0.250 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,8 +78,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.020 |      0.004 |
-| Vccaux    |       1.800 |     0.060 |       0.054 |      0.005 |
+| Vccint    |       1.000 |     0.058 |       0.054 |      0.005 |
+| Vccaux    |       1.800 |     0.060 |       0.054 |      0.006 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -85,7 +87,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.003 |       0.002 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -154,13 +156,14 @@ Table of Contents
 +---------------------------------+-----------+
 | Name                            | Power (W) |
 +---------------------------------+-----------+
-| LC3Zybo_top                     |     0.118 |
+| LC3Zybo_top                     |     0.154 |
 |   Inst_ZyboVIOSE_wrapper        |     0.108 |
 |     Inst_ZyboVIO_SE             |     0.108 |
-|   Inst_student_code             |     0.007 |
-|     Inst_lc3_computer           |     0.007 |
-|       lc3_m                     |     0.007 |
-|         lc3_1                   |     0.007 |
+|   Inst_student_code             |     0.043 |
+|     Inst_lc3_computer           |     0.043 |
+|       Inst_memory               |     0.024 |
+|       lc3_m                     |     0.019 |
+|         lc3_1                   |     0.019 |
 |     lc3_debug_1                 |    <0.001 |
 |       BtnToggle_1               |    <0.001 |
 |       hand_clk_db               |    <0.001 |

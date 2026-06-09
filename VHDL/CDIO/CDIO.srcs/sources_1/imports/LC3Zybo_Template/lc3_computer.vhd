@@ -112,21 +112,7 @@ architecture Behavioral of lc3_computer is
    ---<<<<< End of pregenerated code >>>>>---
    ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
    ------------------------------------------
-   ------STUdent code ----------------------
-	component xilinx_one_port_ram_sync
-       generic (
-               ADDR_WIDTH : integer :=16 ; -- 2^16 65536 pladser 2^15
-               DATA_WIDTH : integer :=16
-           );
-           port(
-               clk: in std_logic;
-               we: in std_logic;
-               addr: in std_logic_vector(ADDR_WIDTH-1 downto 0);
-               din: in std_logic_vector(DATA_WIDTH-1 downto 0);
-               dout: out std_logic_vector(DATA_WIDTH-1 downto 0)
-           );
-        end component;
-   -----------------------------------------
+
 begin
 
   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
@@ -163,7 +149,7 @@ begin
 	tx_data <= X"00";
 	
 	--Input data for the LC3 CPU
-	data_in <= X"0000";
+	--data_in <= X"0000";
 
    --All the input signals comming to the FPGA should be used at least once otherwise we get 
    --synthesis warnings. The following lines of VHDL code are meant to remove those warnings. 
