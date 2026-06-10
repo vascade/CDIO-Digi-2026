@@ -5,7 +5,7 @@ void roulette() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Roulette");
     SetTargetFPS(60);
     
-    Texture2D table = LoadTexture("textures/table.png");
+    Texture2D table = LoadTexture("table.png");
 
     // Vars for table
     int frameWidth = table.width;
