@@ -107,7 +107,10 @@ architecture Behavioral of lc3_computer is
 	constant IO_SSEG    : std_logic_vector(15 downto 0) := X"FE12";  -- 7 segment
 	constant IO_LED     : std_logic_vector(15 downto 0) := X"FE16";  -- Leds
 	constant IO_PLED    : std_logic_vector(15 downto 0) := X"FE17";  -- Physical Leds
-   
+	
+	
+	-- Student own signals
+	signal ram_din : std_logic_vector(15 downto 0);    
 	---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
    ---<<<<< End of pregenerated code >>>>>---
    ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
@@ -136,12 +139,13 @@ begin
    led(7) <= '0'; 
 
    --Physical leds on the Zybo board (active high)
-   pled(0) <= '0';
-   pled(1) <= '0';
-   pled(2) <= '0';
+   --pled(0) <= '0';
+   --pled(1) <= '0';
+   --pled(2) <= '0';
 
    --Virtual hexadecimal display on Zybo VIO
-   hex <= X"1234"; 
+   --hex <= X"1234"; 
+   hex <= address;
 
 	--Virtual I/O UART
 	rx_rd <= '0';
@@ -216,30 +220,36 @@ begin
    
 	-------------------------------------------------------------------------------
 	-- <<< Write your VHDL code starting from here >>>
-	-------------------------------------------------------------------------------
+	------------------------------------------------------------------------------
     -- Ram
    	Inst_memory : entity work.xilinx_one_port_ram_sync
         port map(
            clk => clk,
            addr => address,
            din => data_out,
-           dout => data_in,
+           dout => ram_din,
            we => WE
            );    
      
      process(clk)
         begin
             if(clk'event and clk = '1') then
-                if WE = '0' then
+              --  if RE = '1' then
                     case address is
                         when IO_BTN =>
                             data_in <= X"00" & "000" & btn;
+                            pled <= "001";
                         when IO_PBTN =>
                             data_in <= X"000" & pbtn;
-                     end case
-                 if WE = '1' then 
-                    case address is 
-                        when 
+                            pled <= "100";
+                        when others =>
+                            data_in <= ram_din;
+                     end case;
+                   --  end if;
+                     end if;
+            --     if WE = '1' then 
+             --       case address is 
+             --           when 
                      
                  
       end process;
