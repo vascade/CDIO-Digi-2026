@@ -632,3 +632,10 @@ dismissDialog("Launch Runs"); // f (ck)
 // TclEventType: RUN_COMPLETED
 // Elapsed time: 124 seconds
 selectCodeEditor("lc3_computer.vhd", 19, 417); // ce (w, ck)
+// Elapsed time: 75 seconds
+selectCodeEditor("lc3_computer.vhd", 247, 247); // ce (w, ck)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4986 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1882 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 7026 ms. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 523 ms to process. Increasing delay to 2000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 45 MB. Current time: 6/10/26 10:15:15 AM CEST
