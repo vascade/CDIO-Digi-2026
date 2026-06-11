@@ -1,11 +1,12 @@
 #include "game.h"
+#include "raylib.h"
 
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
-int main(void)
-{
-    roulette();
-    
+int main(void) {
+    //roulette();
+    serial();
+
     return 0;
 }
