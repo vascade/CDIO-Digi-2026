@@ -129,14 +129,14 @@ begin
 
    
    --Virtual Leds on Zybo VIO (active high)
-   led(0) <= '0';
-   led(1) <= '0';
-   led(2) <= '0'; 
-   led(3) <= '0'; 
-   led(4) <= '0'; 
-   led(5) <= '0'; 
-   led(6) <= '0'; 
-   led(7) <= '0'; 
+   --led(0) <= '0';
+   --led(1) <= '0';
+   --led(2) <= '0'; 
+   --led(3) <= '0'; 
+   --led(4) <= '0'; 
+   --led(5) <= '0'; 
+   --led(6) <= '0'; 
+   --led(7) <= '0'; 
 
    --Physical leds on the Zybo board (active high)
    --pled(0) <= '0';
@@ -144,7 +144,7 @@ begin
    --pled(2) <= '0';
 
    --Virtual hexadecimal display on Zybo VIO
-   hex <= X"1234";
+   --hex <= X"1234";
 
 	--Virtual I/O UART
 	--rx_rd <= '0';
@@ -230,7 +230,7 @@ begin
            we => WE
            );    
      
-     process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din)
+     process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out)
            begin
                data_in <= ram_din; -- default
                rx_rd   <= '0';
@@ -248,14 +248,32 @@ begin
                             data_in <= (not tx_full) & "000000000000000";
                        when STDOUT_D => --XFE06" DDR
                             data_in <= X"0000";
+                       when IO_SW => --x"FE0A" SW
+                            data_in <= X"00" & SW;
+                       when IO_PSW => --x"FE0B" PSW
+                            data_in <= X"000" & PSW;
+                       when IO_BTN => --x"FE0E" BTN
+                            data_in <= x"00" & "000" & btn;
+                       when IO_PBTN => --x"FE0F" PBTN
+                            data_in <= x"000" & pbtn;
                        when others   => 
                             data_in <= ram_din;
                    end case;
                elsif WE = '1' then
-                   if address = STDOUT_D then
-                       tx_data <= data_out(7 downto 0);
-                       tx_wr   <= '1';
-                   end if;
+                   case address is
+                        when STDOUT_D =>
+                            tx_data <= data_out(7 downto 0);
+                            tx_wr   <= '1';
+                        when IO_SSEG => --x"FE12" SSEG
+                                hex <= data_out;
+                        when IO_LED => --x"FE16" LED
+                                led <= data_out(7 downto 0);
+                        when IO_PLED => --X"FE17" PLED
+                                PLED <= data_out(2 downto 0);
+                        when others =>
+                            NULL;
+                   end case;
+                   
                end if;
            end process;
       

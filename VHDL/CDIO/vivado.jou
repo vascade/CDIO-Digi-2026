@@ -2,70 +2,16 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Jun 10 09:04:47 2026
-# Process ID: 26060
+# Start of session at: Thu Jun 11 13:46:43 2026
+# Process ID: 7408
 # Current directory: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22472 C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18532 C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.xpr
 # Log file: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/vivado.log
 # Journal file: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.xpr
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs synth_2 -jobs 6
-wait_on_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
-reset_run synth_2
-launch_runs impl_2 -to_step write_bitstream -jobs 6
-wait_on_run impl_2
 reset_run synth_2
 launch_runs impl_2 -to_step write_bitstream -jobs 6
 wait_on_run impl_2

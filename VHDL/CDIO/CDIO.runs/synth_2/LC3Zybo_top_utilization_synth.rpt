@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu Jun 11 12:33:44 2026
+| Date         : Thu Jun 11 15:03:42 2026
 | Host         : Wills-laptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LC3Zybo_top_utilization_synth.rpt -pb LC3Zybo_top_utilization_synth.pb
 | Design       : LC3Zybo_top
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3263 |     0 |     17600 | 18.54 |
-|   LUT as Logic             | 3209 |     0 |     17600 | 18.23 |
+| Slice LUTs*                | 3276 |     0 |     17600 | 18.61 |
+|   LUT as Logic             | 3222 |     0 |     17600 | 18.31 |
 |   LUT as Memory            |   54 |     0 |      6000 |  0.90 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   54 |     0 |           |       |
-| Slice Registers            | 1916 |     0 |     35200 |  5.44 |
+| Slice Registers            | 1943 |     0 |     35200 |  5.52 |
 |   Register as Flip Flop    | 1916 |     0 |     35200 |  5.44 |
-|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
+|   Register as Latch        |   27 |     0 |     35200 |  0.08 |
 | F7 Muxes                   |  107 |     0 |      8800 |  1.22 |
 | F8 Muxes                   |   16 |     0 |      4400 |  0.36 |
 +----------------------------+------+-------+-----------+-------+
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 4     |          Yes |           - |          Set |
-| 340   |          Yes |           - |        Reset |
+| 367   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 1572  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -151,26 +151,26 @@ Table of Contents
 |  Ref Name | Used |  Functional Category |
 +-----------+------+----------------------+
 | FDRE      | 1572 |         Flop & Latch |
-| LUT6      | 1117 |                  LUT |
-| LUT5      |  891 |                  LUT |
-| LUT3      |  405 |                  LUT |
+| LUT6      | 1097 |                  LUT |
+| LUT5      |  894 |                  LUT |
+| LUT3      |  431 |                  LUT |
 | LUT1      |  365 |                  LUT |
 | FDCE      |  340 |         Flop & Latch |
-| LUT4      |  251 |                  LUT |
-| LUT2      |  212 |                  LUT |
+| LUT4      |  284 |                  LUT |
 | CARRY4    |  209 |           CarryLogic |
+| LUT2      |  196 |                  LUT |
 | MUXF7     |  107 |                MuxFx |
 | SRLC16E   |   54 |   Distributed Memory |
 | RAMB36E1  |   32 |         Block Memory |
+| LDCE      |   27 |         Flop & Latch |
 | MUXF8     |   16 |                MuxFx |
 | IBUF      |    9 |                   IO |
 | BUFG      |    6 |                Clock |
+| OBUF      |    4 |                   IO |
 | FDPE      |    4 |         Flop & Latch |
-| OBUFT     |    3 |                   IO |
 | BSCANE2   |    2 |               Others |
 | PS7       |    1 | Specialized Resource |
 | PLLE2_ADV |    1 |                Clock |
-| OBUF      |    1 |                   IO |
 | DSP48E1   |    1 |     Block Arithmetic |
 +-----------+------+----------------------+
 

@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Jun 11 12:33:50 2026
-# Process ID: 10252
+# Start of session at: Thu Jun 11 15:03:48 2026
+# Process ID: 23756
 # Current directory: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2
 # Command line: vivado.exe -log LC3Zybo_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source LC3Zybo_top.tcl -notrace
 # Log file: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/LC3Zybo_top.vdi
@@ -26,7 +26,7 @@ No Unisim elements were transformed.
 
 7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 604.148 ; gain = 342.008
+link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 605.453 ; gain = 343.840
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
@@ -37,67 +37,67 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.720 . Memory (MB): peak = 614.887 ; gain = 10.738
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.399 . Memory (MB): peak = 617.344 ; gain = 11.891
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
-Ending Cache Timing Information Task | Checksum: 121029d18
+Ending Cache Timing Information Task | Checksum: 129c5a303
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1141.547 ; gain = 526.660
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1141.844 ; gain = 524.500
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 18b0093cf
+Phase 1 Retarget | Checksum: d0599857
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.294 . Memory (MB): peak = 1141.547 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.196 . Memory (MB): peak = 1141.844 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 13f24e225
+Phase 2 Constant propagation | Checksum: 1408d627c
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.376 . Memory (MB): peak = 1141.547 ; gain = 0.000
-INFO: [Opt 31-389] Phase Constant propagation created 8 cells and removed 25 cells
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.248 . Memory (MB): peak = 1141.844 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 1 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: d27b9b79
+Phase 3 Sweep | Checksum: 14ec20b94
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.461 . Memory (MB): peak = 1141.547 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.303 . Memory (MB): peak = 1141.844 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 99 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: d27b9b79
+Phase 4 BUFG optimization | Checksum: 14ec20b94
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.565 . Memory (MB): peak = 1141.547 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.379 . Memory (MB): peak = 1141.844 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
-Phase 5 Shift Register Optimization | Checksum: 1952425a7
+Phase 5 Shift Register Optimization | Checksum: 235fab480
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.691 . Memory (MB): peak = 1141.547 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.469 . Memory (MB): peak = 1141.844 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 1952425a7
+Phase 6 Post Processing Netlist | Checksum: 235fab480
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.718 . Memory (MB): peak = 1141.547 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.487 . Memory (MB): peak = 1141.844 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1141.547 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 1952425a7
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1141.844 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 235fab480
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.745 . Memory (MB): peak = 1141.547 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.505 . Memory (MB): peak = 1141.844 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=9.817 | TNS=0.000 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=9.165 | TNS=0.000 |
 WARNING: [Power 33-198] PS7 POWER property is not specified on the PS7 instance. Power reported will not be accurate.
 INFO: [Pwropt 34-9] Applying IDT optimizations ...
 INFO: [Pwropt 34-10] Applying ODC optimizations ...
@@ -110,27 +110,27 @@ Starting PowerOpt Patch Enables Task
 INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 32 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
 Number of BRAM Ports augmented: 0 newly gated: 16 Total Ports: 64
-Ending PowerOpt Patch Enables Task | Checksum: caaaa89e
+Ending PowerOpt Patch Enables Task | Checksum: 97aa21f6
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Ending Power Optimization Task | Checksum: caaaa89e
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 97aa21f6
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 1339.574 ; gain = 198.027
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1340.434 ; gain = 198.590
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: caaaa89e
+Ending Final Cleanup Task | Checksum: 97aa21f6
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 30 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1339.574 ; gain = 735.426
+opt_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1340.434 ; gain = 734.980
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/LC3Zybo_top_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file LC3Zybo_top_drc_opted.rpt -pb LC3Zybo_top_drc_opted.pb -rpx LC3Zybo_top_drc_opted.rpx
 Command: report_drc -file LC3Zybo_top_drc_opted.rpt -pb LC3Zybo_top_drc_opted.pb -rpx LC3Zybo_top_drc_opted.rpx
@@ -149,26 +149,26 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 Running DRC as a precondition to command place_design
 INFO: [DRC 23-27] Running DRC with 2 threads
 WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 21 Warnings
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
@@ -178,45 +178,45 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 421bed64
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 5f029e8d
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 171628c2c
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: d9aa2456
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.968 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1ae94d080
+Phase 1.3 Build Placer Netlist Model | Checksum: 1bf3625fe
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1ae94d080
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1bf3625fe
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 1ae94d080
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1bf3625fe
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 22ff93707
+Phase 2.1 Floorplanning | Checksum: 16b975745
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 2.2 Physical Synthesis In Placer
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -230,52 +230,52 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2 Physical Synthesis In Placer | Checksum: 19e2a80b2
+Phase 2.2 Physical Synthesis In Placer | Checksum: 1810ac3a8
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 12147b72e
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1f0751eb5
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 12147b72e
+Phase 3.1 Commit Multi Column Macros | Checksum: 1f0751eb5
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1b8d1389d
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 19161d93a
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 163ea83d1
+Phase 3.3 Area Swap Optimization | Checksum: 1d0ceda1f
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 169b349f0
+Phase 3.4 Pipeline Register Optimization | Checksum: 25b372399
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 1e16d201e
+Phase 3.5 Small Shape Detail Placement | Checksum: 16729201b
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 299e5662d
+Phase 3.6 Re-assign LUT pins | Checksum: 14033ef65
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: 234eb3272
+Phase 3.7 Pipeline Register Optimization | Checksum: 14033ef65
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 234eb3272
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 14033ef65
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -283,58 +283,58 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 248fb301b
+Post Placement Optimization Initialization | Checksum: 157a8539a
 
 Phase 4.1.1.1 BUFG Insertion
 INFO: [Place 46-31] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
-Phase 4.1.1.1 BUFG Insertion | Checksum: 248fb301b
+Phase 4.1.1.1 BUFG Insertion | Checksum: 157a8539a
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
-INFO: [Place 30-746] Post Placement Timing Summary WNS=8.046. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 22294d499
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=6.761. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1c3104032
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 22294d499
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1c3104032
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 22294d499
+Phase 4.2 Post Placement Cleanup | Checksum: 1c3104032
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 22294d499
+Phase 4.3 Placer Reporting | Checksum: 1c3104032
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: 25b19f49d
+Phase 4.4 Final Placement Cleanup | Checksum: 11bf0975c
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 25b19f49d
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 11bf0975c
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Ending Placer Task | Checksum: 1d84e10ce
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Ending Placer Task | Checksum: 68d09904
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 56 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1339.574 ; gain = 0.000
+place_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.449 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.243 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/LC3Zybo_top_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file LC3Zybo_top_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1339.574 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file LC3Zybo_top_utilization_placed.rpt -pb LC3Zybo_top_utilization_placed.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1339.574 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file LC3Zybo_top_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1339.574 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1340.434 ; gain = 0.000
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
@@ -346,106 +346,107 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: e92bb3f5 ConstDB: 0 ShapeSum: ef225cd9 RouteDB: 0
+Checksum: PlaceDB: 332cf13a ConstDB: 0 ShapeSum: 35a3a7ca RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: c8c324c3
+Phase 1 Build RT Design | Checksum: 113975e58
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Post Restoration Checksum: NetGraph: b8d0c4eb NumContArr: ff25fd8 Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Post Restoration Checksum: NetGraph: c7991738 NumContArr: 4bfe4720 Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: c8c324c3
+Phase 2.1 Create Timer | Checksum: 113975e58
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: c8c324c3
+Phase 2.2 Fix Topology Constraints | Checksum: 113975e58
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: c8c324c3
+Phase 2.3 Pre Route Cleanup | Checksum: 113975e58
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1340.434 ; gain = 0.000
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 15e993541
+Phase 2.4 Update Timing | Checksum: 10aa9a2d3
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 1339.574 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=8.169  | TNS=0.000  | WHS=-0.186 | THS=-29.633|
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1340.434 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.789  | TNS=0.000  | WHS=-0.277 | THS=-24.810|
 
-Phase 2 Router Initialization | Checksum: 12d90f989
+Phase 2 Router Initialization | Checksum: a08dc78c
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 22cbd0b13
+Phase 3 Initial Routing | Checksum: e6d3742f
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 536
- Number of Nodes with overlaps = 28
+ Number of Nodes with overlaps = 552
+ Number of Nodes with overlaps = 34
+ Number of Nodes with overlaps = 3
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.728  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.306  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 20acab3fc
+Phase 4.1 Global Iteration 0 | Checksum: 2749e1fea
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 4 Rip-up And Reroute | Checksum: 20acab3fc
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 4 Rip-up And Reroute | Checksum: 2749e1fea
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 17b16495d
+Phase 5.1.1 Update Timing | Checksum: 28b28f0b0
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.843  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.306  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Delay CleanUp | Checksum: 17b16495d
+Phase 5.1 Delay CleanUp | Checksum: 28b28f0b0
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 17b16495d
+Phase 5.2 Clock Skew Optimization | Checksum: 28b28f0b0
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 5 Delay and Skew Optimization | Checksum: 17b16495d
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 5 Delay and Skew Optimization | Checksum: 28b28f0b0
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 1b1c0d0b5
+Phase 6.1.1 Update Timing | Checksum: 21fa9d237
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.843  | TNS=0.000  | WHS=0.105  | THS=0.000  |
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.306  | TNS=0.000  | WHS=0.150  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 1dcca18e3
+Phase 6.1 Hold Fix Iter | Checksum: 22cc3f0e3
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
-Phase 6 Post Hold Fix | Checksum: 1dcca18e3
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
+Phase 6 Post Hold Fix | Checksum: 22cc3f0e3
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 2.09952 %
-  Global Horizontal Routing Utilization  = 2.91682 %
+  Global Vertical Routing Utilization    = 2.26084 %
+  Global Horizontal Routing Utilization  = 2.91774 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -454,44 +455,44 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 163810fc2
+Phase 7 Route finalize | Checksum: 27787c166
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 163810fc2
+Phase 8 Verifying routed nets | Checksum: 27787c166
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 1dbdf3f09
+Phase 9 Depositing Routes | Checksum: 25a5bc3bc
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=6.843  | TNS=0.000  | WHS=0.105  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=6.306  | TNS=0.000  | WHS=0.150  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 1dbdf3f09
+Phase 10 Post Router Timing | Checksum: 25a5bc3bc
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1340.434 ; gain = 0.000
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
 74 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 1339.574 ; gain = 0.000
+route_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.525 . Memory (MB): peak = 1339.574 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.272 . Memory (MB): peak = 1340.434 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/LC3Zybo_top_routed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file LC3Zybo_top_drc_routed.rpt -pb LC3Zybo_top_drc_routed.pb -rpx LC3Zybo_top_drc_routed.rpx
 Command: report_drc -file LC3Zybo_top_drc_routed.rpt -pb LC3Zybo_top_drc_routed.pb -rpx LC3Zybo_top_drc_routed.rpx
@@ -536,28 +537,31 @@ WARNING: [DRC DPIP-1] Input pipelining: DSP Inst_student_code/Inst_lc3_computer/
 WARNING: [DRC DPIP-1] Input pipelining: DSP Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620 input Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 WARNING: [DRC DPOP-1] PREG Output pipelining: DSP Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620 output Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620 multiplier stage Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/WE) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC PDRC-153] Gated clock check: Net Inst_student_code/Inst_lc3_computer/lc3_m/E[0] is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/hex_reg[15]_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/hex_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net Inst_student_code/Inst_lc3_computer/lc3_m/FSM_sequential_state_reg_reg[0][0] is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/led_reg[7]_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/led_reg[7]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net Inst_student_code/Inst_lc3_computer/lc3_m/pled[0][0] is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/pled_reg[2]_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/pled_reg[2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_12/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_13/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_14/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_15/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_2/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_3/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_4/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_5/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_6/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_7/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_8/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_0_9/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_0/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_1/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_10/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11 has an input control pin Inst_student_code/Inst_lc3_computer/Inst_memory/ram_reg_1_11/WEA[0] (net: Inst_student_code/Inst_lc3_computer/Inst_memory/we) which is driven by a register (Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 25 Warnings, 1 Advisories
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 28 Warnings, 1 Advisories
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
 Loading data files...
@@ -570,7 +574,7 @@ Writing bitstream ./LC3Zybo_top.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
 INFO: [Common 17-83] Releasing license: Implementation
-105 Infos, 49 Warnings, 0 Critical Warnings and 0 Errors encountered.
+105 Infos, 52 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 1761.820 ; gain = 422.246
-INFO: [Common 17-206] Exiting Vivado at Thu Jun 11 12:35:03 2026...
+write_bitstream: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1753.602 ; gain = 413.168
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 11 15:04:36 2026...
