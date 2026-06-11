@@ -96,25 +96,25 @@ architecture Behavioral of lc3_computer is
 
 
 	-- I/O constants for addr from 0xFE00 to 0xFFFF:
-    constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- Serial IN (terminal keyboard)
-    constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";
-    constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- Serial OUT (terminal  display)
-    constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";
-	constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches
+    constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- Serial IN (terminal keyboard) -- KBSR 
+    constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- Keyboard Data Register - KBDR
+    constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- Serial OUT (terminal  display) - DSR
+    constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- Display Data Register -- DDR
+	constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches 
     constant IO_PSW     : std_logic_vector(15 downto 0) := X"FE0B";  -- Physical Switches	
 	constant IO_BTN     : std_logic_vector(15 downto 0) := X"FE0e";  -- Buttons
  	constant IO_PBTN    : std_logic_vector(15 downto 0) := X"FE0F";  -- Physical Buttons	
 	constant IO_SSEG    : std_logic_vector(15 downto 0) := X"FE12";  -- 7 segment
 	constant IO_LED     : std_logic_vector(15 downto 0) := X"FE16";  -- Leds
-	constant IO_PLED    : std_logic_vector(15 downto 0) := X"FE17";  -- Physical Leds
-	
-	
-	-- Student own signals
-	signal ram_din : std_logic_vector(15 downto 0);    
+	constant IO_PLED    : std_logic_vector(15 downto 0) := X"FE17";  -- Physical Leds  
 	---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
    ---<<<<< End of pregenerated code >>>>>---
    ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
    ------------------------------------------
+   
+   ----------------------------Student own signals
+       signal ram_din : std_logic_vector(15 downto 0);
+       
 
 begin
 
@@ -144,8 +144,7 @@ begin
    --pled(2) <= '0';
 
    --Virtual hexadecimal display on Zybo VIO
-   --hex <= X"1234"; 
-   hex <= address;
+   hex <= X"1234";
 
 	--Virtual I/O UART
 	rx_rd <= '0';
@@ -236,14 +235,26 @@ begin
             if(clk'event and clk = '1') then
               --  if RE = '1' then
                     case address is
-                        when IO_BTN =>
-                            data_in <= X"00" & "000" & btn;
-                            pled <= "001";
-                        when IO_PBTN =>
-                            data_in <= X"000" & pbtn;
-                            pled <= "100";
+                        --when IO_BTN => -- x"FE0E"
+                            --data_in <= X"00" & "000" & btn;
+                            --pled(1) <= btn_c;
+                            --pled(0) <= btn_r;
+                            --pled(2) <= btn_l;
+                        --when IO_PBTN => -- x"FE0F"
+                            --data_in <= X"000" & pbtn;
+                            --pled(0) <= pbtn(0);
+                            --pled(1) <= pbtn(1);
+                            --pled(2) <= pbtn(2); 
+                        when STDIN_S => --x"FE00" -- KBSR
+                        
+                        when STDIN_D => --x"FE02" -- KBDR ASCII findes i KBDR[7:0]
+                        
+                        when STDOUT_S => --X"FE04" -- Serial OUT (TERMINAL DISPLAY) -DSR
+                        
+                        when STDOUT_D => --X"FE06" -- Display Data Register -- DDR
                         when others =>
                             data_in <= ram_din;
+                            pled <= "111";
                      end case;
                    --  end if;
                      end if;

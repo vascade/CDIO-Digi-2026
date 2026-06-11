@@ -639,3 +639,623 @@ selectCodeEditor("lc3_computer.vhd", 247, 247); // ce (w, ck)
 // WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 7026 ms. Increasing delay to 4000 ms.
 // WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 523 ms to process. Increasing delay to 2000 ms.
 // HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 45 MB. Current time: 6/10/26 10:15:15 AM CEST
+// Elapsed time: 2170 seconds
+selectCodeEditor("lc3_computer.vhd", 328, 369); // ce (w, ck)
+// Elapsed time: 97 seconds
+selectCodeEditor("lc3_computer.vhd", 316, 334); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 275, 368); // ce (w, ck)
+// Elapsed time: 28 seconds
+selectCodeEditor("lc3_computer.vhd", 304, 318); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 314, 313); // ce (w, ck)
+// Elapsed time: 34 seconds
+selectCodeEditor("lc3_computer.vhd", 280, 293); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 357, 365); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 328, 381); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 336, 407); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("lc3_computer.vhd", 352, 363); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 347, 381); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 344, 407); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 318, 302); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 306, 314); // ce (w, ck)
+// Elapsed time: 41 seconds
+selectCodeEditor("lc3_computer.vhd", 236, 284); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 236, 300); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 272, 318); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 331, 284); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 163, 332); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 10:43:28 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 10:43:28 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 89 seconds
+selectCodeEditor("memory.vhd", 303, 408); // ce (w, ck)
+selectCodeEditor("memory.vhd", 425, 440); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("memory.vhd", 347, 135); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 45 MB. Current time: 6/10/26 10:45:17 AM CEST
+// Elapsed time: 59 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 66 seconds
+selectCodeEditor("lc3_computer.vhd", 295, 344); // ce (w, ck)
+// Elapsed time: 23 seconds
+selectCodeEditor("lc3_computer.vhd", 132, 401); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_debug.vhd", 5); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "student_code.vhd", 4); // k (j, ck)
+selectCodeEditor("student_code.vhd", 254, 265); // ce (w, ck)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "pbtn"); // l (aQ, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 181, 289, false, false, false, true, false); // ce (w, ck) - Popup Trigger
+selectCodeEditor("memory.vhd", 50, 266); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // l (aQ, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // l (aQ, ck)
+selectCodeEditor("lc3_computer.vhd", 240, 164); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 311, 204); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 295, 569); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 347, 571); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 292, 502); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 10:49:02 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 10:49:02 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+selectCodeEditor("lc3_computer.vhd", 34, 197); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 342, 437); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 130, 263); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 130, 253); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 130, 260); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 66 seconds
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 26 seconds
+selectCodeEditor("lc3_computer.vhd", 291, 144); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 218, 252); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 343, 370); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 28 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 10:51:26 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 10:51:26 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 60 seconds
+selectCodeEditor("lc3_computer.vhd", 276, 241); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 53 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 41 seconds
+selectCodeEditor("lc3_computer.vhd", 280, 441); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 35, 318); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 10:54:23 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 10:54:23 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// Elapsed time: 21 seconds
+selectCodeEditor("lc3_computer.vhd", 282, 368); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 275, 278); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 272, 293); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 272, 315); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 282, 282); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 333, 315); // ce (w, ck)
+// TclEventType: RUN_STEP_COMPLETED
+selectCodeEditor("lc3_computer.vhd", 276, 286); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 240, 284); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 196, 302); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 196, 316); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("lc3_computer.vhd", 201, 284); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 198, 284); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 194, 295); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 191, 322); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 391, 268); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 194, 230); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 193, 220); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 193, 202); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 436, 181); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: RUN_COMPLETED
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 10:55:43 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 10:55:43 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3, false, true); // k (j, ck) - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (Q, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3, false, true); // k (j, ck) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (Q, ck)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 10 seconds
+selectCodeEditor("memory.vhd", 52, 379); // ce (w, ck)
+selectCodeEditor("memory.vhd", 233, 376); // ce (w, ck)
+// Elapsed time: 24 seconds
+selectCodeEditor("memory.vhd", 87, 380); // ce (w, ck)
+selectCodeEditor("memory.vhd", 87, 380, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("memory.vhd", 105, 382); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 13 seconds
+selectCodeEditor("memory.vhd", 560, 387); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 22 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 141 seconds
+selectCodeEditor("lc3_computer.vhd", 873, 360); // ce (w, ck)
+// Elapsed time: 24 seconds
+selectCodeEditor("lc3_computer.vhd", 931, 167); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+// Elapsed time: 27 seconds
+selectCodeEditor("memory.vhd", 882, 280); // ce (w, ck)
+// Elapsed time: 55 seconds
+selectCodeEditor("memory.vhd", 97, 440); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("memory.vhd", 473, 435); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: reset_run synth_2 
+// TclEventType: DG_GRAPH_GENERATED
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 11:02:21 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 11:02:21 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// Elapsed time: 13 seconds
+selectCodeEditor("memory.vhd", 467, 334); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 252 seconds
+selectCodeEditor("memory.vhd", 492, 333); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+// Elapsed time: 117 seconds
+selectCodeEditor("memory.vhd", 504, 287); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 619, 345); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 268, 167); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 498, 264); // ce (w, ck)
+// Elapsed time: 122 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 478, 334); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectCodeEditor("memory.vhd", 286, 335); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("memory.vhd", 487, 334); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 11:12:07 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 11:12:07 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+selectCodeEditor("memory.vhd", 329, 330); // ce (w, ck)
+selectCodeEditor("memory.vhd", 288, 334); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 114 MB (+2057kb) [02:08:03]
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 134 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 36, 45); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 313, 320); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 137, 99); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 157, 112); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 206, 145); // ce (w, ck)
+// Elapsed time: 34 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 47 MB. Current time: 6/10/26 11:15:18 AM CEST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 26 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "ram"); // l (aQ, ck)
+selectCodeEditor("lc3_computer.vhd", 107, 392); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 191, 400); // ce (w, ck)
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 25 seconds
+selectCodeEditor("lc3_computer.vhd", 611, 509); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 46 MB. Current time: 6/10/26 11:51:45 AM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 46 MB. Current time: 6/10/26 12:27:04 PM CEST
+// Elapsed time: 4248 seconds
+selectCodeEditor("lc3_computer.vhd", 300, 467); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 302, 362); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// [GUI Memory]: 126 MB (+6770kb) [03:22:41]
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// [GUI Memory]: 134 MB (+2017kb) [03:22:42]
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 12:27:35 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 12:27:35 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 154 seconds
+selectCodeEditor("lc3_computer.vhd", 202, 455); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 197, 371); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aj (ck): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (aj)
+// bx (ck):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // aj (ck)
+// TclEventType: FILE_SET_CHANGE
+// 'cv' command handler elapsed time: 9 seconds
+// [GUI Memory]: 142 MB (+1327kb) [03:25:35]
+selectButton("PAResourceQtoS.RunBitgen_BITSTREAM_GENERATION_HAS_ALREADY_COMPLETED_Cancel", "Cancel"); // JButton (A, G)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cv' command handler elapsed time: 8 seconds
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 12:30:39 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 12:30:39 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// [GUI Memory]: 151 MB (+1607kb) [03:25:58]
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 99 seconds
+selectCodeEditor("lc3_computer.vhd", 876, 5); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 247 seconds
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+// Elapsed time: 81 seconds
+selectCodeEditor("lc3_computer.vhd", 578, 470); // ce (w, ck)
+// Elapsed time: 53 seconds
+selectCodeEditor("lc3_computer.vhd", 578, 470); // ce (w, ck)
+// Elapsed time: 53 seconds
+selectCodeEditor("lc3_computer.vhd", 410, 315); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+// Elapsed time: 14 seconds
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("memory.vhd", 64, 387); // ce (w, ck)
+// [GUI Memory]: 165 MB (+6158kb) [03:35:18]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 133 seconds
+selectCodeEditor("lc3_computer.vhd", 731, 330); // ce (w, ck)
+// Elapsed time: 18 seconds
+selectCodeEditor("lc3_computer.vhd", 749, 373); // ce (w, ck)
+// Elapsed time: 21 seconds
+typeControlKey(null, null, 'z');
+selectCodeEditor("lc3_computer.vhd", 536, 381); // ce (w, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("lc3_computer.vhd", 589, 353); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 808, 331); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 683, 344); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 773, 331); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 711, 350); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 528, 384); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 566, 407); // ce (w, ck)
+// [GUI Memory]: 174 MB (+1095kb) [03:39:30]
+// Elapsed time: 204 seconds
+selectCodeEditor("lc3_computer.vhd", 342, 451); // ce (w, ck)
+// [GUI Memory]: 183 MB (+96kb) [03:45:37]
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 46 MB. Current time: 6/10/26 12:57:06 PM CEST
+// Elapsed time: 939 seconds
+selectCodeEditor("lc3_computer.vhd", 171, 479); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 373, 650); // ce (w, ck)
+// Elapsed time: 75 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 285, 654); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aj (ck): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (aj)
+// bx (ck):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// bx (ck):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aj (ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 14 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cv' command handler elapsed time: 16 seconds
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Wed Jun 10 13:05:00 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Wed Jun 10 13:05:00 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 303, 557); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 378, 556); // ce (w, ck)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 42 MB. Current time: 6/10/26 4:06:47 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 43 MB. Current time: 6/11/26 9:05:14 AM CEST
+// Elapsed time: 72108 seconds
+selectCodeEditor("lc3_computer.vhd", 315, 488); // ce (w, ck)
+// Elapsed time: 25 seconds
+selectCodeEditor("lc3_computer.vhd", 773, 450); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 729, 452); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 781, 452); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 336, 362); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 336, 351); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 373, 338); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 336, 161); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 256, 346); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("lc3_computer.vhd", 839, 290); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 241, 350); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("lc3_computer.vhd", 373, 261); // ce (w, ck)
+// Elapsed time: 20 seconds
+selectCodeEditor("lc3_computer.vhd", 469, 350); // ce (w, ck)
+// Elapsed time: 55 seconds
+selectCodeEditor("lc3_computer.vhd", 470, 468); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 437, 433); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 500, 414); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 616, 463); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 330, 402); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 346, 414); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 338, 331); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("lc3_computer.vhd", 159, 180); // ce (w, ck)
+// Elapsed time: 39 seconds
+selectCodeEditor("lc3_computer.vhd", 354, 332); // ce (w, ck)
+// Elapsed time: 32 seconds
+selectCodeEditor("lc3_computer.vhd", 169, 185); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 171, 201); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectCodeEditor("lc3_computer.vhd", 206, 211); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 183, 212); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 207, 192); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 196, 248); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 190, 286); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 198, 277); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 166, 265); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 196, 285); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 195, 299); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 197, 320); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 198, 334); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 207, 411); // ce (w, ck)
+// Elapsed time: 25 seconds
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 208, 334); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 212, 337); // ce (w, ck)
+// Elapsed time: 53 seconds
+selectCodeEditor("lc3_computer.vhd", 701, 181); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 402, 299); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 377, 293); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 168, 312); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 235, 296); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 326, 296); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("lc3_computer.vhd", 164, 197); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 322, 305); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 329, 304); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 405, 230); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 484, 301); // ce (w, ck)
+// Elapsed time: 23 seconds
+typeControlKey(null, null, 'z');
+// Elapsed time: 52 seconds
+selectCodeEditor("lc3_computer.vhd", 485, 199); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 473, 232); // ce (w, ck)
+// Elapsed time: 73 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "stdin_s"); // l (aQ, ck)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+// Elapsed time: 33 seconds
+selectCodeEditor("lc3_computer.vhd", 186, 224); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 174, 213); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 439, 222); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 103, 232); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 627, 217); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 673, 229); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 700, 230); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 705, 228); // ce (w, ck)
+// Elapsed time: 42 seconds
+selectCodeEditor("lc3_computer.vhd", 370, 248); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 344, 243); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 41, 282); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 45, 280); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 400, 306); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 402, 295); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE

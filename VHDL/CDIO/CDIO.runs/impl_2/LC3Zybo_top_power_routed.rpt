@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Wed Jun 10 09:59:58 2026
+| Date             : Wed Jun 10 13:06:53 2026
 | Host             : Wills-laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file LC3Zybo_top_power_routed.rpt -pb LC3Zybo_top_power_summary_routed.pb -rpx LC3Zybo_top_power_routed.rpx
 | Design           : LC3Zybo_top
@@ -52,17 +52,17 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.005 |        5 |       --- |             --- |
-| Slice Logic             |     0.009 |     5179 |       --- |             --- |
-|   LUT as Logic          |     0.007 |     2974 |     17600 |           16.90 |
-|   Register              |    <0.001 |     1640 |     35200 |            4.66 |
+| Clocks                  |     0.004 |        5 |       --- |             --- |
+| Slice Logic             |     0.009 |     5184 |       --- |             --- |
+|   LUT as Logic          |     0.007 |     2975 |     17600 |           16.90 |
+|   Register              |    <0.001 |     1641 |     35200 |            4.66 |
 |   CARRY4                |    <0.001 |      208 |      4400 |            4.73 |
 |   LUT as Shift Register |    <0.001 |       39 |      6000 |            0.65 |
 |   F7/F8 Muxes           |    <0.001 |       99 |     17600 |            0.56 |
 |   BUFG                  |    <0.001 |        5 |        32 |           15.63 |
-|   Others                |     0.000 |      192 |       --- |             --- |
-| Signals                 |     0.009 |     3900 |       --- |             --- |
-| Block RAM               |     0.024 |       32 |        60 |           53.33 |
+|   Others                |     0.000 |      191 |       --- |             --- |
+| Signals                 |     0.009 |     3903 |       --- |             --- |
+| Block RAM               |     0.023 |       32 |        60 |           53.33 |
 | PLL                     |     0.106 |        1 |         2 |           50.00 |
 | DSPs                    |    <0.001 |        1 |        80 |            1.25 |
 | I/O                     |     0.001 |       13 |       100 |           13.00 |
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.058 |       0.053 |      0.005 |
+| Vccint    |       1.000 |     0.058 |       0.054 |      0.005 |
 | Vccaux    |       1.800 |     0.060 |       0.054 |      0.006 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
