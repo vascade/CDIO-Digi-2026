@@ -147,9 +147,9 @@ begin
    hex <= X"1234";
 
 	--Virtual I/O UART
-	rx_rd <= '0';
-	tx_wr <= '0';
-	tx_data <= X"00";
+	--rx_rd <= '0';
+	--tx_wr <= '0';
+	--tx_data <= X"00";
 	
 	--Input data for the LC3 CPU
 	--data_in <= X"0000";
@@ -233,8 +233,8 @@ begin
      process(clk)
         begin
             if(clk'event and clk = '1') then
-              --  if RE = '1' then
-                    case address is
+                if RE = '1' then
+                    case address is --READ MUX
                         --when IO_BTN => -- x"FE0E"
                             --data_in <= X"00" & "000" & btn;
                             --pled(1) <= btn_c;
@@ -246,23 +246,33 @@ begin
                             --pled(1) <= pbtn(1);
                             --pled(2) <= pbtn(2); 
                         when STDIN_S => --x"FE00" -- KBSR
-                        
+                            data_in <= (not rx_empty) & "000000000000000";
                         when STDIN_D => --x"FE02" -- KBDR ASCII findes i KBDR[7:0]
-                        
+                            data_in <= x"00" & rx_data;
+                            rx_rd <= '1';
                         when STDOUT_S => --X"FE04" -- Serial OUT (TERMINAL DISPLAY) -DSR
-                        
+                            data_in <= (not tx_full) & "000000000000000";
                         when STDOUT_D => --X"FE06" -- Display Data Register -- DDR
+                            data_in <= x"0000"; 
                         when others =>
                             data_in <= ram_din;
-                            pled <= "111";
-                     end case;
-                   --  end if;
-                     end if;
-            --     if WE = '1' then 
-             --       case address is 
-             --           when 
-                     
-                 
+                            rx_rd <= '0';
+                     end case;--  end if;
+                 elsif WE = '1' then
+                    case address is --WRITE MUX
+                        when STDOUT_D => 
+                            tx_data <= data_out(7 downto 0);
+                            tx_wr <= '1';
+                        when others =>
+                            tx_wr <= '0';
+                    end case;                 
+                 else 
+                    tx_wr <= '0';
+                    rx_rd <= '0';
+                 end if;
+            end if;                 
       end process;
+      
+        
 end Behavioral;
 

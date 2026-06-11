@@ -1259,3 +1259,322 @@ selectCodeEditor("lc3_computer.vhd", 400, 306); // ce (w, ck)
 selectCodeEditor("lc3_computer.vhd", 402, 295); // ce (w, ck)
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 246 seconds
+selectCodeEditor("lc3_computer.vhd", 159, 248); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 425, 432); // ce (w, ck)
+// Elapsed time: 91 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rx_empty"); // l (aQ, ck)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+// Elapsed time: 166 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "write"); // l (aQ, ck)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+// Elapsed time: 133 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rx_em"); // l (aQ, ck)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+selectCodeEditor("lc3_computer.vhd", 300, 327); // ce (w, ck)
+// Elapsed time: 166 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ck)
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // aw
+unMinimizeFrame(RDIResource.RDIViews_PROPERTIES, "Properties"); // aw
+// Elapsed time: 45 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1, false, true); // k (j, ck) - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (Q, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 46 MB. Current time: 6/11/26 9:35:13 AM CEST
+// Elapsed time: 228 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1, false, true); // k (j, ck) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (Q, ck)
+selectCodeEditor("lc3_computer.vhd", 372, 284); // ce (w, ck)
+// Elapsed time: 71 seconds
+selectCodeEditor("lc3_computer.vhd", 503, 279); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 543, 280); // ce (w, ck)
+// Elapsed time: 50 seconds
+selectCodeEditor("lc3_computer.vhd", 274, 280); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 489, 281); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 388, 282); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 543, 272); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 508, 309); // ce (w, ck)
+// Elapsed time: 30 seconds
+selectCodeEditor("lc3_computer.vhd", 297, 314); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 329, 343); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 410, 317); // ce (w, ck)
+// Elapsed time: 32 seconds
+selectCodeEditor("lc3_computer.vhd", 194, 317); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 309, 330); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 235, 333); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 342, 326); // ce (w, ck)
+// Elapsed time: 51 seconds
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 596, 389); // ce (w, ck)
+// Elapsed time: 635 seconds
+selectCodeEditor("lc3_computer.vhd", 370, 403); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 303, 413); // ce (w, ck)
+// Elapsed time: 22 seconds
+selectCodeEditor("lc3_computer.vhd", 321, 449); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 17 seconds
+selectCodeEditor("lc3_computer.vhd", 34, 12); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 212, 494); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 227, 501); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 31, 46); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 326, 463); // ce (w, ck)
+// Elapsed time: 208 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 193, 312); // ce (w, ck)
+selectCodeEditor("memory.vhd", 229, 321); // ce (w, ck)
+// Elapsed time: 33 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 340, 290); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 185, 445, false, true, false, false, false); // ce (w, ck) - Control Key
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("lc3_computer.vhd", 32, 211); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 27, 211); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("lc3_computer.vhd", 23, 232); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 29, 254); // ce (w, ck)
+// Elapsed time: 18 seconds
+selectCodeEditor("lc3_computer.vhd", 351, 304); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 39, 213); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 287, 415); // ce (w, ck)
+// Elapsed time: 69 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 69, 317); // ce (w, ck)
+selectCodeEditor("memory.vhd", 297, 538); // ce (w, ck)
+selectCodeEditor("memory.vhd", 53, 502); // ce (w, ck)
+selectCodeEditor("memory.vhd", 288, 509); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("memory.vhd", 637, 297); // ce (w, ck)
+selectCodeEditor("memory.vhd", 460, 433); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+// Elapsed time: 116 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 30, 78); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 247, 549); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("lc3_computer.vhd", 255, 128); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 282, 129); // ce (w, ck)
+// Elapsed time: 24 seconds
+selectCodeEditor("lc3_computer.vhd", 231, 527); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 439, 297); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 327, 316); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 271, 333); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 193, 331); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 223, 331); // ce (w, ck)
+// Elapsed time: 52 seconds
+selectCodeEditor("lc3_computer.vhd", 270, 483); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 167, 504); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("lc3_computer.vhd", 165, 26); // ce (w, ck)
+// Elapsed time: 22 seconds
+selectCodeEditor("lc3_computer.vhd", 113, 556); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 46 MB. Current time: 6/11/26 10:05:15 AM CEST
+// Elapsed time: 30 seconds
+selectCodeEditor("lc3_computer.vhd", 113, 556); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 334, 470); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("lc3_computer.vhd", 356, 242); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 212, 483); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("lc3_computer.vhd", 279, 491); // ce (w, ck)
+// Elapsed time: 23 seconds
+selectCodeEditor("lc3_computer.vhd", 319, 60); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 139, 76); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 165, 75); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 180, 75); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 155, 77); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 225, 73); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 187, 73); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 251, 72); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 301, 480); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("lc3_computer.vhd", 117, 500); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 166, 499); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 204, 453); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 147, 485); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 187, 485); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 219, 483); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 223, 466); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectCodeEditor("lc3_computer.vhd", 35, 30); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 157, 77); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 197, 81); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 189, 80); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 274, 306); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("lc3_computer.vhd", 146, 519); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 267, 522); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 139, 524); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 213, 503); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 282, 519); // ce (w, ck)
+// Elapsed time: 17 seconds
+selectCodeEditor("lc3_computer.vhd", 185, 504); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 231, 503); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 166, 510); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 166, 505); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 206, 80); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 131, 77); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 258, 500); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 267, 497); // ce (w, ck)
+// Elapsed time: 327 seconds
+selectCodeEditor("lc3_computer.vhd", 109, 23); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 228, 27); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 308, 231); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 338, 229); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 304, 233); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 337, 232); // ce (w, ck)
+// Elapsed time: 25 seconds
+selectCodeEditor("lc3_computer.vhd", 269, 475); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 157, 373); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 153, 385); // ce (w, ck)
+// Elapsed time: 127 seconds
+selectCodeEditor("lc3_computer.vhd", 147, 568); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 277 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Thu Jun 11 10:22:58 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Thu Jun 11 10:22:58 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 48 MB. Current time: 6/11/26 10:35:17 AM CEST
+// Elapsed time: 2521 seconds
+selectCodeEditor("lc3_computer.vhd", 628, 430); // ce (w, ck)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rx_data"); // l (aQ, ck)
+selectCodeEditor("lc3_computer.vhd", 399, 479); // ce (w, ck)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aI, ck)
+selectCodeEditor("lc3_computer.vhd", 911, 182); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 684 MB. GUI used memory: 47 MB. Current time: 6/11/26 11:05:20 AM CEST
+// Elapsed time: 40 seconds
+selectCodeEditor("lc3_computer.vhd", 642, 382); // ce (w, ck)
+// Elapsed time: 265 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 46 seconds
+selectCodeEditor("lc3_computer.vhd", 292, 263); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 316, 150); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 196, 144); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 243, 144); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 197, 145); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 242, 145); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("lc3_computer.vhd", 541, 145); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 586, 354); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 480, 410); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 393, 405); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 304, 364); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 272, 419); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 38 seconds
+selectCodeEditor("lc3_computer.vhd", 343, 212); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("lc3_computer.vhd", 309, 248); // ce (w, ck)
+// Elapsed time: 156 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 55, 364); // ce (w, ck)
+selectCodeEditor("memory.vhd", 393, 348); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 55, 367); // ce (w, ck)
+selectCodeEditor("memory.vhd", 322, 302); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 503, 339); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 543, 327); // ce (w, ck)
+// Elapsed time: 19 seconds
+selectCodeEditor("memory.vhd", 68, 229); // ce (w, ck)
+selectCodeEditor("memory.vhd", 319, 225); // ce (w, ck)
+selectCodeEditor("memory.vhd", 346, 214); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("memory.vhd", 53, 499); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 453, 514); // ce (w, ck)
+// Elapsed time: 42 seconds
+selectCodeEditor("memory.vhd", 56, 369); // ce (w, ck)
+selectCodeEditor("memory.vhd", 379, 353); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 379, 353, false, true, false, false, false); // ce (w, ck) - Control Key
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Thu Jun 11 11:17:40 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Thu Jun 11 11:17:40 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 73 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 210 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 3); // k (j, ck)
+selectCodeEditor("memory.vhd", 55, 350); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
