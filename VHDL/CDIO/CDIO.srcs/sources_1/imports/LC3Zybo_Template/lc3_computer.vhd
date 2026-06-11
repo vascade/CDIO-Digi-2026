@@ -230,48 +230,34 @@ begin
            we => WE
            );    
      
-     process(clk)
-        begin
-            if(clk'event and clk = '1') then
-                if RE = '1' then
-                    case address is --READ MUX
-                        --when IO_BTN => -- x"FE0E"
-                            --data_in <= X"00" & "000" & btn;
-                            --pled(1) <= btn_c;
-                            --pled(0) <= btn_r;
-                            --pled(2) <= btn_l;
-                        --when IO_PBTN => -- x"FE0F"
-                            --data_in <= X"000" & pbtn;
-                            --pled(0) <= pbtn(0);
-                            --pled(1) <= pbtn(1);
-                            --pled(2) <= pbtn(2); 
-                        when STDIN_S => --x"FE00" -- KBSR
+     process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din)
+           begin
+               data_in <= ram_din; -- default
+               rx_rd   <= '0';
+               tx_wr   <= '0';
+               tx_data <= (others => '0');
+           
+               if RE = '1' then
+                   case address is
+                       when STDIN_S  => --x"FE00" KBSR
                             data_in <= (not rx_empty) & "000000000000000";
-                        when STDIN_D => --x"FE02" -- KBDR ASCII findes i KBDR[7:0]
-                            data_in <= x"00" & rx_data;
-                            rx_rd <= '1';
-                        when STDOUT_S => --X"FE04" -- Serial OUT (TERMINAL DISPLAY) -DSR
+                       when STDIN_D  =>  --x"FE02" KBDR
+                            data_in <= X"00" & rx_data;
+                            rx_rd   <= '1';
+                       when STDOUT_S => --x"FE04" DSR
                             data_in <= (not tx_full) & "000000000000000";
-                        when STDOUT_D => --X"FE06" -- Display Data Register -- DDR
-                            data_in <= x"0000"; 
-                        when others =>
+                       when STDOUT_D => --XFE06" DDR
+                            data_in <= X"0000";
+                       when others   => 
                             data_in <= ram_din;
-                            rx_rd <= '0';
-                     end case;--  end if;
-                 elsif WE = '1' then
-                    case address is --WRITE MUX
-                        when STDOUT_D => 
-                            tx_data <= data_out(7 downto 0);
-                            tx_wr <= '1';
-                        when others =>
-                            tx_wr <= '0';
-                    end case;                 
-                 else 
-                    tx_wr <= '0';
-                    rx_rd <= '0';
-                 end if;
-            end if;                 
-      end process;
+                   end case;
+               elsif WE = '1' then
+                   if address = STDOUT_D then
+                       tx_data <= data_out(7 downto 0);
+                       tx_wr   <= '1';
+                   end if;
+               end if;
+           end process;
       
         
 end Behavioral;
