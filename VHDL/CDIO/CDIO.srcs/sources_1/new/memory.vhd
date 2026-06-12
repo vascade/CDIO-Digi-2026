@@ -186,9 +186,9 @@ architecture beh_arch of xilinx_one_port_ram_sync is
             X"0000", X"0000", X"0000", X"0000", X"0000", X"0000", X"0000", X"0000",  -- addr 1264 - 1271
             X"0000", X"0000", X"0000", X"0000", X"0000", X"0000", X"0000", X"0000",  -- addr 1272 - 1279
             -- Start of user program         (1280-...)
-            X"2405", X"608A", X"7092", X"608e", X"7096", x"0FFB", X"FE00",
-            --X"2205", X"6484", X"0DFE", X"2003", X"7046", X"0FFB", X"FE00", X"0041",  -- addr 1280 - 1287
-            --X"2405", X"608A", X"7092", X"608e", X"7096", X"0ffb", X"fe00",  -- addr 1280 - 1286
+            --X"2407", X"6080", X"07FE", X"6082", X"6284", X"07FE", X"7086", X"0FF9", X"FE00", -- test simple echo
+            X"2405", X"608A", X"7092", X"608e", X"7096", x"0FFB", X"FE00", -- test-simple-IO
+            
                 others => X"0000" );
 begin
     process (clk)

@@ -114,8 +114,9 @@ architecture Behavioral of lc3_computer is
    
    ----------------------------Student own signals
        signal ram_din : std_logic_vector(15 downto 0);
-       
-
+       signal hex_reg : std_logic_vector(15 downto 0);
+       signal led_reg : std_logic_vector(15 downto 0);
+       signal pled_reg : std_logic_vector(15 downto 0);
 begin
 
   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
@@ -230,6 +231,10 @@ begin
            we => WE
            );    
      
+     hex <= hex_reg;
+     led <= led_reg(7 downto 0);
+     pled <= pled_reg(2 downto 0);
+     
      process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out)
            begin
                data_in <= ram_din; -- default
@@ -264,19 +269,28 @@ begin
                         when STDOUT_D =>
                             tx_data <= data_out(7 downto 0);
                             tx_wr   <= '1';
-                        when IO_SSEG => --x"FE12" SSEG
-                                hex <= data_out;
-                        when IO_LED => --x"FE16" LED
-                                led <= data_out(7 downto 0);
-                        when IO_PLED => --X"FE17" PLED
-                                PLED <= data_out(2 downto 0);
                         when others =>
                             NULL;
                    end case;
-                   
                end if;
            end process;
-      
-        
+     
+     process(clk)
+     begin
+        if rising_edge(clk) then
+            if WE = '1' then
+                case address is 
+                    when IO_SSEG => 
+                        hex_reg <= data_out;
+                    when IO_LED => 
+                        led_reg <= data_out(15 downto 0);
+                    when IO_PLED => 
+                        pled_reg <= data_out(15 downto 0);
+                    when others => 
+                        NULL;
+                end case;
+            end if;
+        end if;
+     end process;
 end Behavioral;
 

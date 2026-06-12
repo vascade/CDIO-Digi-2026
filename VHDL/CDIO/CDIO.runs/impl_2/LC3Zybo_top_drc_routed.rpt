@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu Jun 11 15:04:25 2026
+| Date         : Fri Jun 12 09:29:28 2026
 | Host         : Wills-laptop running 64-bit major release  (build 9200)
 | Command      : report_drc -file LC3Zybo_top_drc_routed.rpt -pb LC3Zybo_top_drc_routed.pb -rpx LC3Zybo_top_drc_routed.rpx
 | Design       : LC3Zybo_top
@@ -24,7 +24,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 29
+             Violations found: 26
 +-----------+----------+-------------------------------------------------------------------+------------+
 | Rule      | Severity | Description                                                       | Violations |
 +-----------+----------+-------------------------------------------------------------------+------------+
@@ -32,7 +32,6 @@ Table of Contents
 | DPIP-1    | Warning  | Input pipelining                                                  | 2          |
 | DPOP-1    | Warning  | PREG Output pipelining                                            | 1          |
 | DPOP-2    | Warning  | MREG Output pipelining                                            | 1          |
-| PDRC-153  | Warning  | Gated clock check                                                 | 3          |
 | REQP-1839 | Warning  | RAMB36 async control check                                        | 20         |
 | AVAL-4    | Advisory | enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND | 1          |
 +-----------+----------+-------------------------------------------------------------------+------------+
@@ -62,21 +61,6 @@ Related violations: <none>
 DPOP-2#1 Warning
 MREG Output pipelining  
 DSP Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620 multiplier stage Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/Mmult_n0620/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-PDRC-153#1 Warning
-Gated clock check  
-Net Inst_student_code/Inst_lc3_computer/lc3_m/E[0] is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/hex_reg[15]_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/hex_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#2 Warning
-Gated clock check  
-Net Inst_student_code/Inst_lc3_computer/lc3_m/FSM_sequential_state_reg_reg[0][0] is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/led_reg[7]_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/led_reg[7]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#3 Warning
-Gated clock check  
-Net Inst_student_code/Inst_lc3_computer/lc3_m/pled[0][0] is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/pled_reg[2]_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/pled_reg[2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 REQP-1839#1 Warning

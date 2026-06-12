@@ -1,0 +1,581 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 24760
+License: Customer
+
+Current time: 	Thu Jun 11 19:20:02 CEST 2026
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1440x900
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 197 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Willi
+User home directory: C:/Users/Willi
+User working directory: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Willi/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Willi/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Willi/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/vivado.log
+Vivado journal file location: 	C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/vivado.jou
+Engine tmp dir: 	C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/.Xil/Vivado-24760-Wills-laptop
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	193 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 529 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.xpr. Version: Vivado v2018.2 
+// bx (ck):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.xpr 
+// [GUI Memory]: 51 MB (+51418kb) [00:00:07]
+// [Engine Memory]: 512 MB (+385604kb) [00:00:07]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 61 MB (+6844kb) [00:00:09]
+// [Engine Memory]: 559 MB (+22255kb) [00:00:09]
+// [Engine Memory]: 587 MB (+55kb) [00:00:09]
+// [GUI Memory]: 65 MB (+1508kb) [00:00:10]
+// HMemoryUtils.trashcanNow. Engine heap size: 621 MB. GUI used memory: 40 MB. Current time: 6/11/26 7:20:04 PM CEST
+// [Engine Memory]: 622 MB (+5664kb) [00:00:11]
+// Project name: CDIO; location: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO; part: xc7z010clg400-1
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 76 MB (+8075kb) [00:00:57]
+// Elapsed time: 46 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 1); // i (N, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, top.vhd]", 11, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, memory.vhd]", 6, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, memory.vhd]", 6, false, false, false, false, false, true); // B (D, ck) - Double Click
+// [GUI Memory]: 80 MB (+116kb) [00:01:10]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, lc3_computer.vhd]", 7, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, lc3_computer.vhd]", 7, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 1); // k (j, ck)
+selectCodeEditor("memory.vhd", 400, 214); // ce (w, ck)
+// [GUI Memory]: 85 MB (+1248kb) [00:01:30]
+// Elapsed time: 10 seconds
+selectCodeEditor("memory.vhd", 85, 232); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 109, 233); // ce (w, ck)
+selectCodeEditor("memory.vhd", 86, 233); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 108, 230); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+// Elapsed time: 15 seconds
+typeControlKey((HResource) null, "memory.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("memory.vhd", 82, 247); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [GUI Memory]: 92 MB (+2556kb) [00:03:05]
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 647 MB. GUI used memory: 43 MB. Current time: 6/11/26 7:22:59 PM CEST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 658 MB (+4880kb) [00:03:07]
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Thu Jun 11 19:23:01 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Thu Jun 11 19:23:01 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 269 seconds
+selectCodeEditor("memory.vhd", 595, 233); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("memory.vhd", 83, 225); // ce (w, ck)
+selectCodeEditor("memory.vhd", 84, 247); // ce (w, ck)
+// Elapsed time: 30 seconds
+selectCodeEditor("memory.vhd", 575, 247); // ce (w, ck)
+// Elapsed time: 22 seconds
+selectCodeEditor("memory.vhd", 651, 284); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 1); // k (j, ck)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 1, false, true); // k (j, ck) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (Q, ck)
+selectCodeEditor("memory.vhd", 214, 360); // ce (w, ck)
+// Elapsed time: 358 seconds
+selectCodeEditor("memory.vhd", 91, 350); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Thu Jun 11 19:34:55 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Thu Jun 11 19:34:55 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 98 MB (+1467kb) [00:16:27]
+// Elapsed time: 267 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 2); // k (j, ck)
+// Elapsed time: 251 seconds
+selectCodeEditor("lc3_computer.vhd", 979, 443); // ce (w, ck)
+// Elapsed time: 420 seconds
+selectCodeEditor("lc3_computer.vhd", 460, 407); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 45 MB. Current time: 6/11/26 7:53:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 41 MB. Current time: 6/11/26 8:30:47 PM CEST
+// Elapsed time: 2422 seconds
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 502, 333); // ce (w, ck)
+// Elapsed time: 33 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 1); // k (j, ck)
+// Elapsed time: 38 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 2); // k (j, ck)
+// Elapsed time: 409 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 773, 395); // ce (w, ck)
+// Elapsed time: 75 seconds
+selectCodeEditor("lc3_computer.vhd", 985, 394); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 41 MB. Current time: 6/12/26 9:04:49 AM CEST
+// Elapsed time: 45108 seconds
+selectCodeEditor("lc3_computer.vhd", 185, 101); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 1); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("memory.vhd", 92, 333); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Fri Jun 12 09:12:32 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Fri Jun 12 09:12:32 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 36 seconds
+selectCodeEditor("memory.vhd", 449, 377); // ce (w, ck)
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 103 MB (+610kb) [13:53:48]
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 151 seconds
+selectCodeEditor("memory.vhd", 82, 336); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 54 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 2); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 148, 549); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 166, 285); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 388, 282); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 60, 298); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 149, 299); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 377, 299); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 122, 317); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 388, 312); // ce (w, ck)
+// Elapsed time: 20 seconds
+selectCodeEditor("lc3_computer.vhd", 132, 539); // ce (w, ck)
+// Elapsed time: 20 seconds
+selectCodeEditor("lc3_computer.vhd", 148, 557); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 115, 345); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 42, 366); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 195, 365); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("lc3_computer.vhd", 195, 365); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 111, 556); // ce (w, ck)
+// Elapsed time: 69 seconds
+selectCodeEditor("lc3_computer.vhd", 377, 585); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 291, 608); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("lc3_computer.vhd", 402, 587); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 498, 554); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 498, 554); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 395, 588); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 402, 578); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 360, 571); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 40 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// aj (ck): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (aj)
+// bx (ck):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// bx (ck):  Resetting Runs : addNotify
+dismissDialog("Save Project"); // aj (ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_MODIFY
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cv' command handler elapsed time: 3 seconds
+// TclEventType: DG_ANALYSIS_MSG_RESET
+dismissDialog("Launch Runs"); // f (ck)
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// bx (ck):  Generate Bitstream : addNotify
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Jun 12 09:21:04 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Fri Jun 12 09:21:04 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+dismissDialog("Generate Bitstream"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("lc3_computer.vhd", 250, 487); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 560, 410); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 241, 515); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 252, 553); // ce (w, ck)
+// TclEventType: RUN_FAILED
+// ah (ck): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Failed"); // ah (ck)
+selectCodeEditor("lc3_computer.vhd", 244, 533); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 109 MB (+449kb) [14:01:30]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Fri Jun 12 09:21:28 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Fri Jun 12 09:21:28 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_FAILED
+// ah (ck): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Failed"); // ah (ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (ck):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_2 -jobs 6 
+// Tcl Message: [Fri Jun 12 09:21:47 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log 
+dismissDialog("Starting Design Runs"); // bx (ck)
+// TclEventType: RUN_FAILED
+// ah (ck): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // ah (ck)
+// Elapsed time: 14 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-285] failed synthesizing module 'lc3_computer' [C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_computer.vhd:56]. ]", 2, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.srcs\sources_1\imports\LC3Zybo_Template\lc3_computer.vhd;-;;-;16;-;line;-;56;-;;-;16;-;"); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-690] width mismatch in assignment; target has 8 bits, source has 16 bits [C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_computer.vhd:235]. ]", 1, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.srcs\sources_1\imports\LC3Zybo_Template\lc3_computer.vhd;-;;-;16;-;line;-;235;-;;-;16;-;"); // ah (O, ck)
+// PAResourceOtoP.PAViews_SOURCES: Sources: close view
+selectCodeEditor("lc3_computer.vhd", 134, 180); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("lc3_computer.vhd", 148, 266); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+selectCodeEditor("lc3_computer.vhd", 255, 259); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// f (ck): Launch Runs: addNotify
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Fri Jun 12 09:22:58 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Fri Jun 12 09:22:58 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_FAILED
+// ah (ck): Synthesis Failed: addNotify
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Failed"); // ah (ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-690] width mismatch in assignment; target has 16 bits, source has 8 bits [C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_computer.vhd:293]. ]", 1, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.srcs\sources_1\imports\LC3Zybo_Template\lc3_computer.vhd;-;;-;16;-;line;-;293;-;;-;16;-;"); // ah (O, ck)
+selectCodeEditor("lc3_computer.vhd", 315, 214); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (ck):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_2 -jobs 6 
+// Tcl Message: [Fri Jun 12 09:23:22 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log 
+dismissDialog("Starting Design Runs"); // bx (ck)
+// TclEventType: RUN_FAILED
+// ah (ck): Synthesis Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Failed"); // ah (ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-690] width mismatch in assignment; target has 16 bits, source has 3 bits [C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_computer.vhd:295]. ]", 1, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.srcs\sources_1\imports\LC3Zybo_Template\lc3_computer.vhd;-;;-;16;-;line;-;295;-;;-;16;-;"); // ah (O, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (ck):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_2 -jobs 6 
+// Tcl Message: [Fri Jun 12 09:23:41 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log 
+dismissDialog("Starting Design Runs"); // bx (ck)
+// TclEventType: RUN_COMPLETED
+// ah (ck): Synthesis Completed: addNotify
+// Elapsed time: 27 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (ck):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -jobs 6 
+// Tcl Message: [Fri Jun 12 09:24:11 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+dismissDialog("Starting Design Runs"); // bx (ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3352] multi-driven net led[7] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/led_reg[7]/Q' [C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_computer.vhd:235]. ]", 1, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Willi\Documents\DTU\2.Semester\CDIO\CDIO-Digi-2026\VHDL\CDIO\CDIO.srcs\sources_1\imports\LC3Zybo_Template\lc3_computer.vhd;-;;-;16;-;line;-;235;-;;-;16;-;"); // ah (O, ck)
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STEP_COMPLETED
+// ah (ck): Implementation Failed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Implementation Failed"); // ah (ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net Inst_student_code/Inst_lc3_computer/FSM_sequential_state_reg_reg[0]_0[0] has multiple drivers: Inst_student_code/Inst_lc3_computer/hex_reg_reg[0]/Q, and Inst_student_code/Inst_lc3_computer/hex_reg[0]/Q.. ]", 7, true); // ah (O, ck) - Node
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 2); // k (j, ck)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 2, false, true); // k (j, ck) - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (Q, ck)
+selectCodeEditor("lc3_computer.vhd", 333, 196); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 134, 250); // ce (w, ck)
+// Elapsed time: 32 seconds
+selectCodeEditor("lc3_computer.vhd", 160, 151); // ce (w, ck)
+// Elapsed time: 20 seconds
+selectCodeEditor("lc3_computer.vhd", 254, 208); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 267, 220); // ce (w, ck)
+// Elapsed time: 23 seconds
+selectCodeEditor("lc3_computer.vhd", 102, 64); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("lc3_computer.vhd", 124, 215); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 124, 215, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("lc3_computer.vhd", 183, 244); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 15 seconds
+selectCodeEditor("lc3_computer.vhd", 248, 78); // ce (w, ck)
+// Elapsed time: 22 seconds
+selectCodeEditor("lc3_computer.vhd", 390, 161); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 361, 195); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 168, 94); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 223, 115); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("lc3_computer.vhd", 209, 268); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 116 MB (+1510kb) [14:07:46]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 13 seconds
+typeControlKey((HResource) null, "lc3_computer.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 411, 193); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 -to_step write_bitstream -jobs 6 
+// Tcl Message: [Fri Jun 12 09:28:22 2026] Launched synth_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log [Fri Jun 12 09:28:22 2026] Launched impl_2... Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 45 MB. Current time: 6/12/26 9:34:49 AM CEST
+// Elapsed time: 1601 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, lc3_wrapper_multiplexers.vhd]", 5, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, lc3_wrapper_multiplexers.vhd]", 5, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, lc3_wrapper_multiplexers.vhd]", 5, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, top.vhd]", 11, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, top.vhd]", 11, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("top.vhd", 114, 180); // ce (w, ck)
+typeControlKey((HResource) null, "top.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("top.vhd", 301, 214); // ce (w, ck)
+// Elapsed time: 379 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "memory.vhd", 1); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 44 MB. Current time: 6/12/26 10:04:52 AM CEST
+// Elapsed time: 531 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 2); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 44 MB. Current time: 6/12/26 10:34:54 AM CEST
