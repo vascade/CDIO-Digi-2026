@@ -74,3 +74,44 @@ launch_runs impl_2 -to_step write_bitstream -jobs 6
 Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log
 [Fri Jun 12 09:28:22 2026] Launched impl_2...
 Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/impl_2/runme.log
+close [ open C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART.vhd w ]
+add_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_RX.vhd w ]
+add_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_RX.vhd
+close [ open C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_TX.vhd w ]
+add_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_TX.vhd
+close [ open C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_TOP.vhd w ]
+add_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_TOP.vhd
+close [ open C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_INTERFACE.vhd w ]
+add_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_INTERFACE.vhd
+update_compile_order -fileset sources_1
+reset_run synth_2
+launch_runs synth_2 -jobs 6
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'uart_rx(arch)' found in library 'xil_defaultlib'
+	(Active) Duplicate found at line 18 of file C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART.vhd
+Duplicate found in file C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_RX.vhd
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'flag_buf(arch)' found in library 'xil_defaultlib'
+Duplicate found at line 104 of file C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART.vhd
+	(Active) Duplicate found at line 15 of file C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_INTERFACE.vhd
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'uart_tx(arch)' found in library 'xil_defaultlib'
+	(Active) Duplicate found at line 155 of file C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART.vhd
+Duplicate found in file C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_TX.vhd
+[Fri Jun 12 12:54:35 2026] Launched synth_2...
+Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log
+close [ open C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_FIFO.vhd w ]
+add_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_FIFO.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_MODM.vhd w ]
+add_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART_MODM.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/UART.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_2
+launch_runs synth_2 -jobs 6
+[Sun Jun 14 23:40:29 2026] Launched synth_2...
+Run output will be captured here: C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.runs/synth_2/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 14 23:57:57 2026...

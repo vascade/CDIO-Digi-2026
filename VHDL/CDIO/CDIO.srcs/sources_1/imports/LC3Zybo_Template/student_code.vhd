@@ -26,12 +26,14 @@ entity student_code is
            psw : in  STD_LOGIC_VECTOR (3 downto 0);
            pled : out  STD_LOGIC_VECTOR (2 downto 0);
            sink : out STD_LOGIC;
-           rx_data : in std_logic_vector(7 downto 0);
-           rx_rd : out std_logic;
-           rx_empty : in std_logic;
-           tx_data : out std_logic_vector(7 downto 0);
-           tx_wr : out std_logic;
-           tx_full : in std_logic;
+           ---Commented out since internal signals 
+           --rx_data : in std_logic_vector(7 downto 0);
+           --rx_rd : out std_logic;
+           --rx_empty : in std_logic;
+           --tx_data : out std_logic_vector(7 downto 0);
+           --tx_wr : out std_logic;
+           --tx_full : in std_logic;
+           -------------------------------------
            -- ADDED STUDENT CODE---
            rx_pin : in std_logic ;
            tx_pin : out std_logic
@@ -77,13 +79,14 @@ begin
 		pbtn => pbtn,
 		pled => pled,
 		
-		rx_data => rx_data,
-		tx_data => tx_data,
-      rx_rd => rx_rd,
-		rx_empty => rx_empty,
-      tx_wr => tx_wr,
-		tx_full => tx_full,
-		
+		--SAME THING, INTERNAL SIGNALS
+		--rx_data => rx_data,
+		--tx_data => tx_data,
+        --rx_rd => rx_rd,
+		--rx_empty => rx_empty,
+        --tx_wr => tx_wr,
+		--tx_full => tx_full,
+		------------------------------
 		sink => sink,
       
 		cpu_clk_enable => cpu_clk_enable,

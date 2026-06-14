@@ -31,13 +31,15 @@ entity lc3_computer is
 		pled				  : out  std_logic_vector(2 downto 0);
 
 		--VIO serial
-	   rx_data          : in  std_logic_vector(7 downto 0);
-      rx_rd            : out std_logic;
-      rx_empty         : in  std_logic;
-      tx_data          : out std_logic_vector(7 downto 0);
-      tx_wr            : out std_logic;
-      tx_full          : in  std_logic;
-		
+	  ----- COMMENTED OUT BECAUSE WE ARE CHANGING TO UART 
+	  ----- declaring as internal signals instead -------
+	  --rx_data          : in  std_logic_vector(7 downto 0);
+      --rx_rd            : out std_logic;
+      --rx_empty         : in  std_logic;
+      --tx_data          : out std_logic_vector(7 downto 0);
+      --tx_wr            : out std_logic;
+      --tx_full          : in  std_logic;
+      ---------------
 		sink             : out std_logic;
 
       --Debug
@@ -122,6 +124,16 @@ architecture Behavioral of lc3_computer is
        signal hex_reg : std_logic_vector(15 downto 0);
        signal led_reg : std_logic_vector(15 downto 0);
        signal pled_reg : std_logic_vector(15 downto 0);
+    
+    ---VIO SERIAL ADDED AS SIGNALS BELOW
+       signal rx_data  : std_logic_vector(7 downto 0);
+       signal rx_rd    : std_logic;
+       signal rx_empty : std_logic;
+       signal tx_data  : std_logic_vector(7 downto 0);
+       signal tx_wr    : std_logic;
+       signal tx_full  : std_logic;
+    ------------------------------------
+    ------------------------------------
 begin
 
   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
@@ -170,7 +182,7 @@ begin
    sink_pbtn <= pbtn(0) or pbtn(1) or pbtn(2) or pbtn(3);
    sink_sw <= sw(0) or sw(1) or sw(2) or sw(3) or sw(4) or sw(5) or sw(6) or sw(7); 
    sink_btn <= btn(0) or btn(1) or btn(2) or btn(3) or btn(4);
-	sink_uart <= rx_data(0) or rx_data(1) or rx_data(2) or rx_data(3) or rx_data(4) or 
+   sink_uart <= rx_data(0) or rx_data(1) or rx_data(2) or rx_data(3) or rx_data(4) or 
 					 rx_data(5) or rx_data(6) or rx_data(7)or rx_empty or tx_full; 
    sink <= sink_sw or sink_psw or sink_btn or sink_pbtn or sink_uart;
 

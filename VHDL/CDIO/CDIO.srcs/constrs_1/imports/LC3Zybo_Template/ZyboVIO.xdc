@@ -32,8 +32,10 @@ set_property PACKAGE_PIN D18 [get_ports {blinky}]
 ##Pmod Header JE
 #set_property PACKAGE_PIN V12 [get_ports {je[0]}] 
 #set_property PACKAGE_PIN W16 [get_ports {je[1]}] 
-set_property PACKAGE_PIN J15 [get_ports tx_pin] #RXD
-set_property PACKAGE_PIN H15 [get_ports rx_pin] #TXD
+#RXD
+set_property PACKAGE_PIN J15 [get_ports tx_pin]
+#TXD
+set_property PACKAGE_PIN H15 [get_ports rx_pin]
 #set_property PACKAGE_PIN V13 [get_ports {je[4]}] 
 #set_property PACKAGE_PIN U17 [get_ports {je[5]}] 
 #set_property PACKAGE_PIN T17 [get_ports {je[6]}] 
