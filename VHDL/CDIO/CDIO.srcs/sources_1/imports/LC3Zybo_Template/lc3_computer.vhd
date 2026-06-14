@@ -49,7 +49,12 @@ entity lc3_computer is
 		--LC3 CPU inputs
       cpu_clk_enable   : in  std_logic;
       sys_reset        : in  std_logic;
-      sys_program      : in  std_logic
+      sys_program      : in  std_logic;
+      
+      -- ADDED STUDENT CODE---
+      rx_pin : in std_logic ;
+      tx_pin : out std_logic
+      ------------------------
    );
 end lc3_computer;
 
@@ -235,6 +240,27 @@ begin
      led <= led_reg(7 downto 0);
      pled <= pled_reg(2 downto 0);
      
+     Inst_uart : entity work.UART
+        generic map( 
+            DBIT => 8, -- 8 data bits
+            SB_TICK => 16, -- 1 stop bit
+            DVSR => 163, -- 50 mhz / (16 sb_tick * 19200 baud) = 163
+            DVSR_bit => 8, 
+            FIFO_W => 2 --4 word FIFO
+            )
+        port map( 
+            clk      => clk,
+            reset    => sys_reset,
+            rd_uart  => rx_rd,
+            wr_uart  => tx_wr,
+            rx       => rx_pin,
+            w_data   => tx_data,
+            tx_full  => tx_full,
+            rx_empty => rx_empty,
+            r_data   => rx_data,
+            tx       => tx_pin
+        );
+            
      process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out)
            begin
                data_in <= ram_din; -- default

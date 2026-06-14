@@ -19,7 +19,11 @@ entity LC3Zybo_top is
       blinky : out std_logic;
       pbtn : in std_logic_vector(3 downto 0);
       psw : in std_logic_vector(3 downto 0);
-      pled : out std_logic_vector(2 downto 0)
+      pled : out std_logic_vector(2 downto 0);
+      -- ADDED STUDENT CODE---
+      rx_pin : in std_logic ;
+      tx_pin : out std_logic
+      ------------------------
   );
 end LC3Zybo_top;
 
@@ -35,6 +39,7 @@ architecture Behavioral of LC3Zybo_top is
 		vhex : IN std_logic_vector(15 downto 0);
       sink : IN std_logic;
       blinky : OUT std_logic
+      
 		);
 	END COMPONENT;
    attribute box_type : string; 
@@ -78,8 +83,11 @@ begin
       rx_empty => rx_empty,
       tx_data => tx_data,
       tx_wr => tx_wr,
-      tx_full => tx_full
-		
+      tx_full => tx_full,
+      -- ADDED STUDENT CODE---
+      rx_pin => rx_pin,
+      tx_pin => tx_pin
+      ------------------------
 	);
 	
 	--Here we instantiate the component that allows us to connect to the 
