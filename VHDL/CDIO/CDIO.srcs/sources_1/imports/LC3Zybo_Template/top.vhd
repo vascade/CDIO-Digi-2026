@@ -22,7 +22,14 @@ entity LC3Zybo_top is
       pled : out std_logic_vector(2 downto 0);
       -- ADDED STUDENT CODE---
       rx_pin : in std_logic ;
-      tx_pin : out std_logic
+      tx_pin : out std_logic;
+      -- UART
+      rx_data_2          : in  std_logic_vector(7 downto 0);
+      rx_rd_2            : out std_logic;
+      rx_empty_2         : in  std_logic;
+      tx_data_2          : out std_logic_vector(7 downto 0);
+      tx_wr_2           : out std_logic;
+      tx_full_2         : in  std_logic
       ------------------------
   );
 end LC3Zybo_top;
@@ -58,10 +65,9 @@ architecture Behavioral of LC3Zybo_top is
    signal psw_d : std_logic_vector(3 downto 0);
    signal pbtn_d : std_logic_vector(3 downto 0);
    signal sink : std_logic;
-   ---- COMMENTED OUT, SINCE INTERNAL SIGNALS NOW FOR UART
-   --signal rx_data, tx_data : std_logic_vector(7 downto 0);
-   --signal rx_empty, tx_full : std_logic;
-   --signal rx_rd, tx_wr : std_logic;
+   signal rx_data, tx_data : std_logic_vector(7 downto 0);
+   signal rx_empty, tx_full : std_logic;
+   signal rx_rd, tx_wr : std_logic;
 begin
 
 	--Here is an instance of the component where students can write their code
@@ -78,17 +84,22 @@ begin
 		psw => psw_d,
 		pled => pled,
       sink => sink,
-      ---- INTERNAL SIGNALS NOW----
-      --rx_data => rx_data,
-      --rx_rd => rx_rd,
-      --rx_empty => rx_empty,
-      --tx_data => tx_data,
-      --tx_wr => tx_wr,
-      --tx_full => tx_full,
-      -----------------------------
+      rx_data => rx_data,
+      rx_rd => rx_rd,
+      rx_empty => rx_empty,
+      tx_data => tx_data,
+      tx_wr => tx_wr,
+      tx_full => tx_full,
+      
       -- ADDED STUDENT CODE---
       rx_pin => rx_pin,
-      tx_pin => tx_pin
+      tx_pin => tx_pin,
+      --rx_data_2 => rx_data_2,
+      --rx_rd_2 => rx_rd_2,
+      --rx_empty_2 => rx_empty_2,
+      --tx_data_2 => tx_data_2,
+      --tx_wr_2 => tx_wr_2,
+      --tx_full_2 => tx_full_2
       ------------------------
 	);
 	
@@ -104,15 +115,12 @@ begin
 		vbtn => btn,
 		vhex => hex,
 		vdot => dot,
-
-      ---- INTERNAL SIGNALS NOW----
       rx_data => open,
       rx_rd => '0',
       rx_empty => open,
       tx_data => (others => '0'),
       tx_wr => '0',
       tx_full => open,
-      -----------------------------
 		sink => sink,
 		blinky => blinky
 	);

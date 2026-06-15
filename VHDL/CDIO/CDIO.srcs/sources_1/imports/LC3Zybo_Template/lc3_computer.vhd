@@ -31,15 +31,12 @@ entity lc3_computer is
 		pled				  : out  std_logic_vector(2 downto 0);
 
 		--VIO serial
-	  ----- COMMENTED OUT BECAUSE WE ARE CHANGING TO UART 
-	  ----- declaring as internal signals instead -------
-	  --rx_data          : in  std_logic_vector(7 downto 0);
-      --rx_rd            : out std_logic;
-      --rx_empty         : in  std_logic;
-      --tx_data          : out std_logic_vector(7 downto 0);
-      --tx_wr            : out std_logic;
-      --tx_full          : in  std_logic;
-      ---------------
+	  rx_data          : in  std_logic_vector(7 downto 0);
+      rx_rd            : out std_logic;
+      rx_empty         : in  std_logic;
+      tx_data          : out std_logic_vector(7 downto 0);
+      tx_wr            : out std_logic;
+      tx_full          : in  std_logic;
 		sink             : out std_logic;
 
       --Debug
@@ -55,7 +52,15 @@ entity lc3_computer is
       
       -- ADDED STUDENT CODE---
       rx_pin : in std_logic ;
-      tx_pin : out std_logic
+      tx_pin : out std_logic;
+      
+      -- UART --
+	  rx_data_2          : in  std_logic_vector(7 downto 0);
+      rx_rd_2            : out std_logic;
+      rx_empty_2         : in  std_logic;
+      tx_data_2          : out std_logic_vector(7 downto 0);
+      tx_wr_2           : out std_logic;
+      tx_full_2         : in  std_logic
       ------------------------
    );
 end lc3_computer;
@@ -103,10 +108,14 @@ architecture Behavioral of lc3_computer is
 
 
 	-- I/O constants for addr from 0xFE00 to 0xFFFF:
-    constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- Serial IN (terminal keyboard) -- KBSR 
-    constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- Keyboard Data Register - KBDR
-    constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- Serial OUT (terminal  display) - DSR
-    constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- Display Data Register -- DDR
+    constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- VIO - Serial IN (terminal keyboard) -- KBSR 
+    constant STDIN_S_2  : std_logic_vector(15 downto 0) := X"FE01";  -- UART - SERIAL IN (terminal keyboard)-- KBSR
+    constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- VIO - Keyboard Data Register - KBDR
+    constant STDIN_D_2  : std_logic_vector(15 downto 0) := X"FE03";  -- UART - Keyboard Data Register - KBDR
+    constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- VIO - Serial OUT (terminal  display) - DSR
+    constant STDOUT_S_2 : std_logic_vector(15 downto 0) := X"FE05";  -- UART - Serial OUT (terminal  display) - DSR
+    constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- VIO - Display Data Register -- DDR
+    constant STDOUT_D_2 : std_logic_vector(15 downto 0) := X"FE07";  -- UART - Display Data Register -- DDR
 	constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches 
     constant IO_PSW     : std_logic_vector(15 downto 0) := X"FE0B";  -- Physical Switches	
 	constant IO_BTN     : std_logic_vector(15 downto 0) := X"FE0e";  -- Buttons
@@ -124,16 +133,7 @@ architecture Behavioral of lc3_computer is
        signal hex_reg : std_logic_vector(15 downto 0);
        signal led_reg : std_logic_vector(15 downto 0);
        signal pled_reg : std_logic_vector(15 downto 0);
-    
-    ---VIO SERIAL ADDED AS SIGNALS BELOW
-       signal rx_data  : std_logic_vector(7 downto 0);
-       signal rx_rd    : std_logic;
-       signal rx_empty : std_logic;
-       signal tx_data  : std_logic_vector(7 downto 0);
-       signal tx_wr    : std_logic;
-       signal tx_full  : std_logic;
-    ------------------------------------
-    ------------------------------------
+       signal tx_data_int : std_logic_vector(7 downto 0);
 begin
 
   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
@@ -273,12 +273,15 @@ begin
             tx       => tx_pin
         );
             
-     process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out)
+     process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out, rx_empty_2, rx_data_2, tx_full_2)
            begin
                data_in <= ram_din; -- default
                rx_rd   <= '0';
                tx_wr   <= '0';
-               tx_data <= (others => '0');
+               tx_data <= (others => '0')
+               rx_rd_2 <= '0';
+               tx_wr_2 <= '0';
+               tx_data_2 <= (others => '0');
            
                if RE = '1' then
                    case address is
@@ -291,6 +294,15 @@ begin
                             data_in <= (not tx_full) & "000000000000000";
                        when STDOUT_D => --XFE06" DDR
                             data_in <= X"0000";
+                       when STDIN_S_2  => --x"FE01" KBSR
+                                 data_in <= (not rx_empty_2) & "000000000000000";
+                       when STDIN_D_2  =>  --x"FE03" KBDR
+                                 data_in <= X"00" & rx_data_2;
+                                 rx_rd_2   <= '1';
+                       when STDOUT_S_2 => --x"FE05" DSR
+                                 data_in <= (not tx_full_2) & "000000000000000";
+                       when STDOUT_D_2 => --XFE07" DDR
+                                 data_in <= X"0000";
                        when IO_SW => --x"FE0A" SW
                             data_in <= X"00" & SW;
                        when IO_PSW => --x"FE0B" PSW
@@ -307,6 +319,9 @@ begin
                         when STDOUT_D =>
                             tx_data <= data_out(7 downto 0);
                             tx_wr   <= '1';
+                        when STDOUT_D_2 =>
+                            tx_data_2<= data_out(7 downto 0);
+                            tx_wr_2 <= '1';
                         when others =>
                             NULL;
                    end case;
