@@ -26,13 +26,24 @@ entity student_code is
            psw : in  STD_LOGIC_VECTOR (3 downto 0);
            pled : out  STD_LOGIC_VECTOR (2 downto 0);
            sink : out STD_LOGIC;
-
-			  rx_data : in std_logic_vector(7 downto 0);
+           rx_data : in std_logic_vector(7 downto 0);
            rx_rd : out std_logic;
            rx_empty : in std_logic;
            tx_data : out std_logic_vector(7 downto 0);
            tx_wr : out std_logic;
-           tx_full : in std_logic);
+           tx_full : in std_logic;
+           -- ADDED STUDENT CODE---
+           rx_pin : in std_logic ;
+           tx_pin : out std_logic
+                 -- UART --
+           --rx_data_2          : in  std_logic_vector(7 downto 0);
+           --rx_rd_2            : out std_logic;
+           --rx_empty_2         : in  std_logic;
+           --tx_data_2          : out std_logic_vector(7 downto 0);
+           --tx_wr_2           : out std_logic;
+           --tx_full_2         : in  std_logic
+           ------------------------
+           );
 end student_code;
 
 architecture Behavioral of student_code is
@@ -73,11 +84,12 @@ begin
 		pbtn => pbtn,
 		pled => pled,
 		
+		
 		rx_data => rx_data,
 		tx_data => tx_data,
-      rx_rd => rx_rd,
+        rx_rd => rx_rd,
 		rx_empty => rx_empty,
-      tx_wr => tx_wr,
+        tx_wr => tx_wr,
 		tx_full => tx_full,
 		
 		sink => sink,
@@ -89,7 +101,18 @@ begin
 		address_dbg => address,
 		data_dbg => data,
 		RE_dbg => RE,
-		WE_dbg => WE
+		WE_dbg => WE,
+		
+		-- ADDED STUDENT CODE---
+        rx_pin => rx_pin,
+        tx_pin => tx_pin
+        --rx_data_2 => rx_data_2,
+        --rx_rd_2 => rx_rd_2,
+        --rx_empty_2 => rx_empty_2,
+        --tx_data_2 => tx_data_2,
+        --tx_wr_2 => tx_wr_2,
+        --tx_full_2 => tx_full_2
+        ------------------------
 	);
 	
 	--Instance of the debuging module for the LC3 computer

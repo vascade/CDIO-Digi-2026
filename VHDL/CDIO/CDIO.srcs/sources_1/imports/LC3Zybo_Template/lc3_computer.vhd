@@ -31,13 +31,12 @@ entity lc3_computer is
 		pled				  : out  std_logic_vector(2 downto 0);
 
 		--VIO serial
-	   rx_data          : in  std_logic_vector(7 downto 0);
+	  rx_data          : in  std_logic_vector(7 downto 0);
       rx_rd            : out std_logic;
       rx_empty         : in  std_logic;
       tx_data          : out std_logic_vector(7 downto 0);
       tx_wr            : out std_logic;
       tx_full          : in  std_logic;
-		
 		sink             : out std_logic;
 
       --Debug
@@ -49,7 +48,11 @@ entity lc3_computer is
 		--LC3 CPU inputs
       cpu_clk_enable   : in  std_logic;
       sys_reset        : in  std_logic;
-      sys_program      : in  std_logic
+      sys_program      : in  std_logic;
+      
+      -- ADDED STUDENT CODE---
+      rx_pin : in std_logic ;
+      tx_pin : out std_logic
    );
 end lc3_computer;
 
@@ -96,10 +99,14 @@ architecture Behavioral of lc3_computer is
 
 
 	-- I/O constants for addr from 0xFE00 to 0xFFFF:
-    constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- Serial IN (terminal keyboard) -- KBSR 
-    constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- Keyboard Data Register - KBDR
-    constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- Serial OUT (terminal  display) - DSR
-    constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- Display Data Register -- DDR
+    constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- VIO - Serial IN (terminal keyboard) -- KBSR 
+    constant STDIN_S_2  : std_logic_vector(15 downto 0) := X"FE01";  -- UART - SERIAL IN (terminal keyboard)-- KBSR
+    constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- VIO - Keyboard Data Register - KBDR
+    constant STDIN_D_2  : std_logic_vector(15 downto 0) := X"FE03";  -- UART - Keyboard Data Register - KBDR
+    constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- VIO - Serial OUT (terminal  display) - DSR
+    constant STDOUT_S_2 : std_logic_vector(15 downto 0) := X"FE05";  -- UART - Serial OUT (terminal  display) - DSR
+    constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- VIO - Display Data Register -- DDR
+    constant STDOUT_D_2 : std_logic_vector(15 downto 0) := X"FE07";  -- UART - Display Data Register -- DDR
 	constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches 
     constant IO_PSW     : std_logic_vector(15 downto 0) := X"FE0B";  -- Physical Switches	
 	constant IO_BTN     : std_logic_vector(15 downto 0) := X"FE0e";  -- Buttons
@@ -117,6 +124,16 @@ architecture Behavioral of lc3_computer is
        signal hex_reg : std_logic_vector(15 downto 0);
        signal led_reg : std_logic_vector(15 downto 0);
        signal pled_reg : std_logic_vector(15 downto 0);
+      -- UART --
+       signal tx_data_int : std_logic_vector(7 downto 0);
+       signal rx_data_int : std_logic_vector(7 downto 0);
+       signal rx_data_2  : std_logic_vector(7 downto 0);
+       signal rx_empty_2 : std_logic;
+       signal tx_full_2  : std_logic;
+       signal rx_rd_2    : std_logic;
+       signal tx_wr_2    : std_logic;
+       signal tx_data_2  : std_logic_vector(7 downto 0);
+       -----------
 begin
 
   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
@@ -165,7 +182,7 @@ begin
    sink_pbtn <= pbtn(0) or pbtn(1) or pbtn(2) or pbtn(3);
    sink_sw <= sw(0) or sw(1) or sw(2) or sw(3) or sw(4) or sw(5) or sw(6) or sw(7); 
    sink_btn <= btn(0) or btn(1) or btn(2) or btn(3) or btn(4);
-	sink_uart <= rx_data(0) or rx_data(1) or rx_data(2) or rx_data(3) or rx_data(4) or 
+   sink_uart <= rx_data(0) or rx_data(1) or rx_data(2) or rx_data(3) or rx_data(4) or 
 					 rx_data(5) or rx_data(6) or rx_data(7)or rx_empty or tx_full; 
    sink <= sink_sw or sink_psw or sink_btn or sink_pbtn or sink_uart;
 
@@ -235,12 +252,36 @@ begin
      led <= led_reg(7 downto 0);
      pled <= pled_reg(2 downto 0);
      
-     process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out)
+     Inst_uart : entity work.UART
+        generic map( 
+            DBIT => 8, -- 8 data bits
+            SB_TICK => 16, -- 1 stop bit
+            DVSR => 163, -- 50 mhz / (16 sb_tick * 19200 baud) = 163
+            DVSR_bit => 8, 
+            FIFO_W => 2 --4 word FIFO
+            )
+        port map( 
+            clk => clk,
+            reset => sys_reset,
+            rx => rx_pin,
+            tx => tx_pin,
+            rd_uart => rx_rd_2,
+            wr_uart => tx_wr_2,
+            w_data => tx_data_2,
+            tx_full => tx_full_2,
+            rx_empty => rx_empty_2,
+            r_data => rx_data_2
+        );
+            
+     process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out, rx_empty_2, rx_data_2, tx_full_2)
            begin
                data_in <= ram_din; -- default
                rx_rd   <= '0';
                tx_wr   <= '0';
                tx_data <= (others => '0');
+               rx_rd_2 <= '0';
+               tx_wr_2 <= '0';
+               tx_data_2 <= (others => '0');
            
                if RE = '1' then
                    case address is
@@ -253,6 +294,15 @@ begin
                             data_in <= (not tx_full) & "000000000000000";
                        when STDOUT_D => --XFE06" DDR
                             data_in <= X"0000";
+                       when STDIN_S_2  => --x"FE01" KBSR
+                                 data_in <= (not rx_empty_2) & "000000000000000";
+                       when STDIN_D_2  =>  --x"FE03" KBDR
+                                 data_in <= X"00" & rx_data_2;
+                                 rx_rd_2   <= '1';
+                       when STDOUT_S_2 => --x"FE05" DSR
+                                 data_in <= (not tx_full_2) & "000000000000000";
+                       when STDOUT_D_2 => --XFE07" DDR
+                                 data_in <= X"0000";
                        when IO_SW => --x"FE0A" SW
                             data_in <= X"00" & SW;
                        when IO_PSW => --x"FE0B" PSW
@@ -269,6 +319,9 @@ begin
                         when STDOUT_D =>
                             tx_data <= data_out(7 downto 0);
                             tx_wr   <= '1';
+                        when STDOUT_D_2 =>
+                            tx_data_2<= data_out(7 downto 0);
+                            tx_wr_2 <= '1';
                         when others =>
                             NULL;
                    end case;

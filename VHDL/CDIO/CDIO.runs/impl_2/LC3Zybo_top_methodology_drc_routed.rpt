@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Jun 12 09:29:29 2026
+| Date         : Mon Jun 15 13:13:01 2026
 | Host         : Wills-laptop running 64-bit major release  (build 9200)
 | Command      : report_methodology -file LC3Zybo_top_methodology_drc_routed.rpt -pb LC3Zybo_top_methodology_drc_routed.pb -rpx LC3Zybo_top_methodology_drc_routed.rpx
 | Design       : LC3Zybo_top
@@ -40,7 +40,7 @@ Related violations: <none>
 
 LUTAR-1#2 Warning
 LUT drives async reset alert  
-LUT cell Inst_student_code/lc3_debug_1/BtnToggle_1/lc3_1_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/RE/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_0/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_1/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_10/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_11/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_12/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_13/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_14/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_15/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_2/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_3/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_4/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_5/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_6/CLR (the first 15 of 38 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell Inst_student_code/lc3_debug_1/BtnToggle_1/lc3_1_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[0]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[1]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[2]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[3]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[4]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[5]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[6]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/baud_gen_unit/r_reg_reg[7]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/fifo_rx_unit/array_reg_reg[0][0]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/fifo_rx_unit/array_reg_reg[0][1]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/fifo_rx_unit/array_reg_reg[0][2]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/fifo_rx_unit/array_reg_reg[0][3]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/fifo_rx_unit/array_reg_reg[0][4]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/fifo_rx_unit/array_reg_reg[0][5]/CLR, Inst_student_code/Inst_lc3_computer/Inst_uart/fifo_rx_unit/array_reg_reg[0][6]/CLR (the first 15 of 157 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-17#1 Warning

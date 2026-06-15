@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Fri Jun 12 09:29:30 2026
+| Date             : Mon Jun 15 13:13:02 2026
 | Host             : Wills-laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file LC3Zybo_top_power_routed.rpt -pb LC3Zybo_top_power_summary_routed.pb -rpx LC3Zybo_top_power_routed.rpx
 | Design           : LC3Zybo_top
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.005 |        5 |       --- |             --- |
-| Slice Logic             |     0.008 |     5685 |       --- |             --- |
-|   LUT as Logic          |     0.007 |     3158 |     17600 |           17.94 |
-|   Register              |    <0.001 |     1908 |     35200 |            5.42 |
+| Slice Logic             |     0.008 |     5901 |       --- |             --- |
+|   LUT as Logic          |     0.007 |     3241 |     17600 |           18.41 |
+|   Register              |    <0.001 |     2027 |     35200 |            5.76 |
 |   CARRY4                |    <0.001 |      208 |      4400 |            4.73 |
 |   LUT as Shift Register |    <0.001 |       47 |      6000 |            0.78 |
 |   F7/F8 Muxes           |    <0.001 |      123 |     17600 |            0.70 |
 |   BUFG                  |    <0.001 |        5 |        32 |           15.63 |
-|   Others                |     0.000 |      189 |       --- |             --- |
-| Signals                 |     0.010 |     4492 |       --- |             --- |
+|   Others                |     0.000 |      194 |       --- |             --- |
+| Signals                 |     0.009 |     4657 |       --- |             --- |
 | Block RAM               |     0.023 |       32 |        60 |           53.33 |
 | PLL                     |     0.106 |        1 |         2 |           50.00 |
 | DSPs                    |    <0.001 |        1 |        80 |            1.25 |
-| I/O                     |     0.001 |       13 |       100 |           13.00 |
+| I/O                     |     0.002 |       15 |       100 |           15.00 |
 | PS7                     |     0.000 |        1 |       --- |             --- |
 | Static Power            |     0.096 |          |           |                 |
 | Total                   |     0.250 |          |           |                 |
@@ -78,9 +78,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.058 |       0.053 |      0.005 |
+| Vccint    |       1.000 |     0.057 |       0.053 |      0.005 |
 | Vccaux    |       1.800 |     0.060 |       0.054 |      0.006 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -159,11 +159,17 @@ Table of Contents
 | LC3Zybo_top                     |     0.154 |
 |   Inst_ZyboVIOSE_wrapper        |     0.109 |
 |     Inst_ZyboVIO_SE             |     0.109 |
-|   Inst_student_code             |     0.043 |
+|   Inst_student_code             |     0.042 |
 |     Inst_lc3_computer           |     0.042 |
 |       Inst_memory               |     0.023 |
+|       Inst_uart                 |    <0.001 |
+|         baud_gen_unit           |    <0.001 |
+|         fifo_rx_unit            |    <0.001 |
+|         fifo_tx_unit            |    <0.001 |
+|         uart_rx_unit            |    <0.001 |
+|         uart_tx_unit            |    <0.001 |
 |       lc3_m                     |     0.019 |
-|         lc3_1                   |     0.019 |
+|         lc3_1                   |     0.018 |
 |     lc3_debug_1                 |    <0.001 |
 |       BtnToggle_1               |    <0.001 |
 |       hand_clk_db               |    <0.001 |
