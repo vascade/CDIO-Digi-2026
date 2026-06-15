@@ -3,8 +3,8 @@
 ## - uncomment the lines corresponding to used pins
 ## - rename the used signals according to the project
 
-set_property IOSTANDARD LVCMOS33 [get_ports tx_pin]
-set_property IOSTANDARD LVCMOS33 [get_ports rx_pin]
+set_property IOSTANDARD LVCMOS33 [get_ports *]
+#set_property IOSTANDARD LVCMOS33 [get_ports rx_pin]
 
 ##Clock signal
 set_property PACKAGE_PIN L16 [get_ports clk125]
