@@ -52,16 +52,7 @@ entity lc3_computer is
       
       -- ADDED STUDENT CODE---
       rx_pin : in std_logic ;
-      tx_pin : out std_logic;
-      
-      -- UART --
-	  rx_data_2          : in  std_logic_vector(7 downto 0);
-      rx_rd_2            : out std_logic;
-      rx_empty_2         : in  std_logic;
-      tx_data_2          : out std_logic_vector(7 downto 0);
-      tx_wr_2           : out std_logic;
-      tx_full_2         : in  std_logic
-      ------------------------
+      tx_pin : out std_logic
    );
 end lc3_computer;
 
@@ -133,7 +124,16 @@ architecture Behavioral of lc3_computer is
        signal hex_reg : std_logic_vector(15 downto 0);
        signal led_reg : std_logic_vector(15 downto 0);
        signal pled_reg : std_logic_vector(15 downto 0);
+      -- UART --
        signal tx_data_int : std_logic_vector(7 downto 0);
+       signal rx_data_int : std_logic_vector(7 downto 0);
+       signal rx_data_2  : std_logic_vector(7 downto 0);
+       signal rx_empty_2 : std_logic;
+       signal tx_full_2  : std_logic;
+       signal rx_rd_2    : std_logic;
+       signal tx_wr_2    : std_logic;
+       signal tx_data_2  : std_logic_vector(7 downto 0);
+       -----------
 begin
 
   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
@@ -261,16 +261,16 @@ begin
             FIFO_W => 2 --4 word FIFO
             )
         port map( 
-            clk      => clk,
-            reset    => sys_reset,
-            rd_uart  => rx_rd,
-            wr_uart  => tx_wr,
-            rx       => rx_pin,
-            w_data   => tx_data,
-            tx_full  => tx_full,
-            rx_empty => rx_empty,
-            r_data   => rx_data,
-            tx       => tx_pin
+            clk => clk,
+            reset => sys_reset,
+            rx => rx_pin,
+            tx => tx_pin,
+            rd_uart => rx_rd_2,
+            wr_uart => tx_wr_2,
+            w_data => tx_data_2,
+            tx_full => tx_full_2,
+            rx_empty => rx_empty_2,
+            r_data => rx_data_2
         );
             
      process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out, rx_empty_2, rx_data_2, tx_full_2)
@@ -278,7 +278,7 @@ begin
                data_in <= ram_din; -- default
                rx_rd   <= '0';
                tx_wr   <= '0';
-               tx_data <= (others => '0')
+               tx_data <= (others => '0');
                rx_rd_2 <= '0';
                tx_wr_2 <= '0';
                tx_data_2 <= (others => '0');

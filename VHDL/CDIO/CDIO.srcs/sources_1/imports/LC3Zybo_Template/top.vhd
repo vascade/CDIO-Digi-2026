@@ -22,14 +22,14 @@ entity LC3Zybo_top is
       pled : out std_logic_vector(2 downto 0);
       -- ADDED STUDENT CODE---
       rx_pin : in std_logic ;
-      tx_pin : out std_logic;
+      tx_pin : out std_logic
       -- UART
-      rx_data_2          : in  std_logic_vector(7 downto 0);
-      rx_rd_2            : out std_logic;
-      rx_empty_2         : in  std_logic;
-      tx_data_2          : out std_logic_vector(7 downto 0);
-      tx_wr_2           : out std_logic;
-      tx_full_2         : in  std_logic
+      --rx_data_2          : in  std_logic_vector(7 downto 0);
+      --rx_rd_2            : out std_logic;
+      --rx_empty_2         : in  std_logic;
+      --tx_data_2          : out std_logic_vector(7 downto 0);
+      --tx_wr_2           : out std_logic;
+      --tx_full_2         : in  std_logic
       ------------------------
   );
 end LC3Zybo_top;
@@ -93,7 +93,7 @@ begin
       
       -- ADDED STUDENT CODE---
       rx_pin => rx_pin,
-      tx_pin => tx_pin,
+      tx_pin => tx_pin
       --rx_data_2 => rx_data_2,
       --rx_rd_2 => rx_rd_2,
       --rx_empty_2 => rx_empty_2,
@@ -115,12 +115,12 @@ begin
 		vbtn => btn,
 		vhex => hex,
 		vdot => dot,
-      rx_data => open,
-      rx_rd => '0',
-      rx_empty => open,
-      tx_data => (others => '0'),
-      tx_wr => '0',
-      tx_full => open,
+      rx_data => rx_data,
+      rx_rd => rx_rd,
+      rx_empty => rx_empty,
+      tx_data => tx_data,
+      tx_wr => tx_wr,
+      tx_full => tx_full,
 		sink => sink,
 		blinky => blinky
 	);

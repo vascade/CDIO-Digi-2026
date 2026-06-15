@@ -105,7 +105,7 @@ begin
 		
 		-- ADDED STUDENT CODE---
         rx_pin => rx_pin,
-        tx_pin => tx_pin,
+        tx_pin => tx_pin
         --rx_data_2 => rx_data_2,
         --rx_rd_2 => rx_rd_2,
         --rx_empty_2 => rx_empty_2,
