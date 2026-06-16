@@ -1,14 +1,15 @@
-.ORIG x0500 ;test her skal det være x3000 eller x0500
+.ORIG x3000 ;test her skal det være x3000 eller x0500
         
         BRnzp MAIN
         
 PTR_ASCII_ZERO  .FILL ASCII_ZERO
 PTR_START       .FILL start
 PTR_startState  .FILL startState
+PTR_tempChar    .FILL tempChar
 money           .FILL #100
     ;play
     MAIN
-        LD R0, money
+        LD R0, money 
         LD R6 PTR_PLAYERVALUES4
         STR R0, R6 #5
         
@@ -67,14 +68,16 @@ PTR_ASCII_ZERO2 .FILL ASCII_ZERO
 PTR_SaveR7      .FILL SaveR7
 
     ;choose player
-    choosePlayer
+    CHOOSEPLAYER
+    choosePlayerLoop
         LD  R6, PTR_SaveR7
         STR R7, R6, #0
         
         LEA  R0, playNameEdit
         PUTS
         
-        GETC 
+        GETC
+        
         LD  R2, PTR_ASCII_ZERO2
         LDR R2, R2, #0
         ADD R0, R0, R2              ;Finder værdien fra char til int, aka -48
@@ -90,7 +93,7 @@ PTR_SaveR7      .FILL SaveR7
         
         ADD R1, R0, #-1
         BRz goToPlayer1
-        BRnzp choosePlayer
+        BRnzp choosePlayerLoop
         
 PTR_PLAYERVALUES4   .FILL PLAYERVALUES4
 PTR_PLAYERVALUES3   .FILL PLAYERVALUES3
@@ -102,13 +105,14 @@ PTR_PLAYERVALUES1   .FILL PLAYERVALUES1
         PUTS
         LD R5, PTR_PLAYERVALUES4 ;Gemmer adressen for Playervalue på R5
         JSR EDITCHOISE
-     
+        BRnzp choosePlayerDone
      
     goToPlayer3
         LEA R0, P3
         PUTS
         LD R5, PTR_PLAYERVALUES3
         JSR EDITCHOISE
+        BRnzp choosePlayerDone
 
 
     goToPlayer2
@@ -116,6 +120,7 @@ PTR_PLAYERVALUES1   .FILL PLAYERVALUES1
         PUTS
         LD R5, PTR_PLAYERVALUES2
         JSR EDITCHOISE
+        BRnzp choosePlayerDone
         
 
     goToPlayer1
@@ -123,6 +128,12 @@ PTR_PLAYERVALUES1   .FILL PLAYERVALUES1
         PUTS
         LD R5, PTR_PLAYERVALUES1
         JSR EDITCHOISE
+    
+    choosePlayerDone
+        LD R6, PTR_SaveR7
+        LDR R7, R6, #0
+        RET
+        
         
 P1                  .STRINGZ "P1" 
 P2                  .STRINGZ "P2" 
@@ -168,11 +179,17 @@ chooseEdit  .STRINGZ "\nCHOOSE 1 FOR EDIT NAME, 2 FOR SHOWING NAME, 3 FOR SHOWIN
     
     Next3
         ADD R1, R0, #-1
+        BRnp back
         JSR MAKE_NAME
         BRnzp back
 
+PTR_SaveR7_2        .FILL SaveR7_2
+PTR_SaveR7_3        .FILL SaveR7_3
 
     MAKE_NAME ;Giver player et nyt navn
+        LD  R6, PTR_SaveR7_2
+        STR R7, R6, #0
+        
         AND R0, R0, #0
         ADD R0, R5, #0  ;Loader adressen af playervalte ind. 
         ADD R1, R0, #0
@@ -191,19 +208,26 @@ chooseEdit  .STRINGZ "\nCHOOSE 1 FOR EDIT NAME, 2 FOR SHOWING NAME, 3 FOR SHOWIN
         AND R0, R0, #0  ;DONE
         STR R0, R1, #0
         
+        LD R6, PTR_SaveR7_2
+        LDR R7, R6, #0
         RET
 
 ;Show name
     SHOW_NAME
+        LD  R6, PTR_SaveR7_2
+        STR R7, R6, #0
+        
         AND R0, R0, #0
         ADD R0, R5, #0
         PUTS ;Printer navn
         
         LEA R0, Enter ;Gør næste linje klar
         PUTS
+        
+        LD R6, PTR_SaveR7_2
+        LDR R7, R6, #0
         RET
 
-PTR_SaveR7_2        .FILL SaveR7_2
     SHOW_MONEY
         LD  R6, PTR_SaveR7_2
         STR R7, R6, #0
@@ -221,6 +245,8 @@ PTR_SaveR7_2        .FILL SaveR7_2
         
 
     PRINT_NUMBER
+        LD  R6, PTR_SaveR7_3
+        STR R7, R6, #0
                                 ;100 del
         AND R1, R1, #0          ;nulstil tæller
         LD  R2, NEG_HUNDRED     ;R2 = -100
@@ -262,15 +288,13 @@ PTR_SaveR7_2        .FILL SaveR7_2
         ADD R0, R0, R3          ;konverter ener til ASCII (det der er tilbage i R0)
         OUT                     ;print ener-cifret
     
+        LD R6, PTR_SaveR7_3
+        LDR R7, R6, #0
         RET
  
 NEG_HUNDRED     .FILL #-100
 NEG_TEN         .FILL #-10
 ASCII_PLUS48    .FILL #48
-
-
-
-
 
 Enter               .STRINGZ "\n"
 start               .STRINGZ "PLAY\n" 
@@ -283,6 +307,8 @@ StartPenge          .FILL #100
         
 SaveR7              .BLKW 1
 SaveR7_2            .BLKW 1
+SaveR7_3            .BLKW 1
+tempChar            .BlKW 1
 PLAYERVALUES1       .BLKW 17 ;4 tegn + 1 til navn samt 1 til pengene, og 10 til sidste spins,  1 for sæt bet
 PLAYERVALUES2       .BLKW 17
 PLAYERVALUES3       .BLKW 17
