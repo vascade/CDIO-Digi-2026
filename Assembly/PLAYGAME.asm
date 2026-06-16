@@ -1,55 +1,83 @@
-    .ORIG x3000 ;test her skal det være x3000
-
+.ORIG x0500 ;test her skal det være x3000 eller x0500
+        
+        BRnzp MAIN
+        
+PTR_ASCII_ZERO  .FILL ASCII_ZERO
+PTR_START       .FILL start
+PTR_startState  .FILL startState
+money           .FILL #100
     ;play
-        AND R0, R0, #0
-        LEA R0, START
-        PUTS
+    MAIN
+        LD R0, money
+        LD R6 PTR_PLAYERVALUES4
+        STR R0, R6 #5
+        
+        LD R0, money
+        LD R6 PTR_PLAYERVALUES3
+        STR R0, R6 #5
+        
+        LD R0, money
+        LD R6 PTR_PLAYERVALUES2
+        STR R0, R6 #5
+        
+        LD R0, money
+        LD R6 PTR_PLAYERVALUES1
+        STR R0, R6 #5
+        
+        LD R0, PTR_start            ;tager String fra start "play"
+        PUTS                        ;Printer 
         
     fromStart
-        LEA R0, startSate
+        LD R0, PTR_startState       ;tager string fra startState "CHOOSE 1 FOR EDIT PLAYER, CHOOSE 2 FOR BETTING"
         PUTS
         
-        AND R0, R0, #0
-        GETC
-        LEA R2, ASCII_ZERO
+        GETC                        ;Player vælger om det er 1 eller 2                   
+        LD  R2, PTR_ASCII_ZERO      ;Loader ascii værdien ind aka -48
         LDR R2, R2, #0
-        ADD R0, R0, R2
+        ADD R0, R0, R2              ;lægger R2 til R0 i R0 
         
-        ADD R1, R0, #-1
-        BRnp next
-        JSR CHOOSEPLAYER
-        BRnzp fromStart
+        ADD R1, R0, #-1             ;hvis vi har valgt 1    
+        BRnp next               
+        JSR CHOOSEPLAYER            ;går til vælg player
+        BRnzp fromStart             ;går tilbage efter vi har være i funktion chooseplayer
     
     next
-        ADD R1, R0, #-2
-        BRnp fromStart
-        JSR SPIN
+        ADD R1, R0, #-2         
+        BRnp fromStart              ;Går tilbage til start hvis ikke 2
+        JSR SPIN                    ;Går til funktionen spin 
         BRnzp fromStart
 
-START               .STRINGZ "PLAY\n" 
-ASCII_ZERO          .FILL #-48
-startSate           .STRINGZ "CHOOSE 1 FOR EDIT PLAYERNAME, CHOOSE 2 FOR BETTING\n"
 
-
-loop
-    JSR CHOOSEPLAYER
-    BRnzp loop
-    HALT
-    
-    
-    ;spin
-    SPIN 
+;Player
+    loop
+        JSR CHOOSEPLAYER
+        BRnzp loop
         HALT
     
+;spin
+    SPIN 
+        LD R0, PTR_playerBet
+        PUTS
+        
+        HALT
+        
+        
+PTR_playerBet   .FILL playerBet
+PTR_ASCII_ZERO2 .FILL ASCII_ZERO
+PTR_SaveR7      .FILL SaveR7
+
     ;choose player
-    CHOOSEPLAYER
-        ST R7, SaveR7
-        AND R0, R0, #0
+    choosePlayer
+        LD  R6, PTR_SaveR7
+        STR R7, R6, #0
+        
+        LEA  R0, playNameEdit
+        PUTS
         
         GETC 
-        LEA R2, ASCII_ZERO
+        LD  R2, PTR_ASCII_ZERO2
         LDR R2, R2, #0
-        ADD R0, R0, R2 ;Finder værdien fra char til int, aka -48
+        ADD R0, R0, R2              ;Finder værdien fra char til int, aka -48
         
         ADD R1, R0, #-4
         BRz goToPlayer4
@@ -62,100 +90,99 @@ loop
         
         ADD R1, R0, #-1
         BRz goToPlayer1
-        BRnzp CHOOSEPLAYER
-    
-    goToPlayer4
-        JSR PLAYER4
-        BRnzp CHOOSEPLAYER
+        BRnzp choosePlayer
         
-    goToPlayer3
-        JSR PLAYER3
-        BRnzp CHOOSEPLAYER
-        
-    goToPlayer2
-        JSR PLAYER2
-        BRnzp CHOOSEPLAYER
-        
-    goToPlayer1
-        JSR PLAYER1
-        BRnzp CHOOSEPLAYER
-    
-    
-    
-;Player 1
-    PLAYER1
-        AND R0, R0, #0
-        LEA R0, P1
-        PUTS
-        
-        LEA R0, PLAYERVALUES1
-        JSR MAKE_NAME
-        
-        LEA R0, PLAYERVALUES1
-        JSR PRINT_NAME
-        
-        ;JSR PRINT_PENGE
-        
-        ;JSR PRINT_OLD_SPINS
-        
-        LD R7, SaveR7
-        RET
-    
-;Player 2
-    PLAYER2
-        AND R0, R0, #0
-        LEA R0, P2
-        PUTS
-        
-        LEA R0, PLAYERVALUES1
-        JSR MAKE_NAME
-        
-        LEA R0, PLAYERVALUES1
-        JSR PRINT_NAME
-        
-        LD R7, SaveR7
-        RET
-        
-;Player 3
-    PLAYER3
-        AND R0, R0, #0
-        LEA R0, P3
-        PUTS
-        
-        LEA R0, PLAYERVALUES1
-        JSR MAKE_NAME
-        
-        LEA R0, PLAYERVALUES1
-        JSR PRINT_NAME
-        
-        LD R7, SaveR7
-        RET
+PTR_PLAYERVALUES4   .FILL PLAYERVALUES4
+PTR_PLAYERVALUES3   .FILL PLAYERVALUES3
+PTR_PLAYERVALUES2   .FILL PLAYERVALUES2
+PTR_PLAYERVALUES1   .FILL PLAYERVALUES1
 
-;Player 4
-    PLAYER4
-        AND R0, R0, #0
+    goToPlayer4
         LEA R0, P4
         PUTS
+        LD R5, PTR_PLAYERVALUES4 ;Gemmer adressen for Playervalue på R5
+        JSR EDITCHOISE
+     
+     
+    goToPlayer3
+        LEA R0, P3
+        PUTS
+        LD R5, PTR_PLAYERVALUES3
+        JSR EDITCHOISE
+
+
+    goToPlayer2
+        LEA R0, P2
+        PUTS
+        LD R5, PTR_PLAYERVALUES2
+        JSR EDITCHOISE
         
-        LEA R0, PLAYERVALUES1
-        JSR MAKE_NAME 
+
+    goToPlayer1
+        LEA R0, P1
+        PUTS
+        LD R5, PTR_PLAYERVALUES1
+        JSR EDITCHOISE
         
-        LEA R0, PLAYERVALUES1
-        JSR PRINT_NAME 
+P1                  .STRINGZ "P1" 
+P2                  .STRINGZ "P2" 
+P3                  .STRINGZ "P3" 
+P4                  .STRINGZ "P4" 
+playNameEdit        .STRINGZ "EDIT PLAYER FROM 1 TO 4\n"
+chooseEdit  .STRINGZ "\nCHOOSE 1 FOR EDIT NAME, 2 FOR SHOWING NAME, 3 FOR SHOWING MONEY, 4 FOR SHOWING 10 LAST MOVES, 5 FOR ESCAPE\n"
+
+;vælger hvilket edit for hvilken play personen har valgt 
+    EDITCHOISE
+    back
+        LEA R0 chooseEdit
+        PUTS
         
-        LD R7, SaveR7
+        GETC 
+        LD  R2, PTR_ASCII_ZERO2
+        LDR R2, R2, #0
+        ADD R0, R0, R2 ;Finder værdien fra char til int, aka -48
+        
+        ADD R1, R0, #-5
+        BRnp Next0
+        LD R6, PTR_SaveR7
+        LDR R7, R6, #0
         RET
+        
+    Next0
+        ADD R1, R0, #-4
+        BRnp Next1
+        ;JSR SHOW_10LAST
+        BRnzp back
+        
+    Next1
+        ADD R1, R0, #-3
+        BRnp Next2
+        JSR SHOW_MONEY
+        BRnzp back
     
+    Next2
+        ADD R1, R0, #-2
+        BRnp Next3
+        JSR SHOW_NAME
+        BRnzp back
+    
+    Next3
+        ADD R1, R0, #-1
+        JSR MAKE_NAME
+        BRnzp back
 
 
     MAKE_NAME ;Giver player et nyt navn
+        AND R0, R0, #0
+        ADD R0, R5, #0  ;Loader adressen af playervalte ind. 
         ADD R1, R0, #0
         AND R2, R2, #0
-        ADD R2, R2, #4 ;Bruger 4 tegn for navn. 
+        ADD R2, R2, #4  ;Bruger 4 tegn for navn. 
 
     ekstraChar       
         AND R0, R0, #0
         GETC 
+        OUT
         STR R0, R1, #0
         ADD R1, R1, #1
         ADD R2, R2, #-1
@@ -166,31 +193,105 @@ loop
         
         RET
 
-;Print name
-    PRINT_NAME
+;Show name
+    SHOW_NAME
+        AND R0, R0, #0
+        ADD R0, R5, #0
         PUTS ;Printer navn
         
         LEA R0, Enter ;Gør næste linje klar
         PUTS
+        RET
+
+PTR_SaveR7_2        .FILL SaveR7_2
+    SHOW_MONEY
+        LD  R6, PTR_SaveR7_2
+        STR R7, R6, #0
         
+        STR R7, R6, #0
+        LDR R0, R5, #5      ;loader penge ind
+        JSR PRINT_NUMBER
+        
+        LEA R0, Enter
+        PUTS
+        
+        LD R6, PTR_SaveR7_2
+        LDR R7, R6, #0
         RET
         
-        
 
-SaveR7              .BLKW 1
-PlAYERVALUES1       .BLKW 16 ;4 tegn + 1 til navn samt 1 til pengene, og 10 til sidste spins 
-PlAYERVALUES2       .BLKW 16
-PlAYERVALUES3       .BLKW 16
-PlAYERVALUES4       .BLKW 16
-P1                  .STRINGZ "P1-" 
-P2                  .STRINGZ "P2-" 
-P3                  .STRINGZ "P3-" 
-P4                  .STRINGZ "P4-" 
+    PRINT_NUMBER
+                                ;100 del
+        AND R1, R1, #0          ;nulstil tæller
+        LD  R2, NEG_HUNDRED     ;R2 = -100
+    
+    loopHundred
+        ADD R3, R0, R2          ;R3 = R0 - 100
+        BRn doneHundred         ;stop hvis negativt
+        ADD R0, R0, R2          ;R0 -= 100
+        ADD R1, R1, #1          ;tæl én hundrede mere
+        BRnzp loopHundred
+    
+    doneHundred
+        ADD R4, R0, #0          ;gem resten i R4
+        LD  R3, ASCII_PLUS48
+        ADD R0, R1, R3          ;konverter hundrede-tæller til ASCII ('0'+'2' = '2')
+        OUT                     ;print hundrede-cifret
+        ADD R0, R4, #0          ;gendan resten tilbage i R0
+    
+                                ;10 del
+        AND R1, R1, #0          ;nulstil tæller
+        LD  R2, NEG_TEN         ;R2 = -10
+    
+    loopTen
+        ADD R3, R0, R2          ;R3 = R0 - 10
+        BRn doneTen             ;stop hvis negativt
+        ADD R0, R0, R2          ;R0 -= 10
+        ADD R1, R1, #1          ;tæl én tier mere
+        BRnzp loopTen
+    
+    doneTen
+        ADD R4, R0, #0          ;gem enerne i R4
+        LD  R3, ASCII_PLUS48
+        ADD R0, R1, R3          ;konverter tier-tæller til ASCII
+        OUT                     ;print tier-cifret
+        ADD R0, R4, #0          ;gendan enerne tilbage i R0
+    
+                                ;1 del
+        LD  R3, ASCII_PLUS48
+        ADD R0, R0, R3          ;konverter ener til ASCII (det der er tilbage i R0)
+        OUT                     ;print ener-cifret
+    
+        RET
+ 
+NEG_HUNDRED     .FILL #-100
+NEG_TEN         .FILL #-10
+ASCII_PLUS48    .FILL #48
+
+
+
+
+
 Enter               .STRINGZ "\n"
+start               .STRINGZ "PLAY\n" 
+startState          .STRINGZ "CHOOSE 1 FOR EDIT PLAYER, CHOOSE 2 FOR BETTING\n"
+playerBet           .STRINGZ "CHOOSE PLAYER FROM 1 - 4 TO BET"
+ASCII_ZERO          .FILL #-48 
+ASCII_TOSTRING      .FILL #48
+
+StartPenge          .FILL #100
+        
+SaveR7              .BLKW 1
+SaveR7_2            .BLKW 1
+PLAYERVALUES1       .BLKW 17 ;4 tegn + 1 til navn samt 1 til pengene, og 10 til sidste spins,  1 for sæt bet
+PLAYERVALUES2       .BLKW 17
+PLAYERVALUES3       .BLKW 17
+PLAYERVALUES4       .BLKW 17
+
 
 WHEEL               .BLKW 37 ;
 
-StartPenge          .FILL #100
+
 
 
 .END
