@@ -100,14 +100,10 @@ architecture Behavioral of lc3_computer is
 
 	-- I/O constants for addr from 0xFE00 to 0xFFFF:
     constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- VIO - Serial IN (terminal keyboard) -- KBSR 
-    constant STDIN_S_2  : std_logic_vector(15 downto 0) := X"FE01";  -- UART - SERIAL IN (terminal keyboard)-- KBSR
     constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- VIO - Keyboard Data Register - KBDR
-    constant STDIN_D_2  : std_logic_vector(15 downto 0) := X"FE03";  -- UART - Keyboard Data Register - KBDR
     constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- VIO - Serial OUT (terminal  display) - DSR
-    constant STDOUT_S_2 : std_logic_vector(15 downto 0) := X"FE05";  -- UART - Serial OUT (terminal  display) - DSR
     constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- VIO - Display Data Register -- DDR
-    constant STDOUT_D_2 : std_logic_vector(15 downto 0) := X"FE07";  -- UART - Display Data Register -- DDR
-	constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches 
+    constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches 
     constant IO_PSW     : std_logic_vector(15 downto 0) := X"FE0B";  -- Physical Switches	
 	constant IO_BTN     : std_logic_vector(15 downto 0) := X"FE0e";  -- Buttons
  	constant IO_PBTN    : std_logic_vector(15 downto 0) := X"FE0F";  -- Physical Buttons	
@@ -133,7 +129,17 @@ architecture Behavioral of lc3_computer is
        signal rx_rd_2    : std_logic;
        signal tx_wr_2    : std_logic;
        signal tx_data_2  : std_logic_vector(7 downto 0);
-       -----------
+       constant STDIN_S_2  : std_logic_vector(15 downto 0) := X"FE01";  -- UART - SERIAL IN (terminal keyboard)-- KBSR
+       constant STDIN_D_2  : std_logic_vector(15 downto 0) := X"FE03";  -- UART - Keyboard Data Register - KBDR
+       constant STDOUT_S_2 : std_logic_vector(15 downto 0) := X"FE05";  -- UART - Serial OUT (terminal  display) - DSR
+       constant STDOUT_D_2 : std_logic_vector(15 downto 0) := X"FE07";  -- UART - Display Data Register -- DDR
+       ---------
+       -- TIMER DAquavious PORK -
+       signal timer_start, timer_done_sig : std_logic;
+       signal timer_wait_time : std_logic_vector(15 downto 0);
+       constant IO_TIMER_WAIT : std_logic_vector(15 downto 0) := x"FE20";
+       constant IO_timer_DONE : STD_LOGIC_VECtoR(15 DOWNTO 0) := x"FE22";
+       
 begin
 
   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
@@ -272,17 +278,35 @@ begin
             rx_empty => rx_empty_2,
             r_data => rx_data_2
         );
+              
+      Inst_timer : entity work.timer 
+        generic map(
+            clock_count => 50000
+            )
+        port map(
+            clk => clk, 
+            start => timer_start,
+            wait_time => timer_wait_time,
+            timer_done => timer_done_sig
+            );
+            
+            
             
      process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out, rx_empty_2, rx_data_2, tx_full_2)
            begin
+               --RAM
                data_in <= ram_din; -- default
+               --VIO
                rx_rd   <= '0';
                tx_wr   <= '0';
                tx_data <= (others => '0');
+               --UART
                rx_rd_2 <= '0';
                tx_wr_2 <= '0';
                tx_data_2 <= (others => '0');
-           
+               --TImer Daquavious pork
+               timer_start <= '0';
+               
                if RE = '1' then
                    case address is
                        when STDIN_S  => --x"FE00" KBSR
@@ -311,6 +335,8 @@ begin
                             data_in <= x"00" & "000" & btn;
                        when IO_PBTN => --x"FE0F" PBTN
                             data_in <= x"000" & pbtn;
+                       when IO_TIMER_DONE =>
+                            data_in <= timer_done_sig & "000000000000000";
                        when others   => 
                             data_in <= ram_din;
                    end case;
@@ -322,6 +348,9 @@ begin
                         when STDOUT_D_2 =>
                             tx_data_2<= data_out(7 downto 0);
                             tx_wr_2 <= '1';
+                        when IO_TIMER_WAIT =>
+                            timer_wait_time <= data_out;
+                            timer_start <= '1';
                         when others =>
                             NULL;
                    end case;

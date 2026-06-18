@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Mon Jun 15 13:39:38 2026
+| Date         : Wed Jun 17 14:28:23 2026
 | Host         : Wills-laptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LC3Zybo_top_utilization_synth.rpt -pb LC3Zybo_top_utilization_synth.pb
 | Design       : LC3Zybo_top
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3377 |     0 |     17600 | 19.19 |
-|   LUT as Logic             | 3323 |     0 |     17600 | 18.88 |
+| Slice LUTs*                | 3450 |     0 |     17600 | 19.60 |
+|   LUT as Logic             | 3396 |     0 |     17600 | 19.30 |
 |   LUT as Memory            |   54 |     0 |      6000 |  0.90 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   54 |     0 |           |       |
-| Slice Registers            | 2062 |     0 |     35200 |  5.86 |
-|   Register as Flip Flop    | 2062 |     0 |     35200 |  5.86 |
-|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
+| Slice Registers            | 2128 |     0 |     35200 |  6.05 |
+|   Register as Flip Flop    | 2112 |     0 |     35200 |  6.00 |
+|   Register as Latch        |   16 |     0 |     35200 |  0.05 |
 | F7 Muxes                   |  107 |     0 |      8800 |  1.22 |
 | F8 Muxes                   |   16 |     0 |      4400 |  0.36 |
 +----------------------------+------+-------+-----------+-------+
@@ -57,9 +57,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 7     |          Yes |           - |          Set |
-| 456   |          Yes |           - |        Reset |
+| 472   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 1599  |          Yes |       Reset |            - |
+| 1649  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -117,7 +117,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    6 |     0 |        32 | 18.75 |
+| BUFGCTRL   |    7 |     0 |        32 | 21.88 |
 | BUFIO      |    0 |     0 |         8 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         2 |  0.00 |
 | PLLE2_ADV  |    1 |     0 |         2 | 50.00 |
@@ -150,22 +150,23 @@ Table of Contents
 +-----------+------+----------------------+
 |  Ref Name | Used |  Functional Category |
 +-----------+------+----------------------+
-| FDRE      | 1599 |         Flop & Latch |
-| LUT6      | 1124 |                  LUT |
-| LUT5      |  942 |                  LUT |
+| FDRE      | 1649 |         Flop & Latch |
+| LUT6      | 1183 |                  LUT |
+| LUT5      |  931 |                  LUT |
 | FDCE      |  456 |         Flop & Latch |
-| LUT3      |  435 |                  LUT |
-| LUT1      |  365 |                  LUT |
-| LUT4      |  314 |                  LUT |
-| CARRY4    |  209 |           CarryLogic |
-| LUT2      |  200 |                  LUT |
+| LUT3      |  429 |                  LUT |
+| LUT1      |  382 |                  LUT |
+| LUT4      |  301 |                  LUT |
+| LUT2      |  230 |                  LUT |
+| CARRY4    |  223 |           CarryLogic |
 | MUXF7     |  107 |                MuxFx |
 | SRLC16E   |   54 |   Distributed Memory |
 | RAMB36E1  |   32 |         Block Memory |
 | MUXF8     |   16 |                MuxFx |
+| LDCE      |   16 |         Flop & Latch |
 | IBUF      |   10 |                   IO |
 | FDPE      |    7 |         Flop & Latch |
-| BUFG      |    6 |                Clock |
+| BUFG      |    7 |                Clock |
 | OBUF      |    5 |                   IO |
 | BSCANE2   |    2 |               Others |
 | PS7       |    1 | Specialized Resource |

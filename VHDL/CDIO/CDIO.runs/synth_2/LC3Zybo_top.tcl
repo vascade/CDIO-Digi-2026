@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -40,6 +39,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/debounce.vhd
   C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_wrapper_multiplexers.vhd
   C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/memory.vhd
+  C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/new/timer.vhd
   C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_computer.vhd
   C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/lc3_debug.vhd
   C:/Users/Willi/Documents/DTU/2.Semester/CDIO/CDIO-Digi-2026/VHDL/CDIO/CDIO.srcs/sources_1/imports/LC3Zybo_Template/student_code.vhd
