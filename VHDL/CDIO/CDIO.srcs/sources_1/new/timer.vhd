@@ -23,7 +23,6 @@ begin
     process(clk)
     begin
         if (clk'event and clk = '1') then
-            timer_done <= '0';  -- default every cycle
 
             if (start = '1') then
                 -- CPU just wrote a new wait_time: latch it and begin counting
@@ -31,6 +30,7 @@ begin
                 ms_timer       <= 0;
                 internal_timer <= 0;
                 running        <= '1';
+                timer_done     <= '0';
 
             elsif (running = '1') then
                 internal_timer <= internal_timer + 1;

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Jun 17 14:28:23 2026
+| Date         : Thu Jun 18 12:54:04 2026
 | Host         : Wills-laptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LC3Zybo_top_utilization_synth.rpt -pb LC3Zybo_top_utilization_synth.pb
 | Design       : LC3Zybo_top
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3450 |     0 |     17600 | 19.60 |
-|   LUT as Logic             | 3396 |     0 |     17600 | 19.30 |
+| Slice LUTs*                | 3455 |     0 |     17600 | 19.63 |
+|   LUT as Logic             | 3401 |     0 |     17600 | 19.32 |
 |   LUT as Memory            |   54 |     0 |      6000 |  0.90 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   54 |     0 |           |       |
@@ -151,13 +151,13 @@ Table of Contents
 |  Ref Name | Used |  Functional Category |
 +-----------+------+----------------------+
 | FDRE      | 1649 |         Flop & Latch |
-| LUT6      | 1183 |                  LUT |
-| LUT5      |  931 |                  LUT |
+| LUT6      | 1187 |                  LUT |
+| LUT5      |  933 |                  LUT |
 | FDCE      |  456 |         Flop & Latch |
-| LUT3      |  429 |                  LUT |
+| LUT3      |  424 |                  LUT |
 | LUT1      |  382 |                  LUT |
-| LUT4      |  301 |                  LUT |
-| LUT2      |  230 |                  LUT |
+| LUT4      |  298 |                  LUT |
+| LUT2      |  232 |                  LUT |
 | CARRY4    |  223 |           CarryLogic |
 | MUXF7     |  107 |                MuxFx |
 | SRLC16E   |   54 |   Distributed Memory |

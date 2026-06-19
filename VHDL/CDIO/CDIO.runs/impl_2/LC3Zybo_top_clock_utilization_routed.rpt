@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Jun 17 14:29:27 2026
+| Date         : Thu Jun 18 12:54:58 2026
 | Host         : Wills-laptop running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file LC3Zybo_top_clock_utilization_routed.rpt
 | Design       : LC3Zybo_top
@@ -27,7 +27,8 @@ Table of Contents
 12. Device Cell Placement Summary for Global Clock g6
 13. Clock Region Cell Placement per Global Clock: Region X0Y0
 14. Clock Region Cell Placement per Global Clock: Region X1Y0
-15. Clock Region Cell Placement per Global Clock: Region X1Y1
+15. Clock Region Cell Placement per Global Clock: Region X0Y1
+16. Clock Region Cell Placement per Global Clock: Region X1Y1
 
 1. Clock Primitive Utilization
 ------------------------------
@@ -55,7 +56,7 @@ Table of Contents
 | g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 2 |         127 |               0 |              |       | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk_bufg/O                         | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk_BUFG                         |
 | g2        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 1 |          48 |               0 |              |       | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/DRCK_bufg/O       | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/DRCK_BUFG       |
 | g3        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y3  | n/a          |                 1 |          48 |               0 |              |       | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/UPDATE_bufg/O     | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/UPDATE_BUFG     |
-| g4        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 2 |          16 |              48 |              |       | timer_wait_time_reg[15]_i_1/O                                              | Inst_lc3_computer/timer_start                                            |
+| g4        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 1 |          16 |              48 |              |       | timer_wait_time_reg[15]_i_1/O                                              | Inst_lc3_computer/timer_start                                            |
 | g5        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y4  | n/a          |                 1 |          11 |               0 |              |       | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/DRCK_bufg/O   | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/DRCK_BUFG   |
 | g6        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y5  | n/a          |                 1 |          11 |               0 |              |       | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/UPDATE_bufg/O | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/UPDATE_BUFG |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+-------+----------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -73,7 +74,7 @@ Table of Contents
 | src1      | g2        | BSCANE2/DRCK      | None       | BSCAN_X0Y3     | X0Y0         |           1 |               0 |                     |              | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/BSCANE2_inst/DRCK        | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/DRCK       |
 | src1      | g3        | BSCANE2/UPDATE    | None       | BSCAN_X0Y3     | X0Y0         |           1 |               0 |                     |              | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/BSCANE2_inst/UPDATE      | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/UPDATE     |
 | src1      | g1        | BSCANE2/TCK       | None       | BSCAN_X0Y3     | X0Y0         |           1 |               0 |                     |              | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/BSCANE2_inst/TCK         | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk                         |
-| src2      | g4        | LUT6/O            | None       | SLICE_X21Y8    | X0Y0         |           1 |               2 |                     |              | Inst_student_code/Inst_lc3_computer/lc3_m/timer_wait_time_reg[15]_i_2/O           | Inst_student_code/Inst_lc3_computer/lc3_m/timer_done_reg            |
+| src2      | g4        | LUT6/O            | None       | SLICE_X14Y13   | X0Y0         |           1 |               2 |                     |              | Inst_student_code/Inst_lc3_computer/lc3_m/timer_wait_time_reg[15]_i_2/O           | Inst_student_code/Inst_lc3_computer/lc3_m/timer_done_reg            |
 | src3      | g5        | BSCANE2/DRCK      | None       | BSCAN_X0Y2     | X0Y0         |           1 |               0 |                     |              | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/BSCANE2_inst/DRCK    | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/DRCK   |
 | src3      | g6        | BSCANE2/UPDATE    | None       | BSCAN_X0Y2     | X0Y0         |           1 |               2 |                     |              | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/BSCANE2_inst/UPDATE  | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/UPDATE |
 +-----------+-----------+-------------------+------------+----------------+--------------+-------------+-----------------+---------------------+--------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -89,10 +90,10 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    7 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  772 |  1100 |  335 |   400 |    0 |    20 |   10 |    10 |    0 |    20 |
-| X1Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1284 |  1100 |  436 |   350 |    0 |    40 |   20 |    20 |    0 |    20 |
-| X0Y1              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1100 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   21 |  1100 |    0 |   350 |    0 |    40 |    2 |    20 |    0 |    20 |
+| X0Y0              |    7 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  834 |  1100 |  356 |   400 |    0 |    20 |   10 |    10 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1222 |  1100 |  453 |   350 |    0 |    40 |   20 |    20 |    0 |    20 |
+| X0Y1              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1100 |    0 |   400 |    0 |    20 |    2 |    10 |    0 |    20 |
+| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   21 |  1100 |    0 |   350 |    0 |    40 |    0 |    20 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 
@@ -104,8 +105,8 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y1 |  0 |  2 |
-| Y0 |  7 |  2 |
+| Y1 |  1 |  1 |
+| Y0 |  7 |  1 |
 +----+----+----+
 
 
@@ -126,8 +127,8 @@ All Modules
 +----+------+-------+
 |    | X0   | X1    |
 +----+------+-------+
-| Y1 |    0 |     2 |
-| Y0 |  571 |  1338 |
+| Y1 |    2 |     0 |
+| Y0 |  633 |  1276 |
 +----+------+-------+
 
 
@@ -211,12 +212,12 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-----+-----+
-|    | X0  | X1  |
-+----+-----+-----+
-| Y1 |   0 |   0 |
-| Y0 |  32 |  32 |
-+----+-----+-----+
++----+-----+----+
+|    | X0  | X1 |
++----+-----+----+
+| Y1 |   0 |  0 |
+| Y0 |  64 |  0 |
++----+-----+----+
 
 
 11. Device Cell Placement Summary for Global Clock g5
@@ -269,11 +270,11 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                      |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         571 |               0 | 561 |      0 |   10 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG                          |
+| g0        | n/a   | BUFG/O          | None       |         633 |               0 | 623 |      0 |   10 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG                          |
 | g1        | n/a   | BUFG/O          | None       |         106 |               0 |  93 |     13 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk_BUFG                         |
 | g2        | n/a   | BUFG/O          | None       |          48 |               0 |  48 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/DRCK_BUFG       |
 | g3        | n/a   | BUFG/O          | None       |          48 |               0 |  48 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainIO/UPDATE_BUFG     |
-| g4        | n/a   | BUFG/O          | None       |          16 |              16 |  16 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_lc3_computer/timer_start                                            |
+| g4        | n/a   | BUFG/O          | None       |          16 |              48 |  48 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_lc3_computer/timer_start                                            |
 | g5        | n/a   | BUFG/O          | None       |          11 |               0 |  11 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/DRCK_BUFG   |
 | g6        | n/a   | BUFG/O          | None       |          11 |               0 |  11 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/UPDATE_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------+
@@ -288,21 +289,32 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                             |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1338 |               0 | 1284 |     34 |   20 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG |
-| g4        | n/a   | BUFG/O          | None       |           0 |              32 |   32 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_lc3_computer/timer_start                   |
+| g0        | n/a   | BUFG/O          | None       |        1276 |               0 | 1222 |     34 |   20 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+-------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-15. Clock Region Cell Placement per Global Clock: Region X1Y1
+15. Clock Region Cell Placement per Global Clock: Region X0Y1
+-------------------------------------------------------------
+
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                             |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |           2 |               0 |  0 |      0 |    2 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG |
++-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+-------------------------------------------------+
+* Clock Loads column represents the clock pin loads (pin count)
+** Non-Clock Loads column represents the non-clock pin loads (pin count)
+*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
+
+
+16. Clock Region Cell Placement per Global Clock: Region X1Y1
 -------------------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+--------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                              |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+--------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |           2 |               0 |  0 |      0 |    2 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG  |
 | g1        | n/a   | BUFG/O          | None       |          21 |               0 | 21 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk_BUFG |
 +-----------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+--------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
@@ -329,7 +341,7 @@ set_property LOC IOB_X0Y78 [get_ports clk125]
 #startgroup
 create_pblock {CLKAG_Inst_lc3_computer/timer_start}
 add_cells_to_pblock [get_pblocks  {CLKAG_Inst_lc3_computer/timer_start}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="Inst_lc3_computer/timer_start"}]]]
-resize_pblock [get_pblocks {CLKAG_Inst_lc3_computer/timer_start}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+resize_pblock [get_pblocks {CLKAG_Inst_lc3_computer/timer_start}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
 #endgroup
 
 # Clock net "Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk_BUFG" driven by instance "Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk_bufg" located at site "BUFGCTRL_X0Y0"
@@ -343,7 +355,7 @@ resize_pblock [get_pblocks {CLKAG_Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/jclk_BU
 #startgroup
 create_pblock {CLKAG_Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG}
 add_cells_to_pblock [get_pblocks  {CLKAG_Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG"}]]]
-resize_pblock [get_pblocks {CLKAG_Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+resize_pblock [get_pblocks {CLKAG_Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/clk_BUFG}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
 #endgroup
 
 # Clock net "Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/UPDATE_BUFG" driven by instance "Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/Inst_jtag_chainSerial/UPDATE_bufg" located at site "BUFGCTRL_X0Y5"

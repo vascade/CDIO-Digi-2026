@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Wed Jun 17 14:29:27 2026
+| Date             : Thu Jun 18 12:54:58 2026
 | Host             : Wills-laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file LC3Zybo_top_power_routed.rpt -pb LC3Zybo_top_power_summary_routed.pb -rpx LC3Zybo_top_power_routed.rpx
 | Design           : LC3Zybo_top
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.251        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.155        |
+| Dynamic (W)              | 0.154        |
 | Device Static (W)        | 0.096        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 82.1         |
@@ -54,14 +54,14 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.005 |        5 |       --- |             --- |
 | Slice Logic             |     0.009 |     6062 |       --- |             --- |
-|   LUT as Logic          |     0.007 |     3312 |     17600 |           18.82 |
+|   LUT as Logic          |     0.007 |     3318 |     17600 |           18.85 |
 |   Register              |    <0.001 |     2093 |     35200 |            5.95 |
 |   CARRY4                |    <0.001 |      222 |      4400 |            5.05 |
 |   LUT as Shift Register |    <0.001 |       47 |      6000 |            0.78 |
-|   F7/F8 Muxes           |    <0.001 |      123 |     17600 |            0.70 |
 |   BUFG                  |    <0.001 |        6 |        32 |           18.75 |
+|   F7/F8 Muxes           |    <0.001 |      123 |     17600 |            0.70 |
 |   Others                |     0.000 |      198 |       --- |             --- |
-| Signals                 |     0.010 |     4720 |       --- |             --- |
+| Signals                 |     0.009 |     4716 |       --- |             --- |
 | Block RAM               |     0.023 |       32 |        60 |           53.33 |
 | PLL                     |     0.106 |        1 |         2 |           50.00 |
 | DSPs                    |    <0.001 |        1 |        80 |            1.25 |
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.058 |       0.053 |      0.005 |
+| Vccint    |       1.000 |     0.057 |       0.053 |      0.005 |
 | Vccaux    |       1.800 |     0.060 |       0.054 |      0.006 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -156,10 +156,10 @@ Table of Contents
 +---------------------------------+-----------+
 | Name                            | Power (W) |
 +---------------------------------+-----------+
-| LC3Zybo_top                     |     0.155 |
+| LC3Zybo_top                     |     0.154 |
 |   Inst_ZyboVIOSE_wrapper        |     0.109 |
 |     Inst_ZyboVIO_SE             |     0.109 |
-|   Inst_student_code             |     0.043 |
+|   Inst_student_code             |     0.042 |
 |     Inst_lc3_computer           |     0.042 |
 |       Inst_memory               |     0.023 |
 |       Inst_timer                |    <0.001 |
