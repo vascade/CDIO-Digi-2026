@@ -1,4 +1,4 @@
-.ORIG x3000 ;test her skal det være x3000 eller x0500
+.ORIG x0500 ;test her skal det være x3000 eller x0500
         
         BRnzp MAIN
         
@@ -307,7 +307,7 @@ PTR_SaveR7_Sp4      .FILL SaveR7_Sp4
         
         LDR R0, R5, #5      ;loader penge ind
         JSR PRINT_NUMBER
-        LD R0, PTR_Enter ;Gør næste linje klar
+        LD R0, PTR_Enter_2 ;Gør næste linje klar
         PUTS
         BRnzp back000
         
@@ -327,6 +327,7 @@ PTR_SaveR7_Sp4      .FILL SaveR7_Sp4
         RET
 
 PTR_GreenSpotST     .FILL GreenSpotST
+PTR_Enter_2         .FILL Enter
 PTR_RedSpotST       .FILL RedSpotST
 PTR_BlackSpotST     .FILL BlackSpotST
 PTR_OddST           .FILL OddST
@@ -334,35 +335,71 @@ PTR_EvenST          .FILL EvenST
 PTR_ZeroST          .FILL ZeroST     
 PTR_playerBet_1     .FILL playerBet
 PTR_RAND_COUNTER_1  .FILL RAND_COUNTER 
-PTR_VR5             .FILL VR5
-PSY_BUTTEN_ADDR     .FILL xFE0F         ; Den fysiske adresse på knappen
+PTR_SaveR7_SPIN     .FILL SaveR7_SPIN 
+PTR_WHEEL_1         .FILL WHEEL
+PSY_BUTTEN_ADDR     .FILL xFE0E         ; Den fysiske adresse på knappen
 PTR_RAND_PSYCON     .FILL RAND_COUNTER
+PTR_SaveR7_Sp1_2    .FILL SaveR7_Sp1
+PTR_SaveR7_Sp2_2    .FILL SaveR7_Sp2
+PTR_SaveR7_Sp3_2    .FILL SaveR7_Sp3
+PTR_SaveR7_Sp4_2    .FILL SaveR7_Sp4
+PTR_SaveR7_Sp5_2    .FILL SaveR7_Sp5
+PTR_WHEEL_2         .FILL WHEEL
+PTR_VR2_1           .FILL VR2
+PTR_delayValueB     .FILL delayValueB
+delayValueB         .FILL #1
 VR0                 .BLKW 1
-MAX_PRESS           .FILL #-15000
+offsetMax           .FILL #-111
+PTR_ValueOff        .FILL valueOff
+valueOff            .BLKW 1
+PTR_randomValue3    .Fill randomValue3 
+randomValue3        .BLKW 1
+timer               .FILL xFE20
+timer_done          .FILL xFE22
+MAX_PRESS           .FILL #-5000
+SEKUND10            .FILL #1000
 MINUS_51            .FILL #-51
 PLUS_51             .FILL #51
+GANGE_100           .FILL #100
+GUIWHEEL            .FILL xFE07
+PTR_GUIWHEEL        .FILL GUIWHEEL
+SEGEMENT7           .FILL xFE12
+PTR_SEGEMENT7       .FILL SEGEMENT7
+sForGUI             .FILL x0073
+PTR_sForGUI         .FILL sForGUI
+rForGUI             .FILL x0072
+PTR_rForGUI         .FILL rForGUI
+PTR_VR5             .FILL VR5
         
     SPIN
-        LD  R6, PTR_SaveR7_Sp3_1
+        LD  R6, PTR_SaveR7_Sp3_2
         STR R7, R6, #0
         
+        LDI R0, PTR_GUIWHEEL
+        LD  R1, rForGui 
+        STR R1, R0, #0
+        
+        LDI R0, PTR_GUIWHEEL
+        LD  R1, rForGui 
+        STR R1, R0, #0
         
         JSR BUTTENPRESS
         
         JSR RANDOM
-        ADD R1, R4, R4      ;Ganger vores random værdi fra R4 3 gange, for at finde det rigte tilsvarende værdi i WHEEL
-        ADD R1, R1, R4
-        LD  R2, PTR_WHEEL
-        ADD R2, R2, R1
         
-        ST R2, PTR_VR2      ;R2 gemmer nu den rigtige adresse for hvor tallet i wheel ligger
+        JSR SPINMATION
+        
+        LD  R2, PTR_WHEEL_2
+        ADD R2, R2, R4
+        
+        ST R2, PTR_VR2_1    ;R2 gemmer nu den rigtige adresse for hvor tallet i wheel ligger
         
         LDR R0, R2, #0      ;loader 
         JSR PRINT_NUMBER
-        LD R0, PTR_Enter ;Gør næste linje klar
+        LD R0, PTR_Enter_2  ;Gør næste linje klar
         PUTS
         
-        LD R2, PTR_VR2
+        LD R2, PTR_VR2_1
         LDR R0, R2, #1
         BRz GreenSpot
         
@@ -382,7 +419,7 @@ PLUS_51             .FILL #51
         PUTS
     
     next001
-        LD R2, PTR_VR2
+        LD R2, PTR_VR2_1
         LDR R0, R2, #2
         BRz ZeroSpot
         ADD R0, R0, #-1
@@ -419,25 +456,36 @@ PLUS_51             .FILL #51
         BRz waitForPress
         
     countLoop    
-        ADD, R4, R4, #1         ;øger tryk tæller
+        LDI R2, PTR_delayValueB     ;loader 1 ind på delay 
+        LD R3, timer
+        STR R2, R3, #0
         
-        ADD R1, R4, R5
-        Brzp forceRelease       ;hvis knappen holdes ned i mere end ca. 3 sekunder. 
+    delayIn
+        LDI R2, timer_done
+        BRz delayIn        
+        
+        ADD R4, R4, #1          ;øger tryk tæller
+        
+        ADD R2, R4, R5          ;tjekker om knappen er hold i mere end 5 sek
+        BRzp forceRelease
         
         LDI R0, PSY_BUTTEN_ADDR ;Tjek knappen igen
         BRp countLoop
         
     forceRelease
-        LD  R2, MINUS_51        ;vi sikre at tiden er melle 10 - 60 sek med % 51
+        ;LD  R2, MINUS_51        ;vi sikre at tiden er melle 10 - 60 sek med % 51
+        STI R4, PTR_randomValue3  ;gemmer værdien af R4 til randomizer  
     
-    modulo
-        ADD R4, R4, R2          ;Trejker 51 fra 
-        BRzp modulo
+    ;modulo
+        ;ADD R4, R4, R2          ;Trækker 51 fra 
+        ;BRzp modulo
         
-        LD R2, PLUS_51          ;lægger 51 til for at få den positive rest
-        ADD R4, R4, R2
+        ;LD R2, PLUS_51          ;lægger 51 til for at få den positive rest
+       ; ADD R4, R4, R2
         
-        ADD R4, R4, #10         ;lægger 10 til så vi får interevalet mellem 10 - 60
+        
+        LD R0, SEKUND10          ;lægger 10 til så vi får interevalet mellem 10 - 60
+        ADD R4, R4, R0
         
         LD  R1, PTR_RAND_PSYCON ;Vi gemmer værdien af hvor længe hjulet skal spinne, både til RANDOM og til WHEEL
         STR R4, R1, #0          ;gemer værdien.
@@ -450,7 +498,7 @@ PLUS_51             .FILL #51
         LD  R6, PTR_SaveR7_Sp4_1
         STR R7, R6, #0
         
-        LD R3, PTR_RAND_COUNTER_1 ;Lægger randcount sammen med seed
+        LD R3, PTR_randomValue3 ;værdien fra hvad buttepress er blevet sat til. 
         LDR R3, R3 #0
         LD R0, SEED
         ADD R0, R0, R3
@@ -476,7 +524,7 @@ PLUS_51             .FILL #51
         
     
     startModulo
-        LD R2, NEG_37       ;Henter værdien -37 
+        LD R2, NEG_37       ;Henter værdien -37
     loopRand
         ADD R3, R0, R2      ;Tester om R0 >= 37
         BRn doneRand        ;Hvis negativ er vi færdige
@@ -486,17 +534,93 @@ PLUS_51             .FILL #51
     doneRand
         AND R4, R4, #0      ;gemmer væriden i R4
         ADD R4, R4, R0
+        ADD R4, R4, #1      ;værdien bliver aldrig 0
         
-        
-        AND R0, R0, #0
-        LD  R1, PTR_RAND_PSYCON ;nulstiller knap værdien.
-        STR R0, R1, #0          
+        LD R1, PTR_ValueOff ;gemmer værdien af det random tal i valueOff
+        STR R4, R1, #0
         
         LD  R6, PTR_SaveR7_Sp4_1
         LDR R7, R6, #0
         RET
         
     SPINMATION
+        LD  R6, PTR_SaveR7_SPIN
+        STR R7, R6, #0
+        
+        LDI R1, PTR_RAND_PSYCON  ;R1 bliver max time 
+        
+        NOT R1, R1              ;vender det til minus
+        ADD R1, R1 #1
+        
+        AND R2, R2 #0           ;R2 bliver sum
+        LD  R3, valueOff        ;delay
+        AND R4, R4, #0          ;offset
+    
+    delayloop    
+        LD R0, PTR_WHEEL_1
+        ADD R0, R0, R4
+        LDR R0, R0, #0
+        JSR PRINT_NUMBER    ;udskrive hex værdien af tallet på wheel
+        
+        LDI R6, SEGEMENT7   
+        STR R0, R6, #0
+        
+        LD R0, PTR_Enter_2  ;Gør næste linje klar
+        PUTS
+        
+        LDI R0, PTR_GUIWHEEL
+        AND R6, R6, #0
+        STR R6, R0, #0
+        
+        LD R0, timer    
+        STR R3, R0, #0          ;timer starter
+    timerLoop                   ;går først videre når timerDone = 1
+        LDI R0, timer_done      ;timer done
+        BRz timerLoop
+        
+        LDI R0, PTR_GUIWHEEL
+        LD  R6, sForGUI
+        STR R6, R0, #0
+        
+        ADD R4, R4 #3           ;OFFSET
+        LD R6, offsetMax
+        ADD R6, R4, R6
+        BRzp offsetReset
+    
+    back67
+        ADD R3, R3, #2; delay = valueOff + 2
+        AND R6, R6, #0
+        ADD R6, R6, R3  ;GEMMER VÆRDIEN AF R3 I R6
+    
+        AND R0, R0, #0
+        
+    divLoop          
+        ADD R6, R6, #-10    ;dividere delay med 10, da vi tager det fra milisekunder til en hundrende del af et sekundt i stedet
+        BRn divSlut
+        
+        ADD R0, R0, #1      ;holder styr på hvor mange gange 10 går op i tallet
+        BRnzp divLoop
+        
+    divSlut 
+        ADD R2, R2, R0      ;tilføjer delay til sum. 
+        
+        AND R6, R6, #0
+        ADD R6, R1, R2      ;sætter R2-R1
+        BRn delayloop
+        
+        AND R0, R0, #0
+        LD  R1, PTR_RAND_PSYCON ;nulstiller knap værdien.
+        STR R0, R1, #0   
+        
+        LD  R6, PTR_SaveR7_SPIN
+        LDR R7, R6, #0
+        RET
+        
+    offsetReset
+        AND R4, R4, #0
+        BRnzp back67
+        
+
         
     CHECKWIN
         LD  R6, PTR_SaveR7_Sp4_1
@@ -513,6 +637,8 @@ PLUS_51             .FILL #51
         
         LDR R1, R5, #17                     ;finder om player har bettet
         BRn noBetPlaced
+        
+        JSR SAVE10LAST
                 
         LDR R1, R5, #20                     ;lægger værdien af n ind i R1, 
         BRn Next011                         ;chekcer om der er blevet bettet med n
@@ -603,9 +729,6 @@ PLUS_51             .FILL #51
     Next013
     noBetPlaced
     
-    
-    ;skal lige huske at lave R0 < 4
-    ;aka vi skal også lige gemme den i starten af Jsr her
         LD  R0, VR0
         ADD R0, R0, #1
         AND R6, R6, #0
@@ -670,6 +793,26 @@ PLUS_51             .FILL #51
         LD  R6, PTR_SaveR7_Sp5_1
         LDR R7, R6, #0
         RET 
+        
+    SAVE10LAST
+        LD  R6, PTR_SaveR7_Sp5_1
+        STR R7, R6, #0
+        
+        LDR R1, R5, #14     ;gemmer værdien af plads 9
+        LDR R2, R5, #15     ;gemmer værdien af plads 10
+    
+    repeat    
+        LDR R4, R2, #0      ;Tager den gamle plads og sætter den i R4 
+        STR R4, R1, #0      ;loader den nye værdi ind i den plads
+        
+        ADD R1, R1, #-1     ;gå videre til næste adresse
+        ADD R2, R2, #-1
+        ADD R3, R3, #-1     ;-counter indtil den er positiv
+        BRp repeat
+        
+        LD  R6, PTR_SaveR7_Sp5_1
+        LDR R7, R6, #0
+        RET 
 
     ;WHEEL_SPINNER
 PTR_SaveR7_Sp1_1        .FILL SaveR7_Sp1
@@ -683,10 +826,11 @@ PTR_ASCII_ZERO2         .FILL ASCII_ZERO
 PTR_SaveR7              .FILL SaveR7
 PTR_Enter               .FILL Enter
 SEED                    .BLKW 1
+COUNT_9                 .FILL 9
 LCG_C                   .FILL #74
 NEG_37                  .FILL #-37
 MODULO_37               .FILL x003F  ; Binært: 0000000000111111
-PTR_VR2             .FILL VR2
+PTR_VR2                 .FILL VR2
 
     ;choose player
     CHOOSEPLAYER
@@ -784,7 +928,7 @@ chooseEdit  .STRINGZ "\nCHOOSE 1 FOR EDIT NAME, 2 FOR SHOWING NAME, 3 FOR SHOWIN
     Next0
         ADD R1, R0, #-4
         BRnp Next1
-        ;JSR SHOW_10LAST
+        JSR SHOW_10LAST
         BRnzp back
         
     Next1
@@ -807,6 +951,10 @@ chooseEdit  .STRINGZ "\nCHOOSE 1 FOR EDIT NAME, 2 FOR SHOWING NAME, 3 FOR SHOWIN
 
 PTR_SaveR7_2        .FILL SaveR7_2
 PTR_SaveR7_3        .FILL SaveR7_3
+PTR_RETURN1   .FILL RETURN1
+PTR_RETURN2   .FILL RETURN2
+PTR_RETURN3   .FILL RETURN3
+PTR_RETURN4   .FILL RETURN4
 
     MAKE_NAME ;Giver player et nyt navn
         LD  R6, PTR_SaveR7_2
@@ -849,6 +997,26 @@ PTR_SaveR7_3        .FILL SaveR7_3
         LD R6, PTR_SaveR7_2
         LDR R7, R6, #0
         RET
+        
+    SHOW_10LAST
+        LD  R6, PTR_SaveR7_2
+        STR R7, R6, #0
+        
+        AND R1, R1, #0
+        ADD R1, R1, #9
+    
+        LDR R0, R5, #5  ;henter playværdi ind i 
+    repeat1
+        ADD R0, R0, #1
+        OUT
+        
+        ADD R1, R1, #-1
+        BRp repeat1
+        
+        
+        LD R6, PTR_SaveR7_2
+        LDR R7, R6, #0
+        RET
 
     SHOW_MONEY
         LD  R6, PTR_SaveR7_2
@@ -868,6 +1036,19 @@ PTR_SaveR7_3        .FILL SaveR7_3
     PRINT_NUMBER
         LD  R6, PTR_SaveR7_3
         STR R7, R6, #0
+        
+        LD R6, PTR_RETURN1   
+        STR R1, R6, #0
+        
+        LD R6, PTR_RETURN2   
+        STR R2, R6, #0
+        
+        LD R6, PTR_RETURN3  
+        STR R3, R6, #0
+        
+        LD R6, PTR_RETURN4   
+        STR R4, R6, #0
+        
                                 ;100 del
         AND R1, R1, #0          ;nulstil tæller
         LD  R2, NEG_HUNDRED     ;R2 = -100
@@ -908,7 +1089,19 @@ PTR_SaveR7_3        .FILL SaveR7_3
         LD  R3, ASCII_PLUS48
         ADD R0, R0, R3          ;konverter ener til ASCII (det der er tilbage i R0)
         OUT                     ;print ener-cifret
-    
+        
+        LD R6, PTR_RETURN1   
+        LDR R1, R6, #0
+        
+        LD R6, PTR_RETURN2   
+        LDR R2, R6, #0
+        
+        LD R6, PTR_RETURN3  
+        LDR R3, R6, #0
+        
+        LD R6, PTR_RETURN4   
+        LDR R4, R6, #0
+        
         LD R6, PTR_SaveR7_3
         LDR R7, R6, #0
         RET
@@ -942,6 +1135,14 @@ RAND_COUNTER        .FILL #677
 
 StartPenge          .FILL #100
 
+RETURN0             .BLKW 1
+RETURN1             .BLKW 1
+RETURN2             .BLKW 1
+RETURN3             .BLKW 1
+RETURN4             .BLKW 1
+RETURN5             .BLKW 1
+RETURN6             .BLKW 1
+
 VR2                 .BLKW 1
 VR5                 .BLKW 1
 SaveR7              .BLKW 1
@@ -952,6 +1153,7 @@ SaveR7_Sp2          .BLKW 1
 SaveR7_Sp3          .BLKW 1
 SaveR7_Sp4          .BLKW 1
 SaveR7_Sp5          .BLKW 1
+SaveR7_SPIN         .BLKW 1
 PLAYERVALUES1       .BLKW 21 ;4 tegn + 1 til navn samt 1 til pengene, og 10 til sidste spins, 1 for mængde af penge for bettet, 1 for sæt bet, 1 for bet, 1 for bet
 PLAYERVALUES2       .BLKW 21
 PLAYERVALUES3       .BLKW 21
