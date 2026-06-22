@@ -1,7 +1,7 @@
-#define NUM_TEX 1
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 800
+#ifndef GAME_H
+#define GAME_H
 
-void roulette();
-void serial();
-const char* get_path(const char* filename);
+int run_roulette(int argc, char *argv[]);
+void serial(void);
+
+#endif
