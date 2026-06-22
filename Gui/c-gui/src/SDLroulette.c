@@ -1,6 +1,7 @@
 #include <SDL3/SDL.h>
 #include <stdio.h>
 #include <SDL3_image/SDL_image.h>
+#include <get_path.h>
 int run_roulette(int argc, char *argv[])
 {
     // To dodge errors in compiling
@@ -39,10 +40,10 @@ int run_roulette(int argc, char *argv[])
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
     // PNG's
-    table = IMG_LoadTexture(renderer, "textures/table.png");
+    table = IMG_LoadTexture(renderer, get_path("table.png"));
     if (!table)
         SDL_Log("FAILED TO LOAD table.png: %s", SDL_GetError());
-    triangle = IMG_LoadTexture(renderer, "textures/triangle.png");
+    triangle = IMG_LoadTexture(renderer, get_path("triangle.png"));
     if (!triangle)
         SDL_Log("FAILED TO LOAD triangle.png: %s", SDL_GetError());
     SDL_FRect tablePos = {tablePosX, tablePosY, tableWidth, tableHeight};
@@ -54,8 +55,6 @@ int run_roulette(int argc, char *argv[])
     float spinFriction = 0.99f;
     // KEYBOARD INPUT
     const bool *keys = SDL_GetKeyboardState(NULL);
-    // TEXT
-    const char *text = "Marko er en fucking lorteunge";
     int running = 1;
     SDL_Event event;
 
