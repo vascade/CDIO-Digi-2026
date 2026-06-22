@@ -7,7 +7,7 @@ int run_roulette(int argc, char *argv[])
     (void)argc;
     (void)argv;
     SDL_Init(SDL_INIT_VIDEO);
-
+    Uint64 lastTime = SDL_GetTicks();
     // Traditional window and renderer
     SDL_Window *win = NULL;
     SDL_Renderer *renderer = NULL;
@@ -32,7 +32,7 @@ int run_roulette(int argc, char *argv[])
     // triangle.png values
     int triangleWidth = 125;
     int triangleHeight = 75;
-    int trianglePosX = (screenWidth / 2) - (tableWidth / 1.70);
+    int trianglePosX = (screenWidth / 2) - (tableWidth / 1.70f);
     int trianglePosY = (screenHeight / 2) - (triangleHeight / 2);
     float initialRotation = -95;
 
@@ -49,41 +49,60 @@ int run_roulette(int argc, char *argv[])
     SDL_FRect trianglePos = {trianglePosX, trianglePosY, triangleWidth, triangleHeight};
 
     // WHEEL ROTATION
-    float rotation = 6.0;
-    float targetRotation = 6.0;
+    float rotation = 6.0f;
+    float spinSpeed = 0.0f;
+    float spinFriction = 0.99f;
     // KEYBOARD INPUT
     const bool *keys = SDL_GetKeyboardState(NULL);
-
+    // TEXT
+    const char *text = "Marko er en fucking lorteunge";
     int running = 1;
     SDL_Event event;
+
     while (running)
     {
+        //Delta time
+        Uint64 now = SDL_GetTicks();
+        float deltaTime = (now - lastTime) / 1000.0f;
+        lastTime = now;
+
         while (SDL_PollEvent(&event))
         { // Top right close button
             if (event.type == SDL_EVENT_QUIT)
             {
                 running = 0;
-            } // Press space for close
+            }
+            // R for reset
+            if (keys[SDL_SCANCODE_R])
+            {
+                spinSpeed = 0.0f;
+                rotation = 6.0f;
+            }
+        }
+            // Press space for close
             if (keys[SDL_SCANCODE_SPACE] || keys[SDL_SCANCODE_ESCAPE])
             {
                 running = 0;
             } // Key-down for spin
             if (keys[SDL_SCANCODE_DOWN])
             {
-                targetRotation += 360.0f / 37;
+                spinSpeed += 100.0f;
             }
-            if (keys[SDL_SCANCODE_R])
-            {
-                targetRotation = 5;
-            }
-        }
-        rotation += (targetRotation - rotation) * 0.05f;
+        spinSpeed *= spinFriction;
+        rotation += spinSpeed * deltaTime;
         // Rendering Part
         SDL_SetRenderDrawColor(renderer, 53, 101, 77, 255);
         SDL_RenderClear(renderer);
         SDL_RenderTextureRotated(renderer, table, NULL, &tablePos, initialRotation + rotation, NULL, SDL_FLIP_NONE);
         SDL_RenderTexture(renderer, triangle, NULL, &trianglePos);
-
+    
+        //Text
+        char buf[64];
+        SDL_snprintf(buf, sizeof(buf), "Spinspeed: %.2f", spinSpeed);
+        SDL_SetRenderScale(renderer, 3,3);
+        SDL_SetRenderDrawColor(renderer, 255,255,255,255);// WHITE
+        SDL_RenderDebugText(renderer, 10, 10, buf);
+        SDL_SetRenderScale(renderer,1,1);
         // DRAW
         SDL_RenderPresent(renderer);
         SDL_Delay(16); // 60 FPS
