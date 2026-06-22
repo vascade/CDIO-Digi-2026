@@ -12,6 +12,9 @@ RM    = rm -rf
 
 UNAME_S := $(shell uname -s)
 
+$(info CFLAGS=$(CFLAGS))
+$(info LDFLAGS=$(LDFLAGS))
+
 # --------------------
 # Windows (MinGW/MSYS)
 # --------------------
