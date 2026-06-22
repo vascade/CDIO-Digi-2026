@@ -233,7 +233,7 @@ money               .FILL #100
     neste55 
         LD R1, n
         ADD R1, R1, R0
-        STR R0, R5, #20 ;fortæller at play better. 
+        STR R0, R5, #20 ;gemmer værdien af player indput
         STR R0, R5, #17 ;fortæller at play better.
         BRnp SLUT
         BRnzp skip1
@@ -277,7 +277,7 @@ PTR_SaveR7_Sp4      .FILL SaveR7_Sp4
     begin
         GETC    ; læs første ciffer tier
         OUT
-        LD R2, PTR_ASCII_ZERO2
+        LD R2, PTR_ASCII_ZERO2_1
         LDR R2, R2, #0
         ADD R3, R0, R2      ; konverter fra ASCII til tal, gem i R3
         
@@ -335,11 +335,19 @@ PTR_ZeroST          .FILL ZeroST
 PTR_playerBet_1     .FILL playerBet
 PTR_RAND_COUNTER_1  .FILL RAND_COUNTER 
 PTR_VR5             .FILL VR5
+PSY_BUTTEN_ADDR     .FILL xFE0F         ; Den fysiske adresse på knappen
+PTR_RAND_PSYCON     .FILL RAND_COUNTER
 VR0                 .BLKW 1
+MAX_PRESS           .FILL #-15000
+MINUS_51            .FILL #-51
+PLUS_51             .FILL #51
         
     SPIN
         LD  R6, PTR_SaveR7_Sp3_1
         STR R7, R6, #0
+        
+        
+        JSR BUTTENPRESS
         
         JSR RANDOM
         ADD R1, R4, R4      ;Ganger vores random værdi fra R4 3 gange, for at finde det rigte tilsvarende værdi i WHEEL
@@ -399,6 +407,45 @@ VR0                 .BLKW 1
         LDR R7, R6, #0
         RET
     
+    BUTTENPRESS
+        LD  R6, PTR_SaveR7_Sp4_1
+        STR R7, R6, #0
+        
+        AND R4, R4, #0      ;Nulstiler tælleren
+        LD R5, MAX_PRESS    ;loader max væriden ind
+     
+    waitForPress  
+        LDI R0, PSY_BUTTEN_ADDR     ;loader buttenpress ind
+        BRz waitForPress
+        
+    countLoop    
+        ADD, R4, R4, #1         ;øger tryk tæller
+        
+        ADD R1, R4, R5
+        Brzp forceRelease       ;hvis knappen holdes ned i mere end ca. 3 sekunder. 
+        
+        LDI R0, PSY_BUTTEN_ADDR ;Tjek knappen igen
+        BRp countLoop
+        
+    forceRelease
+        LD  R2, MINUS_51        ;vi sikre at tiden er melle 10 - 60 sek med % 51
+    
+    modulo
+        ADD R4, R4, R2          ;Trejker 51 fra 
+        BRzp modulo
+        
+        LD R2, PLUS_51          ;lægger 51 til for at få den positive rest
+        ADD R4, R4, R2
+        
+        ADD R4, R4, #10         ;lægger 10 til så vi får interevalet mellem 10 - 60
+        
+        LD  R1, PTR_RAND_PSYCON ;Vi gemmer værdien af hvor længe hjulet skal spinne, både til RANDOM og til WHEEL
+        STR R4, R1, #0          ;gemer værdien.
+        
+        LD  R6, PTR_SaveR7_Sp4_1
+        LDR R7, R6, #0
+        RET
+    
     RANDOM
         LD  R6, PTR_SaveR7_Sp4_1
         STR R7, R6, #0
@@ -440,9 +487,16 @@ VR0                 .BLKW 1
         AND R4, R4, #0      ;gemmer væriden i R4
         ADD R4, R4, R0
         
+        
+        AND R0, R0, #0
+        LD  R1, PTR_RAND_PSYCON ;nulstiller knap værdien.
+        STR R0, R1, #0          
+        
         LD  R6, PTR_SaveR7_Sp4_1
         LDR R7, R6, #0
         RET
+        
+    SPINMATION
         
     CHECKWIN
         LD  R6, PTR_SaveR7_Sp4_1
@@ -617,6 +671,7 @@ VR0                 .BLKW 1
         LDR R7, R6, #0
         RET 
 
+    ;WHEEL_SPINNER
 PTR_SaveR7_Sp1_1        .FILL SaveR7_Sp1
 PTR_SaveR7_Sp2_1        .FILL SaveR7_Sp2
 PTR_SaveR7_Sp3_1        .FILL SaveR7_Sp3
