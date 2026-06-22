@@ -5,33 +5,21 @@ INC_DIR = include
 BIN_DIR = bin
 BUILD_DIR = build
 
+MKDIR = mkdir -p $1
+RM    = rm -rf
+
 # Detect OS
 ifeq ($(OS),Windows_NT)
     TARGET = $(BIN_DIR)/app.exe
 
-    # Adjust these paths to your installations
-    RAYLIB_PATH    ?= C:/raylib
-    SERIALPORT_PATH ?= C:/libserialport
+    CFLAGS += $(shell pkg-config --cflags sdl3 sdl3-image libserialport)
 
-    CFLAGS += -I$(RAYLIB_PATH)/include \
-              -I$(SERIALPORT_PATH)/include
-
-    LDFLAGS = -L$(RAYLIB_PATH)/lib \
-              -L$(SERIALPORT_PATH)/lib \
-              -lraylib \
-              -lserialport \
-              -lopengl32 \
-              -lgdi32 \
-              -lwinmm \
+    LDFLAGS = $(shell pkg-config --libs sdl3 sdl3-image libserialport) \
               -lsetupapi
-
-    MKDIR = if not exist "$(subst /,\,$1)" mkdir "$(subst /,\,$1)"
-    RM    = rmdir /s /q
 
 else
     TARGET = $(BIN_DIR)/app
 
-    RAYLIB_PREFIX     := $(shell brew --prefix raylib 2>/dev/null)
     SERIALPORT_PREFIX := $(shell brew --prefix libserialport 2>/dev/null)
 
     # Fall back to /opt if brew didn't find it
@@ -43,20 +31,12 @@ else
         SERIALPORT_LIB = $(SERIALPORT_PREFIX)/lib
     endif
 
-    CFLAGS += -I$(RAYLIB_PREFIX)/include \
+    CFLAGS += $(shell pkg-config --cflags sdl3 sdl3-image) \
               -I$(SERIALPORT_INC)
 
-    LDFLAGS = -L$(RAYLIB_PREFIX)/lib \
+    LDFLAGS = $(shell pkg-config --libs sdl3 sdl3-image) \
               -L$(SERIALPORT_LIB) \
-              -lraylib \
-              -lserialport \
-              -framework OpenGL \
-              -framework Cocoa \
-              -framework IOKit \
-              -framework CoreVideo
-
-    MKDIR = mkdir -p $1
-    RM    = rm -rf
+              -lserialport
 endif
 
 SRCS = $(wildcard $(SRC_DIR)/*.c)
@@ -73,13 +53,8 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-ifeq ($(OS),Windows_NT)
-	-$(RM) $(BUILD_DIR)
-	-del /q $(TARGET) 2>nul
-else
 	$(RM) $(BUILD_DIR)
 	rm -f $(TARGET)
-endif
 
 run: $(TARGET)
 	$(TARGET)

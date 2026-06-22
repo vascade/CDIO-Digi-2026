@@ -1,12 +1,11 @@
 #include "game.h"
-#include "raylib.h"
-
+#include "SDLroulette.h"
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
-int main(void) {
-    //roulette();
-    serial();
+int main(int argc, char *argv[]) {
+    run_roulette(argc, argv);
+    //serial();
 
     return 0;
 }

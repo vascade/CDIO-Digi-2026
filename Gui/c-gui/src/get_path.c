@@ -1,6 +1,6 @@
 #include <string.h>
 #include <game.h>
-
+#include <stdio.h>
 const char* get_path(const char* filename) {
     static char path[256];
     #ifdef _WIN32

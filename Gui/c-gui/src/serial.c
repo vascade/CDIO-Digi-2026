@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "game.h"
-#include "libserialport.h"
+/*#include "libserialport.h"
 
 void serial() {
     // Setup vars
@@ -34,4 +34,4 @@ void serial() {
 
 
     sp_free_port_list(ports);
-}
+} */
