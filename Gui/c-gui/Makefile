@@ -1,42 +1,49 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Iinclude -O2
-SRC_DIR = src
-INC_DIR = include
-BIN_DIR = bin
+
+SRC_DIR   = src
+INC_DIR   = include
+BIN_DIR   = bin
 BUILD_DIR = build
+
+CFLAGS = -Wall -Wextra -O2 -I$(INC_DIR)
 
 MKDIR = mkdir -p $1
 RM    = rm -rf
 
-# Detect OS
+UNAME_S := $(shell uname -s)
+
+# --------------------
+# Windows (MinGW/MSYS)
+# --------------------
 ifeq ($(OS),Windows_NT)
+
     TARGET = $(BIN_DIR)/app.exe
 
     CFLAGS += $(shell pkg-config --cflags sdl3 sdl3-image libserialport)
 
-    LDFLAGS = $(shell pkg-config --libs sdl3 sdl3-image libserialport) \
-              -lsetupapi
+    LDFLAGS += $(shell pkg-config --libs sdl3 sdl3-image libserialport)
+    LDFLAGS += -lsetupapi
 
-else
+# --------------------
+# macOS
+# --------------------
+else ifeq ($(UNAME_S),Darwin)
+
     TARGET = $(BIN_DIR)/app
 
-    SERIALPORT_PREFIX := $(shell brew --prefix libserialport 2>/dev/null)
+    CFLAGS += $(shell pkg-config --cflags sdl3 sdl3-image libserialport)
+    LDFLAGS += $(shell pkg-config --libs sdl3 sdl3-image libserialport)
 
-    # Fall back to /opt if brew didn't find it
-    ifeq ($(SERIALPORT_PREFIX),)
-        SERIALPORT_INC = /opt/include
-        SERIALPORT_LIB = /opt/lib
-    else
-        SERIALPORT_INC = $(SERIALPORT_PREFIX)/include
-        SERIALPORT_LIB = $(SERIALPORT_PREFIX)/lib
-    endif
+# --------------------
+# Linux
+# --------------------
+else
 
-    CFLAGS += $(shell pkg-config --cflags sdl3 sdl3-image) \
-              -I$(SERIALPORT_INC)
+    TARGET = $(BIN_DIR)/app
 
-    LDFLAGS = $(shell pkg-config --libs sdl3 sdl3-image) \
-              -L$(SERIALPORT_LIB) \
-              -lserialport
+    CFLAGS += $(shell pkg-config --cflags sdl3 sdl3-image libserialport)
+    LDFLAGS += $(shell pkg-config --libs sdl3 sdl3-image libserialport)
+
 endif
 
 SRCS = $(wildcard $(SRC_DIR)/*.c)
@@ -57,6 +64,6 @@ clean:
 	rm -f $(TARGET)
 
 run: $(TARGET)
-	$(TARGET)
+	./$(TARGET)
 
 .PHONY: all clean run
