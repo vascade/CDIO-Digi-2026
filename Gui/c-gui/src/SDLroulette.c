@@ -23,6 +23,7 @@ int run_roulette(int argc, char *argv[])
     // Window and renderer creation
     win = SDL_CreateWindow("Roulette", screenWidth, screenHeight, SDL_WINDOW_MINIMIZED);
     renderer = SDL_CreateRenderer(win, NULL);
+    SDL_SetRenderVSync(renderer, 1); // vsync
     SDL_Texture *table;
     SDL_Texture *triangle;
 
@@ -52,7 +53,7 @@ int run_roulette(int argc, char *argv[])
     SDL_FRect trianglePos = {trianglePosX, trianglePosY, triangleWidth, triangleHeight};
 
     // Serial Vars
-    char byte;
+    int byte;
     int result;
 
     // WHEEL ROTATION
@@ -63,8 +64,13 @@ int run_roulette(int argc, char *argv[])
     int running = 1;
     SDL_Event event;
 
+    // Delta Time
+    Uint64 last = SDL_GetTicks();
     while (running)
     {
+        Uint64 now = SDL_GetTicks();
+        float dt = (now - last) / 1000.0f;
+        last = now;
         while (SDL_PollEvent(&event))
         { // Top right close button
             if (event.type == SDL_EVENT_QUIT)
@@ -87,14 +93,25 @@ int run_roulette(int argc, char *argv[])
             target_rotation -= 360.0f / 37;
         }
 
-        rotation += (target_rotation - rotation) * 0.05f;
-
         // Serial
-        result = sp_blocking_read(ports[port_num], &byte, 1, 0);
+        result = sp_nonblocking_read(ports[port_num], &byte, 2);
 
         if (result == 1) {
-            target_rotation -= 360.0f / 37;
+            printf("dec=%u hex=0x%02X\n", (unsigned char)byte, (unsigned char)byte);
+
+            if ((unsigned int)byte == 253) {
+                //printf("Resetting...\n");
+                target_rotation = 6.0f;
+            }
+
+            if ((unsigned int)byte != 253) {
+                //printf("Rotating\n");
+                target_rotation -= 360.0f / 37;
+            }
         }
+        
+
+        rotation += (target_rotation - rotation) * 0.05f;
 
         // Rendering Part
         SDL_SetRenderDrawColor(renderer, 53, 101, 77, 255);
@@ -104,23 +121,24 @@ int run_roulette(int argc, char *argv[])
 
         // Text
         char buf[64];
+        char fps_buf[32];
+        SDL_snprintf(fps_buf, sizeof(fps_buf), "FPS: %.0f", 1.0f / dt);
         SDL_snprintf(buf, sizeof(buf), "Target Rotation: %.2f", target_rotation);
         SDL_SetRenderScale(renderer, 3, 3);
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // WHITE
         SDL_RenderDebugText(renderer, 10, 10, buf);
+        SDL_RenderDebugText(renderer, 10, 40, fps_buf);
         SDL_SetRenderScale(renderer, 1, 1);
         // DRAW
         SDL_RenderPresent(renderer);
-        SDL_Delay(16); // 60 FPS
+    }
 
-}
-
-// Destroy
-sp_free_port_list(ports);
-SDL_DestroyRenderer(renderer);
-SDL_DestroyWindow(win);
-SDL_DestroyTexture(table);
-SDL_DestroyTexture(triangle);
-SDL_Quit();
-return 0;
+    // Destroy
+    sp_free_port_list(ports);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(win);
+    SDL_DestroyTexture(table);
+    SDL_DestroyTexture(triangle);
+    SDL_Quit();
+    return 0;
 }
