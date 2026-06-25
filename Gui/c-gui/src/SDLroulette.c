@@ -21,22 +21,22 @@ int run_roulette(int argc, char *argv[])
     int screenHeight = mode->h;
 
     // Window and renderer creation
-    win = SDL_CreateWindow("Roulette", screenWidth, screenHeight, SDL_WINDOW_MINIMIZED);
+    win = SDL_CreateWindow("Roulette", screenWidth, screenHeight, 1);
     renderer = SDL_CreateRenderer(win, NULL);
     SDL_SetRenderVSync(renderer, 1); // vsync
     SDL_Texture *table;
     SDL_Texture *triangle;
 
     // table.png values
-    int tableWidth = 1000;
-    int tableHeight = 1000;
+    int tableWidth = 700;
+    int tableHeight = 700;
     int tablePosX = (screenWidth / 2) - (tableWidth / 2);
     int tablePosY = (screenHeight / 2) - (tableHeight / 2);
 
     // triangle.png values
     int triangleWidth = 125;
     int triangleHeight = 75;
-    int trianglePosX = (screenWidth / 2) - (tableWidth / 1.70f);
+    int trianglePosX = (screenWidth / 2) - (tableWidth / 1.50f);
     int trianglePosY = (screenHeight / 2) - (triangleHeight / 2);
     float initialRotation = -95;
 
