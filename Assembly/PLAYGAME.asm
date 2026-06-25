@@ -501,7 +501,7 @@ PTR_VR2_1           .FILL VR2
         ADD R0, R0, R3
         
         ADD R1, R0, R0      ;R1 = seed * 2 Vi laver en masse gange for at komme op på 75 da c og m skal være indbrydes primiske
-        ADD R2, R1, R1      ;R2 = seed * 4 og så skal a-1 = 74 hvilket er delelig med primfaktor 2
+        ADD R2, R1, R1      ;R2 = seed * 4 
         ADD R2, R2, R2      ;R2 = seed * 8
         ADD R0, R0, R2      ;R0 = seed * 9
         ADD R2, R2, R2      ;R2 = seed * 16
