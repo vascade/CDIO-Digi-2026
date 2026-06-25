@@ -3,16 +3,6 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity LC3Zybo_top is
   port (
       clk125 : in std_logic;
@@ -23,14 +13,6 @@ entity LC3Zybo_top is
       -- ADDED STUDENT CODE---
       rx_pin : in std_logic ;
       tx_pin : out std_logic
-      -- UART
-      --rx_data_2          : in  std_logic_vector(7 downto 0);
-      --rx_rd_2            : out std_logic;
-      --rx_empty_2         : in  std_logic;
-      --tx_data_2          : out std_logic_vector(7 downto 0);
-      --tx_wr_2           : out std_logic;
-      --tx_full_2         : in  std_logic
-      ------------------------
   );
 end LC3Zybo_top;
 
@@ -94,13 +76,6 @@ begin
       -- ADDED STUDENT CODE---
       rx_pin => rx_pin,
       tx_pin => tx_pin
-      --rx_data_2 => rx_data_2,
-      --rx_rd_2 => rx_rd_2,
-      --rx_empty_2 => rx_empty_2,
-      --tx_data_2 => tx_data_2,
-      --tx_wr_2 => tx_wr_2,
-      --tx_full_2 => tx_full_2
-      ------------------------
 	);
 	
 	--Here we instantiate the component that allows us to connect to the 

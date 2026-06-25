@@ -97,13 +97,6 @@ begin
 		-- ADDED STUDENT CODE---
         rx_pin => rx_pin,
         tx_pin => tx_pin
-        --rx_data_2 => rx_data_2,
-        --rx_rd_2 => rx_rd_2,
-        --rx_empty_2 => rx_empty_2,
-        --tx_data_2 => tx_data_2,
-        --tx_wr_2 => tx_wr_2,
-        --tx_full_2 => tx_full_2
-        ------------------------
 	);
 	
 	--Instance of the debuging module for the LC3 computer

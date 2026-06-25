@@ -135,23 +135,6 @@ begin
 		 );
    data_dbg <= data_in when RE='1' else data_out;
 	-- <<< LC3 CPU using multiplexers end of instantiation>>>	
-	
-		 
---	-- <<< LC3 CPU using tristates for the data bus>>>
---	lc3_t: entity work.lc3_wrapper_tristates
---	port map (
---		 clk        => clk,
---		 clk_enable => cpu_clk_enable,
---		 reset      => sys_reset,
---		 program    => sys_program,
---		 addr       => address,
---		 data       => data,
---		 WE         => WE,
---		 RE         => RE 
---		 );
---   data_dbg <= data;
---	-- <<< LC3 CPU using tristates end of instantiation>>>
-	
 	--Information that is sent to the debugging module
    address_dbg <= address;
    RE_dbg <= RE;
@@ -205,8 +188,6 @@ begin
           wait_time => timer_wait_time,
           timer_done => timer_done_sig
           );
-            
-            
             
      process(RE, WE, address, rx_empty, rx_data, tx_full, ram_din, sw, psw, btn, pbtn, data_out, rx_empty_2, rx_data_2, tx_full_2)
            begin
