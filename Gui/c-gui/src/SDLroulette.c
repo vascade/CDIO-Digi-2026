@@ -94,7 +94,7 @@ int run_roulette(int argc, char *argv[])
         }
 
         // Serial
-        result = sp_nonblocking_read(ports[port_num], &byte, 2);
+        result = sp_nonblocking_read(ports[port_num], &byte, 1);
 
         if (result == 1) {
             printf("dec=%u hex=0x%02X\n", (unsigned char)byte, (unsigned char)byte);
@@ -103,9 +103,11 @@ int run_roulette(int argc, char *argv[])
                 //printf("Resetting...\n");
                 target_rotation = 6.0f;
             }
+            else if ((unsigned int)byte == 255) {
+                target_rotation = 6.0f;
+            }
 
-            if ((unsigned int)byte != 253) {
-                //printf("Rotating\n");
+            else {
                 target_rotation -= 360.0f / 37;
             }
         }
