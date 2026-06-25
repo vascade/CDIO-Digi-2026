@@ -18,7 +18,6 @@ PTR_PLAYERVALUES1_1 .FILL PLAYERVALUES1
 PTR_ASCII_ZERO2_1   .FILL ASCII_ZERO
 PTR_PlayerBetString     .FILL PlayerBetString
 money1                  .STRINGZ "Money: "
-
 money               .FILL #100
     ;play
     MAIN
@@ -113,6 +112,9 @@ money               .FILL #100
         
         ADD R1, R0, #-6
         BRnp neste01
+        LDI R0, PTR_GUIWHEEL
+        LD  R1, rForGUI 
+        STR R1, R0, #0
         JSR SPIN 
         BRnzp resetBet
     
@@ -345,10 +347,8 @@ PTR_SaveR7_Sp3_2    .FILL SaveR7_Sp3
 PTR_SaveR7_Sp4_2    .FILL SaveR7_Sp4
 PTR_SaveR7_Sp5_2    .FILL SaveR7_Sp5
 PTR_WHEEL_2         .FILL WHEEL
-PTR_VR2_1           .FILL VR2
 PTR_delayValueB     .FILL delayValueB
 delayValueB         .FILL #1
-VR0                 .BLKW 1
 offsetMax           .FILL #-111
 PTR_ValueOff        .FILL valueOff
 valueOff            .BLKW 1
@@ -363,25 +363,21 @@ PLUS_51             .FILL #51
 GANGE_100           .FILL #100
 GUIWHEEL            .FILL xFE07
 PTR_GUIWHEEL        .FILL GUIWHEEL
+SEED                .BLKW 1
 SEGEMENT7           .FILL xFE12
 PTR_SEGEMENT7       .FILL SEGEMENT7
-sForGUI             .FILL x0073
+sForGUI             .FILL #1
 PTR_sForGUI         .FILL sForGUI
-rForGUI             .FILL x0072
+rForGUI             .FILL #999
 PTR_rForGUI         .FILL rForGUI
 PTR_VR5             .FILL VR5
+VR4_offset          .BLKW 1
+VR0                 .BLKW 1
+
         
     SPIN
         LD  R6, PTR_SaveR7_Sp3_2
         STR R7, R6, #0
-        
-        LDI R0, PTR_GUIWHEEL
-        LD  R1, rForGui 
-        STR R1, R0, #0
-        
-        LDI R0, PTR_GUIWHEEL
-        LD  R1, rForGui 
-        STR R1, R0, #0
         
         JSR BUTTENPRESS
         
@@ -391,10 +387,17 @@ PTR_VR5             .FILL VR5
         
         LD  R2, PTR_WHEEL_2
         ADD R2, R2, R4
-        
-        ST R2, PTR_VR2_1    ;R2 gemmer nu den rigtige adresse for hvor tallet i wheel ligger
+        ST  R2, PTR_VR2_1    ;R2 gemmer nu den rigtige adresse for hvor tallet i wheel ligger
         
         LDR R0, R2, #0      ;loader 
+        
+        ADD R5, R0, #0
+        
+        JSR BCDCONVERT
+        LDI R6, PTR_SEGEMENT7
+        STR R0, R6, #0
+        
+        ADD R0, R5, #0
         JSR PRINT_NUMBER
         LD R0, PTR_Enter_2  ;Gør næste linje klar
         PUTS
@@ -440,12 +443,12 @@ PTR_VR5             .FILL VR5
     next002
         JSR CHECKWIN
         
-        LD  R6, PTR_SaveR7_Sp3_1
+        LD  R6, PTR_SaveR7_Sp3_2
         LDR R7, R6, #0
         RET
     
     BUTTENPRESS
-        LD  R6, PTR_SaveR7_Sp4_1
+        LD  R6, PTR_SaveR7_Sp4_2
         STR R7, R6, #0
         
         AND R4, R4, #0      ;Nulstiler tælleren
@@ -473,16 +476,8 @@ PTR_VR5             .FILL VR5
         BRp countLoop
         
     forceRelease
-        ;LD  R2, MINUS_51        ;vi sikre at tiden er melle 10 - 60 sek med % 51
+        
         STI R4, PTR_randomValue3  ;gemmer værdien af R4 til randomizer  
-    
-    ;modulo
-        ;ADD R4, R4, R2          ;Trækker 51 fra 
-        ;BRzp modulo
-        
-        ;LD R2, PLUS_51          ;lægger 51 til for at få den positive rest
-       ; ADD R4, R4, R2
-        
         
         LD R0, SEKUND10          ;lægger 10 til så vi får interevalet mellem 10 - 60
         ADD R4, R4, R0
@@ -490,12 +485,14 @@ PTR_VR5             .FILL VR5
         LD  R1, PTR_RAND_PSYCON ;Vi gemmer værdien af hvor længe hjulet skal spinne, både til RANDOM og til WHEEL
         STR R4, R1, #0          ;gemer værdien.
         
-        LD  R6, PTR_SaveR7_Sp4_1
+        LD  R6, PTR_SaveR7_Sp4_2
         LDR R7, R6, #0
         RET
     
+PTR_VR2_1           .FILL VR2    
+
     RANDOM
-        LD  R6, PTR_SaveR7_Sp4_1
+        LD  R6, PTR_SaveR7_Sp4_2
         STR R7, R6, #0
         
         LD R3, PTR_randomValue3 ;værdien fra hvad buttepress er blevet sat til. 
@@ -504,7 +501,7 @@ PTR_VR5             .FILL VR5
         ADD R0, R0, R3
         
         ADD R1, R0, R0      ;R1 = seed * 2 Vi laver en masse gange for at komme op på 75 da c og m skal være indbrydes primiske
-        ADD R2, R1, R1      ;R2 = seed * 4 og så skal a-1 = 74 hvilket er delelig med primfaktor 2
+        ADD R2, R1, R1      ;R2 = seed * 4 
         ADD R2, R2, R2      ;R2 = seed * 8
         ADD R0, R0, R2      ;R0 = seed * 9
         ADD R2, R2, R2      ;R2 = seed * 16
@@ -560,17 +557,19 @@ PTR_VR5             .FILL VR5
         LD R0, PTR_WHEEL_1
         ADD R0, R0, R4
         LDR R0, R0, #0
-        JSR PRINT_NUMBER    ;udskrive hex værdien af tallet på wheel
         
-        LDI R6, SEGEMENT7   
+        ADD R5, R0, #0
+        
+        JSR BCDCONVERT
+        
+        LDI R6, PTR_SEGEMENT7   ;sender hex værdi til 7segment
         STR R0, R6, #0
+        
+        ADD R0, R5, #0
+        JSR PRINT_NUMBER        ;udskrive dec værdien af tallet på wheel
         
         LD R0, PTR_Enter_2  ;Gør næste linje klar
         PUTS
-        
-        LDI R0, PTR_GUIWHEEL
-        AND R6, R6, #0
-        STR R6, R0, #0
         
         LD R0, timer    
         STR R3, R0, #0          ;timer starter
@@ -578,7 +577,7 @@ PTR_VR5             .FILL VR5
         LDI R0, timer_done      ;timer done
         BRz timerLoop
         
-        LDI R0, PTR_GUIWHEEL
+        LDI R0, PTR_GUIWHEEL    ;sender spin til gui
         LD  R6, sForGUI
         STR R6, R0, #0
         
@@ -612,6 +611,8 @@ PTR_VR5             .FILL VR5
         LD  R1, PTR_RAND_PSYCON ;nulstiller knap værdien.
         STR R0, R1, #0   
         
+        ST R4, VR4_offset
+        
         LD  R6, PTR_SaveR7_SPIN
         LDR R7, R6, #0
         RET
@@ -632,18 +633,18 @@ PTR_VR5             .FILL VR5
         ST  R0, VR0
         
         LD  R5, PTR_PLAYERVALUES_TABLE      ;Loader hver player values ind
-        ADD R5, R5, R0
-        LDR R5, R5, #0
+        ADD R5, R5, R0                      ;går til næste player
+        LDR R5, R5, #0                      ;gemmer værdien af playerns bet i R5
         
         LDR R1, R5, #17                     ;finder om player har bettet
         BRn noBetPlaced
         
-        JSR SAVE10LAST
+        JSR SAVE10LAST                      ;gemmer værdien af selve hjulet på player last moves
                 
         LDR R1, R5, #20                     ;lægger værdien af n ind i R1, 
         BRn Next011                         ;chekcer om der er blevet bettet med n
         
-        LD  R2, PTR_VR2                     ;Henter adressen på hvor fra Wheel landte
+        LD  R2, PTR_VR2_1                   ;Henter adressen på hvor fra Wheel landte
         LDR R3, R2, #0                      ;Tal værdien ligger i R3
         NOT R3, R3                          ;Vender R3 om altså hjulets talværdi
         ADD R3, R3, #1                      ; +1 da 2 signed
@@ -663,11 +664,11 @@ PTR_VR5             .FILL VR5
         BRnzp Next011
 
     Next011  
-        LD  R2, PTR_VR2                     ;Henter adressen på hvor fra Wheel landte
+        LD  R2, PTR_VR2_1                   ;Henter adressen på hvor fra Wheel landte
         LDR R1, R5, #19                     ;lægger værdien af o/e ind i R1, 
         BRn Next012                         ;checker om værdien er blevet bettet på                        
         
-        LD  R2, PTR_VR2                     ;Henter adressen på hvor fra Wheel landte
+        LD  R2, PTR_VR2_1                   ;Henter adressen på hvor fra Wheel landte
         LDR R3, R2, #2                      ;Tal værdien ligger i R3
         NOT R3, R3                          ;Vender R3 om altså hjulets talværdi
         ADD R3, R3, #1                      ; +1 da 2 signed
@@ -687,12 +688,12 @@ PTR_VR5             .FILL VR5
         BRnzp Next012
         
     Next012
-        LD  R2, PTR_VR2                     ;Henter adressen på hvor fra Wheel landte
+        LD  R2, PTR_VR2_1                   ;Henter adressen på hvor fra Wheel landte
         LDR R1, R5, #18                     ;lægger værdien af o/e ind i R1, 
         BRn Next013                         ;checker om værdien er blevet bettet på                        
         BRz maybeX35
         
-        LD  R2, PTR_VR2                     ;Henter adressen på hvor fra Wheel landte
+        LD  R2, PTR_VR2_1                   ;Henter adressen på hvor fra Wheel landte
         LDR R3, R2, #1                      ;Tal værdien ligger i R3
         NOT R3, R3                          ;Vender R3 om altså hjulets talværdi
         ADD R3, R3, #1                      ; +1 da 2 signed
@@ -701,7 +702,7 @@ PTR_VR5             .FILL VR5
         BRnzp Lost2
         
     maybeX35
-        LD  R2, PTR_VR2                     ;Henter adressen på hvor fra Wheel landte
+        LD  R2, PTR_VR2_1                     ;Henter adressen på hvor fra Wheel landte
         LDR R3, R2, #1                      ;Tal værdien ligger i R3
         NOT R3, R3                          ;Vender R3 om altså hjulets talværdi
         ADD R3, R3, #1                      ; +1 da 2 signed
@@ -798,34 +799,88 @@ PTR_VR5             .FILL VR5
         LD  R6, PTR_SaveR7_Sp5_1
         STR R7, R6, #0
         
-        LDR R1, R5, #14     ;gemmer værdien af plads 9
-        LDR R2, R5, #15     ;gemmer værdien af plads 10
+        ST  R1, SaveR1_1
+        ST  R2, SaveR2_1
+        ST  R3, SaveR3_1
+        ST  R4, SaveR4_1
+        
+        ADD R1, R5, #14     ;gemmer værdien af plads 9
+        ADD R2, R5, #15     ;gemmer værdien af plads 10
+        AND R3, R3, #0
+        ADD R3, R3, #9
     
     repeat    
-        LDR R4, R2, #0      ;Tager den gamle plads og sætter den i R4 
-        STR R4, R1, #0      ;loader den nye værdi ind i den plads
+        LDR R4, R1, #0      ;Tager den gamle plads værdi og sætter den i R4 
+        STR R4, R2, #0      ;loader den nye værdi ind i den plads
         
         ADD R1, R1, #-1     ;gå videre til næste adresse
         ADD R2, R2, #-1
         ADD R3, R3, #-1     ;-counter indtil den er positiv
         BRp repeat
         
+        LD  R4, PTR_VR2_1
+        LDR R0, R4, #0
+        STR R0, R5, #6
+        
+        LD  R1, SaveR1_1
+        LD  R2, SaveR2_1
+        LD  R3, SaveR3_1
+        LD  R4, SaveR4_1
+        
+        
+        LD  R6, PTR_SaveR7_Sp5_1
+        LDR R7, R6, #0
+        RET 
+        
+    BCDCONVERT
+        LD  R6, PTR_SaveR7_Sp5_1
+        STR R7, R6, #0
+    
+        ST  R1, SaveR1_1
+        ST  R2, SaveR2_1
+        ST  R3, SaveR3_1
+        
+        AND R1, R1, #0
+        AND R2, R2, #0
+        ADD R2, R2, #-10    ;LOADER 10 IND I R2
+        
+    tenLoop
+        ADD R3, R0, R2      ;trækker 10 fra R0
+        BRn done10          ;hvis negativ er der ikke flere 10'ere
+        ADD R0, R0, R2      ;R0 = R0 -10
+        ADD R1, R1, #1      ;tæler en tier mere
+        BRnzp tenLoop
+        
+    done10                  ;R0 indholder resten aka enere og R1 er 10'erne, som nu skal ganges med 16
+        ADD R1, R1, R1      ;*2
+        ADD R1, R1, R1      ;*4
+        ADD R1, R1, R1      ;*8
+        ADD R1, R1, R1      ;*16
+        
+        ADD R0, R0, R1      ;LÆGGER TIERE OG ENERE SAMMEN
+        
+        LD  R1, SaveR1_1
+        LD  R2, SaveR2_1
+        LD  R3, SaveR3_1
+        
         LD  R6, PTR_SaveR7_Sp5_1
         LDR R7, R6, #0
         RET 
 
-    ;WHEEL_SPINNER
 PTR_SaveR7_Sp1_1        .FILL SaveR7_Sp1
 PTR_SaveR7_Sp2_1        .FILL SaveR7_Sp2
 PTR_SaveR7_Sp3_1        .FILL SaveR7_Sp3
 PTR_SaveR7_Sp4_1        .FILL SaveR7_Sp4
 PTR_SaveR7_Sp5_1        .FILL SaveR7_Sp5
 PTR_PLAYERVALUES_TABLE  .FILL PLAYERVALUES_TABLE
+SaveR1_1                .BLKW 1
+SaveR2_1                .BLKW 1
+SaveR3_1                .BLKW 1
+SaveR4_1                .BLKW 1
 PTR_playerBet           .FILL playerBet
 PTR_ASCII_ZERO2         .FILL ASCII_ZERO
 PTR_SaveR7              .FILL SaveR7
 PTR_Enter               .FILL Enter
-SEED                    .BLKW 1
 COUNT_9                 .FILL 9
 LCG_C                   .FILL #74
 NEG_37                  .FILL #-37
@@ -1002,17 +1057,24 @@ PTR_RETURN4   .FILL RETURN4
         LD  R6, PTR_SaveR7_2
         STR R7, R6, #0
         
-        AND R1, R1, #0
-        ADD R1, R1, #9
+        LEA R0, msg10Last
+        PUTS
+        
+        ADD R1, R5, #6      ;start af listen 
+        AND R2, R2, #0
+        ADD R2, R2, #10     ;Tæller til 10
     
-        LDR R0, R5, #5  ;henter playværdi ind i 
     repeat1
-        ADD R0, R0, #1
-        OUT
+        LDR R0, R1, #0      ;Henter tallet
+        JSR PRINT_NUMBER    ;får printet tallet ud af 
         
-        ADD R1, R1, #-1
+        LD  R0, PTR_Enter_1
+        PUTS
+        
+        ADD R1, R1, #1
+        
+        ADD R2, R2, #-1
         BRp repeat1
-        
         
         LD R6, PTR_SaveR7_2
         LDR R7, R6, #0
@@ -1114,6 +1176,7 @@ NEG_TEN         .FILL #-10
 ASCII_PLUS48    .FILL #48
 
 PTR_Enter_1         .FILL Enter
+msg10Last           .STRINGZ "10 Last moves from start to end\n"
 Enter               .STRINGZ "\n"
 start               .STRINGZ "PLAY\n" 
 startState          .STRINGZ "CHOOSE 1 FOR EDIT PLAYER, CHOOSE 2 FOR BETTING\n"
@@ -1132,6 +1195,8 @@ ZeroST              .STRINGZ "Zero"
 ASCII_ZERO          .FILL #-48 
 ASCII_TOSTRING      .FILL #48
 RAND_COUNTER        .FILL #677
+
+
 
 StartPenge          .FILL #100
 
