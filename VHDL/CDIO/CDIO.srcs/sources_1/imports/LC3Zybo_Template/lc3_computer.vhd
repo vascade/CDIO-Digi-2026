@@ -4,16 +4,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity lc3_computer is
    port (
 		--System clock
@@ -25,19 +15,19 @@ entity lc3_computer is
       sw               : in  std_logic_vector(7 downto 0);
       hex              : out std_logic_vector(15 downto 0); --16 bit hexadecimal value (shown on 7-seg sisplay)
 
-		--Physical I/0 (IO on the Zybo FPGA)
-		pbtn				  : in  std_logic_vector(3 downto 0);
-		psw				  : in  std_logic_vector(3 downto 0);
-		pled				  : out  std_logic_vector(2 downto 0);
+	  --Physical I/0 (IO on the Zybo FPGA)
+	  pbtn				  : in  std_logic_vector(3 downto 0);
+	  psw				  : in  std_logic_vector(3 downto 0);
+	  pled				  : out  std_logic_vector(2 downto 0);
 
-		--VIO serial
+	  --VIO serial
 	  rx_data          : in  std_logic_vector(7 downto 0);
       rx_rd            : out std_logic;
       rx_empty         : in  std_logic;
       tx_data          : out std_logic_vector(7 downto 0);
       tx_wr            : out std_logic;
       tx_full          : in  std_logic;
-		sink             : out std_logic;
+	  sink             : out std_logic;
 
       --Debug
       address_dbg      : out std_logic_vector(15 downto 0);
@@ -45,7 +35,7 @@ entity lc3_computer is
       RE_dbg           : out std_logic;
       WE_dbg           : out std_logic;
 		
-		--LC3 CPU inputs
+	  --LC3 CPU inputs
       cpu_clk_enable   : in  std_logic;
       sys_reset        : in  std_logic;
       sys_program      : in  std_logic;
@@ -57,27 +47,6 @@ entity lc3_computer is
 end lc3_computer;
 
 architecture Behavioral of lc3_computer is
-   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
-   ---<<<<< Pregenerated code >>>>>---
-   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
-
-	--Making	sure	that	our	output	signals	are	not	merged/removed	during	
-	-- synthesis. We	achieve	this	by	setting	the keep	attribute for	all	our	outputs
-	-- It's good to uncomment the following attributs if you get some errors with multiple 
-	-- drivers for a signal.
---	attribute	keep:string;
---	attribute	keep	of	led			: signal	is	"true";
---	attribute	keep	of	pled			: signal	is	"true";
---	attribute	keep	of	hex			: signal	is	"true";
---	attribute	keep	of	rx_rd			: signal	is	"true";
---	attribute	keep	of	tx_data		: signal	is	"true";
---	attribute	keep	of	tx_wr			: signal	is	"true";
---	attribute	keep	of	address_dbg	: signal	is	"true";
---	attribute	keep	of	data_dbg		: signal	is	"true";
---	attribute	keep	of	RE_dbg		: signal	is	"true";
---	attribute	keep	of	WE_dbg		: signal	is	"true";
---	attribute	keep	of	sink			: signal	is	"true";
-
    --Creating user friently names for the buttons
    alias btn_u : std_logic is btn(0); --Button UP
    alias btn_l : std_logic is btn(1); --Button LEFT
@@ -91,99 +60,55 @@ architecture Behavioral of lc3_computer is
    signal sink_btn : std_logic;
    signal sink_pbtn : std_logic;
    signal sink_uart : std_logic;
-   
-	-- Memory interface signals
-	signal address: std_logic_vector(15 downto 0);
-	signal data, data_in, data_out: std_logic_vector(15 downto 0); -- data inputs
-	signal RE, WE:  std_logic;
+   -- Memory interface signals
+   signal address: std_logic_vector(15 downto 0);
+   signal data, data_in, data_out: std_logic_vector(15 downto 0); -- data inputs
+   signal RE, WE:  std_logic;
 
 
-	-- I/O constants for addr from 0xFE00 to 0xFFFF:
-    constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- VIO - Serial IN (terminal keyboard) -- KBSR 
-    constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- VIO - Keyboard Data Register - KBDR
-    constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- VIO - Serial OUT (terminal  display) - DSR
-    constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- VIO - Display Data Register -- DDR
-    constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches 
-    constant IO_PSW     : std_logic_vector(15 downto 0) := X"FE0B";  -- Physical Switches	
-	constant IO_BTN     : std_logic_vector(15 downto 0) := X"FE0e";  -- Buttons
- 	constant IO_PBTN    : std_logic_vector(15 downto 0) := X"FE0F";  -- Physical Buttons	
-	constant IO_SSEG    : std_logic_vector(15 downto 0) := X"FE12";  -- 7 segment
-	constant IO_LED     : std_logic_vector(15 downto 0) := X"FE16";  -- Leds
-	constant IO_PLED    : std_logic_vector(15 downto 0) := X"FE17";  -- Physical Leds  
-	---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
+   -- I/O constants for addr from 0xFE00 to 0xFFFF:
+   constant STDIN_S    : std_logic_vector(15 downto 0) := X"FE00";  -- VIO - Serial IN (terminal keyboard) -- KBSR 
+   constant STDIN_D    : std_logic_vector(15 downto 0) := X"FE02";  -- VIO - Keyboard Data Register - KBDR
+   constant STDOUT_S   : std_logic_vector(15 downto 0) := X"FE04";  -- VIO - Serial OUT (terminal  display) - DSR
+   constant STDOUT_D   : std_logic_vector(15 downto 0) := X"FE06";  -- VIO - Display Data Register -- DDR
+   constant IO_SW      : std_logic_vector(15 downto 0) := X"FE0A";  -- Switches 
+   constant IO_PSW     : std_logic_vector(15 downto 0) := X"FE0B";  -- Physical Switches	
+   constant IO_BTN     : std_logic_vector(15 downto 0) := X"FE0e";  -- Buttons
+   constant IO_PBTN    : std_logic_vector(15 downto 0) := X"FE0F";  -- Physical Buttons	
+   constant IO_SSEG    : std_logic_vector(15 downto 0) := X"FE12";  -- 7 segment
+   constant IO_LED     : std_logic_vector(15 downto 0) := X"FE16";  -- Leds
+   constant IO_PLED    : std_logic_vector(15 downto 0) := X"FE17";  -- Physical Leds  
+   ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
    ---<<<<< End of pregenerated code >>>>>---
    ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
    ------------------------------------------
    
-   ----------------------------Student own signals
-       signal ram_din : std_logic_vector(15 downto 0);
-       signal hex_reg : std_logic_vector(15 downto 0);
-       signal led_reg : std_logic_vector(15 downto 0);
-       signal pled_reg : std_logic_vector(15 downto 0);
-      -- UART --
-       signal tx_data_int : std_logic_vector(7 downto 0);
-       signal rx_data_int : std_logic_vector(7 downto 0);
-       signal rx_data_2  : std_logic_vector(7 downto 0);
-       signal rx_empty_2 : std_logic;
-       signal tx_full_2  : std_logic;
-       signal rx_rd_2    : std_logic;
-       signal tx_wr_2    : std_logic;
-       signal tx_data_2  : std_logic_vector(7 downto 0);
-       constant STDIN_S_2  : std_logic_vector(15 downto 0) := X"FE01";  -- UART - SERIAL IN (terminal keyboard)-- KBSR
-       constant STDIN_D_2  : std_logic_vector(15 downto 0) := X"FE03";  -- UART - Keyboard Data Register - KBDR
-       constant STDOUT_S_2 : std_logic_vector(15 downto 0) := X"FE05";  -- UART - Serial OUT (terminal  display) - DSR
-       constant STDOUT_D_2 : std_logic_vector(15 downto 0) := X"FE07";  -- UART - Display Data Register -- DDR
-       ---------
-       -- TIMER DAquavious PORK -
-       signal timer_start, timer_done_sig : std_logic;
-       signal timer_wait_time : std_logic_vector(15 downto 0);
-       constant IO_TIMER_WAIT : std_logic_vector(15 downto 0) := x"FE20";
-       constant IO_timer_DONE : STD_LOGIC_VECtoR(15 DOWNTO 0) := x"FE22";
+   --Student Signals--
+   signal ram_din : std_logic_vector(15 downto 0);
+   signal hex_reg : std_logic_vector(15 downto 0);
+   signal led_reg : std_logic_vector(15 downto 0);
+   signal pled_reg : std_logic_vector(15 downto 0);
+   -- UART --
+   signal tx_data_int : std_logic_vector(7 downto 0);
+   signal rx_data_int : std_logic_vector(7 downto 0);
+   signal rx_data_2  : std_logic_vector(7 downto 0);
+   signal rx_empty_2 : std_logic;
+   signal tx_full_2  : std_logic;
+   signal rx_rd_2    : std_logic;
+   signal tx_wr_2    : std_logic;
+   signal tx_data_2  : std_logic_vector(7 downto 0);
+   constant STDIN_S_2  : std_logic_vector(15 downto 0) := X"FE01";  -- UART - SERIAL IN (terminal keyboard)-- KBSR
+   constant STDIN_D_2  : std_logic_vector(15 downto 0) := X"FE03";  -- UART - Keyboard Data Register - KBDR
+   constant STDOUT_S_2 : std_logic_vector(15 downto 0) := X"FE05";  -- UART - Serial OUT (terminal  display) - DSR
+   constant STDOUT_D_2 : std_logic_vector(15 downto 0) := X"FE07";  -- UART - Display Data Register -- DDR
+   -----------
+   -- Timer --
+   signal timer_start, timer_done_sig : std_logic;
+   signal timer_wait_time : std_logic_vector(15 downto 0);
+   constant IO_TIMER_WAIT : std_logic_vector(15 downto 0) := x"FE20";
+   constant IO_timer_DONE : STD_LOGIC_VECtoR(15 DOWNTO 0) := x"FE22";
        
 begin
-
-  ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>---
-   ---<<<<< Pregenerated code >>>>>---
-   ---<<<<<<<<<<<<<<>>>>>>>>>>>>>>>--- 
-   
-   --In order to avoid warnings or errors all outputs should be assigned a value. 
-   --The VHDL lines below assign a value to each otput signal. An otput signal can have
-   --only one driver, so each otput signal that you plan to use in your own VHDL code
-   --should be commented out in the lines below 
-
-   
-   --Virtual Leds on Zybo VIO (active high)
-   --led(0) <= '0';
-   --led(1) <= '0';
-   --led(2) <= '0'; 
-   --led(3) <= '0'; 
-   --led(4) <= '0'; 
-   --led(5) <= '0'; 
-   --led(6) <= '0'; 
-   --led(7) <= '0'; 
-
-   --Physical leds on the Zybo board (active high)
-   --pled(0) <= '0';
-   --pled(1) <= '0';
-   --pled(2) <= '0';
-
-   --Virtual hexadecimal display on Zybo VIO
-   --hex <= X"1234";
-
-	--Virtual I/O UART
-	--rx_rd <= '0';
-	--tx_wr <= '0';
-	--tx_data <= X"00";
-	
-	--Input data for the LC3 CPU
-	--data_in <= X"0000";
-
-   --All the input signals comming to the FPGA should be used at least once otherwise we get 
-   --synthesis warnings. The following lines of VHDL code are meant to remove those warnings. 
-   --Sink is just an output signal that that has the only purpose to allow all the inputs to 
-   --be used at least once, by orring them and assigning the resulting the value to sink.
-   --You are not suppoosed to modify the following lines of VHDL code, where inputs are orred and
-   --assigned to the sink. 
    sink_psw <= psw(0) or psw(1) or psw(2) or psw(3);
    sink_pbtn <= pbtn(0) or pbtn(1) or pbtn(2) or pbtn(3);
    sink_sw <= sw(0) or sw(1) or sw(2) or sw(3) or sw(4) or sw(5) or sw(6) or sw(7); 
@@ -194,16 +119,7 @@ begin
 
    ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
    ---<<<<< End of pregenerated code >>>>>---
-   ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---
-	
-	--You'll have to decide which type of data bus you need to use for the
-	--  LC3 processor. Here are the options:
-	-- 1. Bidirectional data bus (to which you write using tristates).
-	-- 2. Two unidirctional busses data_in and data_out where you use
-	--    multiplexors to dicide where the data for data_in is comming for.
-	--The VHDL code that instantiate either one of these options for the LC3
-	--  processor are provided below. Just uncomment the one you prefer
-	
+   ---<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>---	
 	-- <<< LC3 CPU using multiplexers for the data bus>>>	
 	lc3_m: entity work.lc3_wrapper_multiplexers
 	port map (
@@ -280,15 +196,15 @@ begin
         );
               
       Inst_timer : entity work.timer 
-        generic map(
-            clock_count => 50000
-            )
-        port map(
-            clk => clk, 
-            start => timer_start,
-            wait_time => timer_wait_time,
-            timer_done => timer_done_sig
-            );
+      generic map(
+          clock_count => 50000
+          )
+      port map(
+          clk => clk, 
+          start => timer_start,
+          wait_time => timer_wait_time,
+          timer_done => timer_done_sig
+          );
             
             
             
@@ -304,7 +220,7 @@ begin
                rx_rd_2 <= '0';
                tx_wr_2 <= '0';
                tx_data_2 <= (others => '0');
-               --TImer Daquavious pork
+               --Timer
                timer_start <= '0';
                
                if RE = '1' then

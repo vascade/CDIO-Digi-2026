@@ -15,13 +15,12 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity student_code is
     Port ( 
-			  clk : in  STD_LOGIC;
-			  
-			  btn : in  STD_LOGIC_VECTOR (4 downto 0);
+		   clk : in  STD_LOGIC;
+		   btn : in  STD_LOGIC_VECTOR (4 downto 0);
            sw : in  STD_LOGIC_VECTOR (7 downto 0);
            led : out  STD_LOGIC_VECTOR (7 downto 0);
            hex : out STD_LOGIC_VECTOR (15 downto 0);
-			  dot : out std_logic_vector (3 downto 0);
+		   dot : out std_logic_vector (3 downto 0);
            pbtn : in  STD_LOGIC_VECTOR (3 downto 0);
            psw : in  STD_LOGIC_VECTOR (3 downto 0);
            pled : out  STD_LOGIC_VECTOR (2 downto 0);
@@ -35,14 +34,6 @@ entity student_code is
            -- ADDED STUDENT CODE---
            rx_pin : in std_logic ;
            tx_pin : out std_logic
-                 -- UART --
-           --rx_data_2          : in  std_logic_vector(7 downto 0);
-           --rx_rd_2            : out std_logic;
-           --rx_empty_2         : in  std_logic;
-           --tx_data_2          : out std_logic_vector(7 downto 0);
-           --tx_wr_2           : out std_logic;
-           --tx_full_2         : in  std_logic
-           ------------------------
            );
 end student_code;
 
@@ -61,8 +52,8 @@ architecture Behavioral of student_code is
    signal data: std_logic_vector(15 downto 0);
    signal RE, WE: std_logic;
    signal sys_reset, sys_program : std_logic;
-	signal sseg_reg : std_logic_vector (15 downto 0);
-	signal btn_io : std_logic_vector(4 downto 0);
+   signal sseg_reg : std_logic_vector (15 downto 0);
+   signal btn_io : std_logic_vector(4 downto 0);
    --------------------------------------------------------------------------
    --From here onward you can write your signal and component declarations --
    --------------------------------------------------------------------------
@@ -72,7 +63,7 @@ begin
 
 	--Instance of the LC3 computer
 	Inst_lc3_computer: entity work.lc3_computer 
-   PORT MAP(
+    PORT MAP(
 		clk => clk,
 		
 		led => led,

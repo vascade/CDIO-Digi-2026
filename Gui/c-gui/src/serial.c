@@ -16,7 +16,7 @@ void serial(void)
     }
 
     scanf("%d", &port_num);
-
+    
     sp_set_baudrate(ports[port_num], 115200);
     sp_set_bits(ports[port_num], 8);
     sp_set_parity(ports[port_num], SP_PARITY_NONE);
